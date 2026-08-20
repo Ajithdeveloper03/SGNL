@@ -7,7 +7,7 @@ import {
   Download, Briefcase, HeartHandshake, Users,
   User, CreditCard, Wallet, Phone, Star,
   CheckCircle2, ChevronLeft, ChevronRight, TrendingUp,
-  Calculator, Clock, BadgeCheck, Globe2, Bell, CreditCard as CreditCardIcon, MapPin as MapPinIcon, Headset
+  Calculator, Clock, BadgeCheck, Globe2, Bell, Headset
 } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
@@ -64,21 +64,21 @@ const heroSlides = [
 ];
 
 const quickServices = [
-  { icon: Landmark,  name: 'Recurring Deposit', grad: 'from-orange-500 to-orange-400', bg: 'bg-orange-50', text: 'text-orange-700' },
-  { icon: Coins,     name: 'Fixed Deposit',      grad: 'from-sky-500 to-sky-400',       bg: 'bg-sky-50',    text: 'text-sky-700' },
-  { icon: Wallet,    name: 'Life Insurance',     grad: 'from-emerald-500 to-emerald-400', bg: 'bg-emerald-50', text: 'text-emerald-700' },
-  { icon: ShieldCheck,name:'Health Insurance',   grad: 'from-rose-500 to-rose-400',       bg: 'bg-rose-50',    text: 'text-rose-700' },
-  { icon: PieChart,  name: 'Mutual Funds',       grad: 'from-blue-500 to-blue-400',       bg: 'bg-blue-50',    text: 'text-blue-700' },
-  { icon: TrendingUp,name: 'PMS & AIF',          grad: 'from-indigo-500 to-indigo-400', bg: 'bg-indigo-50', text: 'text-indigo-700' },
-  { icon: Briefcase, name: 'Demat Account',      grad: 'from-purple-500 to-purple-400', bg: 'bg-purple-50', text: 'text-purple-700' },
-  { icon: Building2, name: 'General Insurance',  grad: 'from-amber-500 to-amber-400',   bg: 'bg-amber-50',  text: 'text-amber-700' },
+  { icon: Landmark, name: 'Recurring Deposit', grad: 'from-orange-500 to-orange-400', bg: 'bg-orange-50', text: 'text-orange-700' },
+  { icon: Coins, name: 'Fixed Deposit', grad: 'from-sky-500 to-sky-400', bg: 'bg-sky-50', text: 'text-sky-700' },
+  { icon: Wallet, name: 'Life Insurance', grad: 'from-emerald-500 to-emerald-400', bg: 'bg-emerald-50', text: 'text-emerald-700' },
+  { icon: ShieldCheck, name: 'Health Insurance', grad: 'from-rose-500 to-rose-400', bg: 'bg-rose-50', text: 'text-rose-700' },
+  { icon: PieChart, name: 'Mutual Funds', grad: 'from-blue-500 to-blue-400', bg: 'bg-blue-50', text: 'text-blue-700' },
+  { icon: TrendingUp, name: 'PMS & AIF', grad: 'from-indigo-500 to-indigo-400', bg: 'bg-indigo-50', text: 'text-indigo-700' },
+  { icon: Briefcase, name: 'Demat Account', grad: 'from-purple-500 to-purple-400', bg: 'bg-purple-50', text: 'text-purple-700' },
+  { icon: Building2, name: 'General Insurance', grad: 'from-amber-500 to-amber-400', bg: 'bg-amber-50', text: 'text-amber-700' },
 ];
 
 const trustFeatures = [
-  { icon: ShieldCheck, label: 'RBA Registered',   desc: 'Regulated Nidhi Company under RBA Norms', color: 'bg-sky-100 text-sky-700 border-sky-200' },
-  { icon: Headphones,  label: 'Customer First',   desc: 'Transparent service with ethical practices at every step', color: 'bg-sky-100 text-sky-700 border-sky-200' },
-  { icon: Zap,         label: 'Quick Settlement', desc: 'Maturity & loan disbursals processed in 7–15 working days', color: 'bg-rose-100 text-rose-700 border-rose-200' },
-  { icon: BadgeCheck,  label: '5 Active Branches',desc: 'Hosur · Chennai · Coimbatore · Trichy · Madurai', color: 'bg-emerald-100 text-emerald-700 border-emerald-200' },
+  { icon: ShieldCheck, label: 'RBA Registered', desc: 'Regulated Nidhi Company under RBA Norms', color: 'bg-sky-100 text-sky-700 border-sky-200' },
+  { icon: Headphones, label: 'Customer First', desc: 'Transparent service with ethical practices at every step', color: 'bg-sky-100 text-sky-700 border-sky-200' },
+  { icon: Zap, label: 'Quick Settlement', desc: 'Maturity & loan disbursals processed in 7–15 working days', color: 'bg-rose-100 text-rose-700 border-rose-200' },
+  { icon: BadgeCheck, label: '5 Active Branches', desc: 'Hosur · Chennai · Coimbatore · Trichy · Madurai', color: 'bg-emerald-100 text-emerald-700 border-emerald-200' },
 ];
 
 const loanProducts = [
@@ -181,29 +181,29 @@ const testimonials = [
 ];
 
 const branches = [
-  { city: 'Hosur',      addr: 'Active Branch', img: 'https://img.staticmb.com/mbcontent/images/crop/uploads/2022/12/hosur-tamil-nadu_0_1200.jpg.webp' },
-  { city: 'Chennai',    addr: 'Active Branch', img: 'https://media.assettype.com/outlooktraveller/2025-09-08/b9f3c0e9/Discover-Chennai-Studio-A-12-1.jpg' },
-  { city: 'Coimbatore',      addr: 'Active Branch', img: 'https://s3.india.com/wp-content/uploads/2025/07/Coimbatore-seasonal-guide.jpg?impolicy=Medium_Widthonly&w=350&h=263' },
-  { city: 'Trichy',     addr: 'Active Branch', img: 'https://www.iimtrichy.ac.in/yuva/assets/images/istockphoto-1326914115-612x612.jpg' },
-  { city: 'Madurai',    addr: 'Active Branch', img: 'https://hblimg.mmtcdn.com/content/hubble/img/desttvimg/mmt/destination/m_Madurai_tv_destination_img_1_l_542_967.jpg' },
+  { city: 'Hosur', addr: 'Active Branch', img: 'https://img.staticmb.com/mbcontent/images/crop/uploads/2022/12/hosur-tamil-nadu_0_1200.jpg.webp' },
+  { city: 'Chennai', addr: 'Active Branch', img: 'https://media.assettype.com/outlooktraveller/2025-09-08/b9f3c0e9/Discover-Chennai-Studio-A-12-1.jpg' },
+  { city: 'Coimbatore', addr: 'Active Branch', img: 'https://s3.india.com/wp-content/uploads/2025/07/Coimbatore-seasonal-guide.jpg?impolicy=Medium_Widthonly&w=350&h=263' },
+  { city: 'Trichy', addr: 'Active Branch', img: 'https://www.iimtrichy.ac.in/yuva/assets/images/istockphoto-1326914115-612x612.jpg' },
+  { city: 'Madurai', addr: 'Active Branch', img: 'https://hblimg.mmtcdn.com/content/hubble/img/desttvimg/mmt/destination/m_Madurai_tv_destination_img_1_l_542_967.jpg' },
 ];
 
 /* ─────────────────────────── COMPONENT ─────────────────────────── */
 
 export default function Home() {
-  const [isScrolled,      setIsScrolled]      = useState(false);
-  const [mobileOpen,      setMobileOpen]       = useState(false);
-  const [currentSlide,    setCurrentSlide]     = useState(0);
-  const [testimonialIdx,  setTestimonialIdx]   = useState(0);
-  const [isAnimating,     setIsAnimating]      = useState(false);
-  const [activeDropdown,  setActiveDropdown]   = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [testimonialIdx, setTestimonialIdx] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   /* scroll & Intersection Observer */
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 60);
     window.addEventListener('scroll', onScroll);
-    
+
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -266,100 +266,185 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#F8FAFC] font-sans">
 
-      {/* ══════════ TOP HEADER{/* NEW HEADER - Matching Image Design */}
-      <header className="bg-[#0056b3] relative z-50 shadow-lg">
-        <div className="max-w-[1400px] mx-auto px-4 lg:px-6">
-          <div className="flex items-center justify-between h-[72px]">
-            
-            {/* Logo Section */}
-            <div className="flex items-center">
-              <Link href="/" className="flex items-center gap-3">
-                <div className="bg-white rounded-lg p-2">
-                  <Building2 className="w-8 h-8 text-[#0056b3]" />
-                </div>
-                <div className="hidden sm:block">
-                  <h1 className="text-white font-bold text-xl leading-tight">SGNL</h1>
-                  <p className="text-white/80 text-xs">Financial Services</p>
-                </div>
-              </Link>
+      {/* ══════════ HEADER SECTION ══════════ */}
+      <div className="w-full relative z-50 flex flex-col shadow-sm">
+        {/* TOP BAR */}
+        <div className="bg-[#001D3D] h-10 w-full hidden lg:flex items-center justify-center text-[10px] xl:text-[11px] font-bold text-white tracking-widest uppercase">
+          <div className="max-w-[1400px] w-full mx-auto flex items-center justify-between h-full px-4 lg:px-8">
+            <div className="flex items-center h-full">
+              {/* Blue slant */}
+              <div className="bg-sky-500 h-full flex items-center px-6 relative z-10 cursor-pointer">
+                <User className="w-3.5 h-3.5 mr-2" />
+                LOOKING: PERSONAL
+                <ChevronDown className="w-3.5 h-3.5 ml-2" />
+                <div className="absolute top-0 -right-4 w-8 h-full bg-sky-500 transform skew-x-[30deg] -z-10" />
+              </div>
+
+              <div className="flex items-center pl-10 pr-6 gap-6 h-full">
+                <button className="flex items-center gap-2 hover:text-sky-500 transition-colors">
+                  <ShieldCheck className="w-4 h-4" /> LOGIN <ChevronDown className="w-3.5 h-3.5" />
+                </button>
+                <div className="w-px h-4 bg-white/20 mx-2" />
+                <a href="mailto:support@sgnl.com" className="flex items-center gap-2 hover:text-sky-500 transition-colors">
+                  <Phone className="w-4 h-4" /> SUPPORT@SGNL.COM
+                </a>
+              </div>
             </div>
 
-            {/* Action Buttons - Desktop */}
-            <div className="hidden lg:flex items-center gap-3">
-              <button className="bg-[#dc3545] text-white px-4 py-2.5 rounded-full flex items-center gap-2 text-sm font-semibold hover:bg-[#c82333] transition-colors shadow-md">
-                <User className="w-4 h-4" />
-                My Account
-              </button>
-              <button className="bg-[#dc3545] text-white px-4 py-2.5 rounded-full flex items-center gap-2 text-sm font-semibold hover:bg-[#c82333] transition-colors shadow-md">
-                <CreditCardIcon className="w-4 h-4" />
-                Pre-Approved Loan
-              </button>
-              <button className="bg-[#dc3545] text-white px-4 py-2.5 rounded-full flex items-center gap-2 text-sm font-semibold hover:bg-[#c82333] transition-colors shadow-md">
-                <Wallet className="w-4 h-4" />
-                Make Payment
-              </button>
-              <button className="bg-[#dc3545] text-white px-4 py-2.5 rounded-full flex items-center gap-2 text-sm font-semibold hover:bg-[#c82333] transition-colors shadow-md">
-                <MapPinIcon className="w-4 h-4" />
-                Branch Locator
-              </button>
-              <button className="bg-[#dc3545] text-white px-4 py-2.5 rounded-full flex items-center gap-2 text-sm font-semibold hover:bg-[#c82333] transition-colors shadow-md">
-                <Zap className="w-4 h-4" />
-                Xpress Services
-              </button>
-              <button className="bg-[#dc3545] text-white px-4 py-2.5 rounded-full flex items-center gap-2 text-sm font-semibold hover:bg-[#c82333] transition-colors shadow-md">
-                <Headset className="w-4 h-4" />
-                Customer Support
-              </button>
-            </div>
-
-            {/* Right Section - Notifications and Mobile Menu */}
-            <div className="flex items-center gap-3">
-              {/* Notification Bell */}
-              <button className="relative bg-white/10 backdrop-blur-sm p-2.5 rounded-lg hover:bg-white/20 transition-colors">
-                <Bell className="w-5 h-5 text-white" />
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">3</span>
-              </button>
-              
-              {/* Mobile Menu Toggle */}
-              <button className="lg:hidden bg-white/10 backdrop-blur-sm p-2.5 rounded-lg hover:bg-white/20 transition-colors" onClick={() => setMobileOpen(!mobileOpen)}>
-                {mobileOpen ? <X className="w-6 h-6 text-white"/> : <Menu className="w-6 h-6 text-white"/>}
+            <div className="flex items-center h-full">
+              <div className="flex items-center gap-6 px-6">
+                <Link href="#" className="hover:text-sky-500 transition-colors">CAREERS</Link>
+                <Link href="#" className="hover:text-sky-500 transition-colors">FAQ'S</Link>
+                <Link href="#" className="hover:text-sky-500 transition-colors">BUSINESS</Link>
+                <Link href="#" className="hover:text-sky-500 transition-colors">REWARDS</Link>
+              </div>
+              <button className="flex items-center gap-2 px-6 h-full border-l border-white/20 hover:bg-white/5 transition-colors">
+                <Globe2 className="w-4 h-4" /> IN - EN <ChevronDown className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
-
-          {/* Mobile Action Buttons */}
-          {mobileOpen && (
-            <div className="lg:hidden border-t border-white/20 bg-[#0056b3]/95 py-4 px-2">
-              <div className="grid grid-cols-2 gap-3">
-                <button className="bg-[#dc3545] text-white px-3 py-2.5 rounded-full flex items-center justify-center gap-2 text-sm font-semibold hover:bg-[#c82333] transition-colors shadow-md">
-                  <User className="w-4 h-4" />
-                  My Account
-                </button>
-                <button className="bg-[#dc3545] text-white px-3 py-2.5 rounded-full flex items-center justify-center gap-2 text-sm font-semibold hover:bg-[#c82333] transition-colors shadow-md">
-                  <CreditCardIcon className="w-4 h-4" />
-                  Pre-Approved
-                </button>
-                <button className="bg-[#dc3545] text-white px-3 py-2.5 rounded-full flex items-center justify-center gap-2 text-sm font-semibold hover:bg-[#c82333] transition-colors shadow-md">
-                  <Wallet className="w-4 h-4" />
-                  Make Payment
-                </button>
-                <button className="bg-[#dc3545] text-white px-3 py-2.5 rounded-full flex items-center justify-center gap-2 text-sm font-semibold hover:bg-[#c82333] transition-colors shadow-md">
-                  <MapPinIcon className="w-4 h-4" />
-                  Branch Locator
-                </button>
-                <button className="bg-[#dc3545] text-white px-3 py-2.5 rounded-full flex items-center justify-center gap-2 text-sm font-semibold hover:bg-[#c82333] transition-colors shadow-md">
-                  <Zap className="w-4 h-4" />
-                  Xpress Services
-                </button>
-                <button className="bg-[#dc3545] text-white px-3 py-2.5 rounded-full flex items-center justify-center gap-2 text-sm font-semibold hover:bg-[#c82333] transition-colors shadow-md">
-                  <Headset className="w-4 h-4" />
-                  Customer Support
-                </button>
-              </div>
-            </div>
-          )}
         </div>
-      </header>
+
+        {/* MAIN NAVBAR */}
+        <header className="bg-white w-full flex items-center justify-center border-b border-gray-100">
+          <div className="max-w-[1400px] w-full mx-auto h-[85px] flex items-center justify-between px-4 lg:px-8">
+            {/* Logo */}
+            <Link href="/" className="flex flex-col items-center justify-center shrink-0">
+              <img src="/sarathi/logo.png" alt="SGNL Logo" className="w-[85px] h-[85px] object-contain" />
+            </Link>
+
+            {/* Desktop Nav */}
+            <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[15px] font-black text-[#001D3D] h-full ml-10">
+              <Link href="/" className="text-sky-500 h-full flex items-center">Home</Link>
+
+              {/* Services */}
+              <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('Services')} onMouseLeave={() => setActiveDropdown(null)}>
+                <button className={`flex items-center gap-1.5 transition-colors h-full ${activeDropdown === 'Services' ? 'text-sky-500' : 'hover:text-sky-500'}`}>
+                  Services <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'Services' ? 'rotate-180 text-sky-500' : 'text-gray-400'}`} />
+                </button>
+                {activeDropdown === 'Services' && (
+                  <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[240px] flex flex-col gap-1 z-50">
+                    {['Recurring Deposits', 'Fixed Deposits', 'Mutual Funds', 'Life Insurance', 'Health Insurance', 'Demat Account'].map(item => (
+                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Schemes */}
+              <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('Schemes')} onMouseLeave={() => setActiveDropdown(null)}>
+                <button className={`flex items-center gap-1.5 transition-colors h-full ${activeDropdown === 'Schemes' ? 'text-sky-500' : 'hover:text-sky-500'}`}>
+                  Schemes <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'Schemes' ? 'rotate-180 text-sky-500' : 'text-gray-400'}`} />
+                </button>
+                {activeDropdown === 'Schemes' && (
+                  <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[260px] flex flex-col gap-1 z-50">
+                    {['Prime Wealth Gain', 'Elite Wealth Gain', 'Vikas Money Savings', 'Ecocial Savings Plan', 'Student Savings Plan'].map(item => (
+                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* About */}
+              <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('About')} onMouseLeave={() => setActiveDropdown(null)}>
+                <button className={`flex items-center gap-1.5 transition-colors h-full ${activeDropdown === 'About' ? 'text-sky-500' : 'hover:text-sky-500'}`}>
+                  About <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'About' ? 'rotate-180 text-sky-500' : 'text-gray-400'}`} />
+                </button>
+                {activeDropdown === 'About' && (
+                  <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[240px] flex flex-col gap-1 z-50">
+                    {['Company Overview', 'Mission & Vision', 'Leadership'].map(item => (
+                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Branches */}
+              <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('Branches')} onMouseLeave={() => setActiveDropdown(null)}>
+                <button className={`flex items-center gap-1.5 transition-colors h-full ${activeDropdown === 'Branches' ? 'text-sky-500' : 'hover:text-sky-500'}`}>
+                  Branches <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'Branches' ? 'rotate-180 text-sky-500' : 'text-gray-400'}`} />
+                </button>
+                {activeDropdown === 'Branches' && (
+                  <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[200px] flex flex-col gap-1 z-50">
+                    {['Hosur', 'Chennai', 'Coimbatore', 'Trichy', 'Madurai'].map(item => (
+                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">
+                Get In Touch
+              </Link>
+            </nav>
+
+            {/* Actions */}
+            <div className="hidden lg:flex items-center h-full ml-auto">
+              <button className="flex items-center gap-2 text-[12px] font-black text-gray-400 hover:text-[#001D3D] uppercase tracking-widest transition-colors mr-8 xl:mr-10">
+                <Search className="w-4 h-4" /> SEARCH
+              </button>
+
+              <div className="h-8 w-px bg-gray-200" />
+
+              <button className="flex items-center gap-3 text-[15px] font-black text-[#001D3D] hover:text-sky-500 transition-colors ml-8 xl:ml-10 mr-8 xl:mr-10">
+                <Headphones className="w-5 h-5 text-sky-500" /> Support
+              </button>
+
+              <button className="bg-sky-500 text-white h-full px-8 xl:px-12 text-[14px] font-black tracking-widest uppercase flex items-center gap-3 hover:bg-[#001D3D] transition-colors">
+                <ArrowRight className="w-4 h-4" /> NEW ACCOUNT
+              </button>
+            </div>
+
+            {/* Mobile Toggle */}
+            <div className="lg:hidden flex items-center gap-3">
+              <button className="bg-sky-500 text-white px-5 py-2 rounded-xl text-sm font-black tracking-wider hover:bg-sky-600 transition-colors uppercase">
+                Apply
+              </button>
+              <button 
+                className={`flex items-center justify-center transition-colors ${mobileOpen ? 'w-10 h-10 rounded-xl border border-gray-200 text-[#001D3D] hover:bg-gray-50' : 'p-2 text-[#001D3D]'}`} 
+                onClick={() => setMobileOpen(!mobileOpen)}
+              >
+                {mobileOpen ? <X className="w-5 h-5" strokeWidth={2.5} /> : <Menu className="w-7 h-7" />}
+              </button>
+            </div>
+          </div>
+        </header>
+
+        {/* Mobile Dropdown Menu */}
+        {mobileOpen && (
+          <div className="lg:hidden absolute top-[85px] left-0 w-full bg-white shadow-2xl py-2 px-6 flex flex-col z-50">
+            {[
+              { name: 'Services', links: ['Recurring Deposits', 'Fixed Deposits', 'Mutual Funds', 'Life Insurance', 'Health Insurance', 'Demat Account'] },
+              { name: 'Schemes', links: ['Prime Wealth Gain', 'Elite Wealth Gain', 'Vikas Money Savings', 'Ecocial Savings Plan', 'Student Savings Plan'] },
+              { name: 'About', links: ['Company Overview', 'Mission & Vision', 'Leadership'] },
+              { name: 'Branches', links: ['Hosur', 'Chennai', 'Coimbatore', 'Trichy', 'Madurai'] }
+            ].map((item) => (
+              <div key={item.name} className="w-full flex flex-col">
+                <div 
+                  className="w-full flex items-center justify-between py-5 cursor-pointer"
+                  onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                >
+                  <span className={`font-black text-[15px] ${activeDropdown === item.name ? 'text-sky-500' : 'text-[#001D3D]'}`}>{item.name}</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === item.name ? 'rotate-180 text-sky-500' : 'text-[#001D3D]'}`} strokeWidth={2.5} />
+                </div>
+                
+                {activeDropdown === item.name && (
+                  <div className="flex flex-col gap-4 pb-5 pl-4">
+                    {item.links.map(link => (
+                      <Link key={link} href="#" className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
+                        {link}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <div className="w-full py-5 cursor-pointer mb-2">
+              <span className="text-[#001D3D] font-black text-[15px]">Get In Touch</span>
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* ══════════ HERO SLIDER ══════════ */}
       <section className="relative w-full h-[calc(100vh-70px)] lg:h-[calc(100vh-130px)] min-h-[500px] max-h-[850px] bg-[#001D3D] overflow-hidden flex items-center select-none">
@@ -373,13 +458,13 @@ export default function Home() {
         {/* Navy Overlay Base */}
         <div className="absolute top-0 left-0 w-full lg:w-[60%] h-full bg-[#001D3D] hidden lg:block" style={{ clipPath: "ellipse(100% 120% at 0% 50%)", zIndex: 1 }} />
         <div className="absolute top-0 left-0 w-full h-full bg-[#001D3D]/85 lg:hidden" style={{ zIndex: 1 }} />
-        
+
         {/* Lighter Cyan Sweep */}
         <div className="absolute top-0 left-0 w-full lg:w-[68%] h-full bg-sky-900/50 mix-blend-multiply hidden lg:block" style={{ clipPath: "ellipse(100% 100% at 0% 50%)", zIndex: 2 }} />
 
         {/* Content Container */}
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 w-full relative flex h-full items-center" style={{ zIndex: 10 }}>
-          
+
           {/* Vertical Dots Navigation */}
           <div className="hidden lg:flex flex-col gap-8 justify-center mr-12 xl:mr-16 items-center border-l-2 border-white/10 pl-6 h-[70%]">
             <button onClick={prevSlide} className="text-white/30 hover:text-sky-500 transition-colors">
@@ -412,16 +497,16 @@ export default function Home() {
             <p key={`sub-${currentSlide}`} className="text-white/70 font-medium text-sm md:text-base lg:text-lg leading-relaxed mb-8 lg:mb-10 max-w-xl animate-fade-in-up [animation-delay:400ms]">
               {slide.sub}
             </p>
-            
+
             <div key={`cta-${currentSlide}`} className="flex flex-wrap gap-4 animate-fade-in-up [animation-delay:600ms]">
               <button className="bg-sky-500 text-white px-8 lg:px-10 py-4 lg:py-5 font-black flex items-center justify-center gap-3 hover:bg-white hover:text-[#001D3D] transition-all shadow-xl shadow-sky-500/30 text-[12px] md:text-[14px] uppercase tracking-wider rounded-sm">
-                <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5"/> {slide.cta}
+                <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5" /> {slide.cta}
               </button>
               <button className="border-2 border-white/30 text-white px-6 lg:px-8 py-4 lg:py-5 font-black flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/50 transition-all text-[12px] md:text-[14px] uppercase tracking-wider rounded-sm">
                 {slide.ctaSecondary}
               </button>
             </div>
-            
+
             {/* Mobile dots */}
             <div className="flex lg:hidden gap-3 mt-8">
               {heroSlides.map((_, i) => (
@@ -496,16 +581,16 @@ export default function Home() {
                 {/* Colorful Gradient Background (Light) */}
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${svc.grad} opacity-[0.08]`} />
                 <div className={`absolute inset-0 ${svc.bg} opacity-30 group-hover:opacity-0 transition-opacity duration-500`} />
-                
+
                 {/* Decorative Abstract Shape */}
                 <div className={`absolute -right-8 -top-8 w-32 h-32 rounded-full bg-gradient-to-br ${svc.grad} opacity-[0.1] group-hover:scale-150 transition-transform duration-700`} />
-                
+
                 <div className={`relative w-20 h-20 lg:w-24 lg:h-24 rounded-3xl bg-gradient-to-br ${svc.grad} flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
                   <svc.icon className="w-10 h-10 lg:w-12 lg:h-12 text-white" />
                 </div>
-                
+
                 <h3 className={`relative text-xl lg:text-2xl font-black text-[#001D3D] text-center mb-4 tracking-tight group-hover:scale-105 transition-transform duration-300`}>{svc.name}</h3>
-                
+
                 <div className="relative flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-sky-600 transition-colors">
                   Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -519,24 +604,24 @@ export default function Home() {
       </section>
 
       {/* ══════════ BEAUTIFUL SCHEMES CAROUSEL ══════════ */}
-      <section className="bg-slate-50 py-20 lg:py-28 border-b border-slate-100 shadow-sm overflow-hidden relative" style={{scrollBehavior: 'smooth'}}>
+      <section className="bg-slate-50 py-20 lg:py-28 border-b border-slate-100 shadow-sm overflow-hidden relative" style={{ scrollBehavior: 'smooth' }}>
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
           <div>
-             <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4 flex items-center gap-2">
-               <Star className="w-4 h-4" /> Exclusive Schemes
-             </p>
-             <h2 className="text-4xl lg:text-5xl font-black text-[#001D3D] tracking-tight">Tailored For Your Future</h2>
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4 flex items-center gap-2">
+              <Star className="w-4 h-4" /> Exclusive Schemes
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-black text-[#001D3D] tracking-tight">Tailored For Your Future</h2>
           </div>
           <div className="flex gap-4">
-             <button onClick={() => scrollSchemes('left')} className="w-12 h-12 rounded-full border-2 border-slate-200 flex items-center justify-center hover:bg-sky-500 hover:border-sky-500 hover:text-white transition-all text-slate-400 bg-white z-20 cursor-pointer">
-               <ChevronLeft className="w-6 h-6" />
-             </button>
-             <button onClick={() => scrollSchemes('right')} className="w-12 h-12 rounded-full border-2 border-[#001D3D] bg-[#001D3D] flex items-center justify-center hover:border-[#001D3D] hover:bg-transparent hover:text-[#001D3D] text-white transition-all z-20 cursor-pointer">
-               <ChevronRight className="w-6 h-6" />
-             </button>
+            <button onClick={() => scrollSchemes('left')} className="w-12 h-12 rounded-full border-2 border-slate-200 flex items-center justify-center hover:bg-sky-500 hover:border-sky-500 hover:text-white transition-all text-slate-400 bg-white z-20 cursor-pointer">
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button onClick={() => scrollSchemes('right')} className="w-12 h-12 rounded-full border-2 border-[#001D3D] bg-[#001D3D] flex items-center justify-center hover:border-[#001D3D] hover:bg-transparent hover:text-[#001D3D] text-white transition-all z-20 cursor-pointer">
+              <ChevronRight className="w-6 h-6" />
+            </button>
           </div>
         </div>
-        
+
         {/* Carousel Track */}
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out delay-100">
           <div ref={schemesCarouselRef} className="flex overflow-x-auto gap-6 lg:gap-8 pb-12 pt-4 snap-x snap-mandatory hide-scrollbars scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
@@ -549,10 +634,10 @@ export default function Home() {
             ].map((scheme, i) => (
               <div key={scheme.name} className="relative group w-[280px] h-[340px] md:w-[320px] md:h-[380px] lg:w-[380px] lg:h-[420px] rounded-[2rem] overflow-hidden snap-center shrink-0 cursor-pointer shadow-md border border-slate-200 bg-white">
                 <img src={scheme.img} alt={scheme.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1000ms] ease-out" />
-                
+
                 {/* Gradients */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#001D3D] via-[#001D3D]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Content */}
                 <div className="absolute inset-0 p-6 lg:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="w-10 h-10 lg:w-12 lg:h-12 bg-sky-500 rounded-2xl flex items-center justify-center shadow-[0_10px_20px_rgba(14,165,233,0.3)] mb-4 lg:mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-75 group-hover:scale-100">
@@ -599,12 +684,12 @@ export default function Home() {
       </section>
 
       {/* ══════════ OUR CONCEPTS ══════════ */}
-      
+
       {/* ══════════ OUR SOLUTIONS (ENHANCED PREMIUM) ══════════ */}
       <section className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-100/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-100/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4" />
-        
+
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
             <div className="max-w-2xl">
@@ -623,12 +708,12 @@ export default function Home() {
                 <div className="relative h-64 overflow-hidden rounded-t-[2.5rem]">
                   <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1500ms]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#001D3D]/80 via-transparent to-transparent opacity-60" />
-                  
+
                   {/* Floating Tag */}
                   <div className={`absolute top-6 left-6 px-5 py-2 ${p.tagColor} text-white text-[11px] font-black rounded-full uppercase tracking-widest shadow-xl flex items-center gap-2`}>
                     <Star className="w-3.5 h-3.5 fill-current" /> {p.tag}
                   </div>
-                  
+
                   {/* Rate Badge */}
                   <div className="absolute bottom-6 left-8 bg-white/90 backdrop-blur-md px-6 py-3 rounded-2xl shadow-lg">
                     <p className="text-[#001D3D] font-black text-2xl lg:text-3xl tracking-tight">{p.rate}</p>
@@ -654,7 +739,7 @@ export default function Home() {
 
                   <div className="flex flex-col sm:flex-row gap-4 mt-auto">
                     <button className="flex-1 bg-[#001D3D] text-white py-5 rounded-2xl font-black text-sm uppercase tracking-wider hover:bg-sky-500 transition-all shadow-lg hover:shadow-sky-500/30 flex items-center justify-center gap-2">
-                       Apply Now <ArrowRight className="w-4 h-4" />
+                      Apply Now <ArrowRight className="w-4 h-4" />
                     </button>
                     <button className="flex-[0.7] border-2 border-slate-100 text-[#001D3D] py-5 rounded-2xl font-black text-sm uppercase tracking-wider hover:border-sky-500 hover:text-sky-600 transition-all">
                       Details
@@ -691,20 +776,20 @@ export default function Home() {
           {/* Interactive Expanding Gallery */}
           <div className="flex flex-col lg:flex-row gap-4 h-[800px] lg:h-[650px] w-full">
             {branches.map((b, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className="relative rounded-[2.5rem] overflow-hidden group flex-1 hover:flex-[3] transition-all duration-700 ease-in-out cursor-pointer border border-white/5 shadow-xl"
               >
                 {/* Background Image */}
-                <img 
-                  src={b.img} 
-                  alt={b.city} 
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out opacity-60 group-hover:opacity-100" 
+                <img
+                  src={b.img}
+                  alt={b.city}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out opacity-60 group-hover:opacity-100"
                 />
-                
+
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-[#001D3D]/50 to-transparent group-hover:via-transparent transition-all duration-700" />
-                
+
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 p-8 lg:p-12 w-full flex flex-col justify-end h-full">
                   <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-out flex flex-col gap-4">
@@ -757,11 +842,11 @@ export default function Home() {
       <section className="py-24 lg:py-32 relative bg-slate-50 overflow-hidden">
         {/* Decorative Image background in a corner */}
         <div className="absolute top-0 right-0 w-1/3 h-full mix-blend-multiply opacity-30 pointer-events-none hidden lg:block">
-           <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover rounded-bl-[150px]" />
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover rounded-bl-[150px]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 lg:px-6 relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-center">
-            
+
             <div className="lg:w-1/3 space-y-8">
               <div>
                 <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4">Testimonials</p>
@@ -802,10 +887,10 @@ export default function Home() {
 
 
       {/* ══════════ DOWNLOAD APP ══════════ */}
-      
+
 
       {/* ══════════ PARTNERS ══════════ */}
-      
+
 
       {/* ══════════ FOOTER ══════════ */}
       <footer className="bg-[#001D3D] pt-20 pb-10">
@@ -815,7 +900,7 @@ export default function Home() {
             {/* Brand */}
             <div className="lg:col-span-2 space-y-5">
               <Link href="/" className="flex items-center gap-3">
-                <img src="logo.png" alt="SGNL Logo" className="h-20 w-auto object-contain bg-white rounded-2xl p-2" />
+                <img src="/sarathi/logo.png" alt="SGNL Logo" className="h-20 w-auto object-contain bg-white rounded-2xl p-2" />
               </Link>
               <p className="text-white/50 text-sm leading-relaxed max-w-sm">
                 A trusted Nidhi Company dedicated to empowering communities through ethical savings, low-interest loans, and transparent financial services.
@@ -832,8 +917,8 @@ export default function Home() {
             {/* Links */}
             {[
               { head: 'Our Schemes', links: ['Prime Wealth Gain', 'Student Savings Plan', 'Vikas Money Savings', 'Ecocial Savings Plan', 'Elite Wealth Gain'] },
-              { head: 'Services',    links: ['Recurring Deposits', 'Fixed Deposits', 'Life Insurance', 'Mutual Funds', 'Demat Account'] },
-              { head: 'Company',     links: ['About Us', 'Our Branches', 'Fair Practice Code', 'Contact Us'] },
+              { head: 'Services', links: ['Recurring Deposits', 'Fixed Deposits', 'Life Insurance', 'Mutual Funds', 'Demat Account'] },
+              { head: 'Company', links: ['About Us', 'Our Branches', 'Fair Practice Code', 'Contact Us'] },
             ].map(col => (
               <div key={col.head}>
                 <p className="text-white font-black text-xs uppercase tracking-widest mb-5">{col.head}</p>

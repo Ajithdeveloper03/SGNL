@@ -33,8 +33,8 @@ const navItems = [
 const heroSlides = [
   {
     tag: '✦ Sarathi Germinate Nidhi Limited',
-    headline: 'We Rise By\nRising Others',
-    highlight: 'Rising Others',
+    headline: 'Empowering your finances,\none smart step at a time.',
+    highlight: 'one smart step at a time.',
     sub: 'Savings · Investments · Insurance · Loans — your complete financial partner across Tamil Nadu.',
     cta: 'Explore Plans',
     ctaSecondary: 'Our Branches',
@@ -43,23 +43,13 @@ const heroSlides = [
   },
   {
     tag: '✦ Fixed Deposits & Savings Plans',
-    headline: 'Let Your Money Grow\nwith Safety',
-    highlight: 'with Safety',
+    headline: 'Make your next move\nyour smartest move.',
+    highlight: 'your smartest move.',
     sub: 'Earn up to 12% p.a. with our Elite Wealth Gain plans. Transparent returns, no hidden charges.',
     cta: 'View FD Plans',
     ctaSecondary: 'Calculate Returns',
     image: 'https://images.pexels.com/photos/7260884/pexels-photo-7260884.jpeg',
     badge: 'Up to 12% p.a.',
-  },
-  {
-    tag: '✦ Discipline · Dedication · Determination',
-    headline: 'We Value You\n& Your Money',
-    highlight: '& Your Money',
-    sub: 'Registered & regulated under the RBA. Your trust is the foundation of everything we do.',
-    cta: 'Meet Our Team',
-    ctaSecondary: 'Company Overview',
-    image: 'https://images.pexels.com/photos/6627897/pexels-photo-6627897.jpeg',
-    badge: 'RBA Registered',
   },
 ];
 
@@ -72,6 +62,14 @@ const quickServices = [
   { icon: TrendingUp, name: 'PMS & AIF', grad: 'from-indigo-500 to-indigo-400', bg: 'bg-indigo-50', text: 'text-indigo-700' },
   { icon: Briefcase, name: 'Demat Account', grad: 'from-purple-500 to-purple-400', bg: 'bg-purple-50', text: 'text-purple-700' },
   { icon: Building2, name: 'General Insurance', grad: 'from-amber-500 to-amber-400', bg: 'bg-amber-50', text: 'text-amber-700' },
+];
+
+const whyChooseUsData = [
+  { icon: ShieldCheck, name: 'Regulated & Trusted', desc: 'We operate under the guidelines of the Reserve Bank of India (RBI), ensuring full compliance, safety, and accountability.', grad: 'from-sky-500 to-sky-400', bg: 'bg-sky-50', text: 'text-sky-700' },
+  { icon: HeartHandshake, name: 'Customer-Centric Approach', desc: 'Your goals are our priority. We offer tailored financial solutions that match your unique needs — no one-size-fits-all advice.', grad: 'from-emerald-500 to-emerald-400', bg: 'bg-emerald-50', text: 'text-emerald-700' },
+  { icon: TrendingUp, name: 'Competitive Interest Rates', desc: 'Maximize your savings and grow your wealth with our high-return Fixed Deposits and investment options.', grad: 'from-violet-500 to-violet-400', bg: 'bg-violet-50', text: 'text-violet-700' },
+  { icon: Zap, name: 'Simple & Transparent', desc: 'We make banking clear and understandable — no jargon, no hidden terms, just honest financial support.', grad: 'from-orange-500 to-orange-400', bg: 'bg-orange-50', text: 'text-orange-700' },
+  { icon: BadgeCheck, name: 'Integrity & Professionalism', desc: 'Our team is committed to ethical practices, professional service, and long-term client relationships built on trust.', grad: 'from-rose-500 to-rose-400', bg: 'bg-rose-50', text: 'text-rose-700' },
 ];
 
 const trustFeatures = [
@@ -490,7 +488,7 @@ export default function Home() {
               <p className="text-white/80 font-bold text-sm md:text-base tracking-wide ml-1 drop-shadow-md">{slide.badge}</p>
             </div>
 
-            <h1 key={`head-${currentSlide}`} className="text-[32px] sm:text-[42px] md:text-5xl lg:text-[68px] xl:text-[78px] font-black text-white leading-[1.08] tracking-tight drop-shadow-2xl mb-5 lg:mb-8 animate-fade-in-up [animation-delay:200ms] whitespace-pre-line">
+            <h1 key={`head-${currentSlide}`} className="text-[24px] sm:text-[32px] md:text-4xl lg:text-[48px] xl:text-[56px] font-black text-white leading-[1.08] tracking-tight drop-shadow-2xl mb-5 lg:mb-8 animate-fade-in-up [animation-delay:200ms] whitespace-pre-line">
               {slide.headline}
             </h1>
 
@@ -568,16 +566,87 @@ export default function Home() {
         </div>
       </section> */}
 
-      {/* ══════════ OUR SERVICES GRID (ELEGANT) ══════════ */}
+      {/* ══════════ ABOUT US ══════════ */}
+      <section className="bg-white py-16 lg:py-24 relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-stretch">
+            
+            {/* Image Side (Left Column) */}
+            <div className="w-full lg:w-1/2 relative rounded-[32px] overflow-hidden min-h-[400px] lg:min-h-[unset] shadow-2xl reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
+              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="About SGNL" className="absolute inset-0 w-full h-full object-cover" />
+              
+              {/* Dark Gradient Overlay matching reference */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/70 to-transparent" />
+              
+              {/* Overlay Content */}
+              <div className="absolute inset-0 flex flex-col justify-end items-center text-center p-8 lg:p-12">
+                <p className="text-white/80 text-[15px] leading-relaxed font-medium mb-5 max-w-lg">
+                  At SGNL, we offer a wide range of customer-focused financial services, including:
+                </p>
+                <div className="flex flex-col items-center gap-4 max-w-lg mt-2">
+                  <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
+                    <div className="flex items-center gap-3 shrink-0">
+                      <span className="text-orange-500 font-black text-lg">✓</span>
+                      <span className="font-bold text-[15px] lg:text-base text-white">Savings Accounts</span>
+                    </div>
+                    <div className="flex items-center gap-3 shrink-0">
+                      <span className="text-orange-500 font-black text-lg">✓</span>
+                      <span className="font-bold text-[15px] lg:text-base text-white">Investment Solutions</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="text-orange-500 font-black text-lg">✓</span>
+                    <span className="font-bold text-[15px] lg:text-base text-white">High-Interest Fixed Deposits</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Content Side (Right Column) */}
+            <div className="w-full lg:w-1/2 flex flex-col justify-center py-4 lg:py-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out delay-100">
+              
+              <div className="mb-8">
+                <span className="bg-slate-100 text-slate-500 text-[11px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full border border-slate-200">
+                  About Us
+                </span>
+              </div>
+              
+              <h3 className="text-2xl lg:text-[28px] font-black text-[#001D3D] leading-tight mb-4 tracking-tight">
+                About Sarathi Germinate Nidhi Limited (SGNL)
+              </h3>
+              
+              <p className="text-slate-600 text-lg leading-relaxed font-medium mb-6">
+                Sarathi Germinate Nidhi Limited (SGNL) is a trusted name in the banking sector, committed to creating a safe, transparent, and growth-focused financial environment. Registered under the guidelines of the Reserve Bank of India (RBI), we aim to bridge the gap between investors and individuals seeking financial security and progress.
+              </p>
+              
+              {/* Services list moved to image overlay */}
+              
+              <p className="text-slate-600 text-lg leading-relaxed font-medium mb-10">
+                Our solutions are designed to be simple, accessible, and tailored to your needs—whether you’re just getting started or planning for long-term financial growth. Driven by integrity, professionalism, and transparency, we make banking easy to understand and even easier to trust.
+              </p>
+              
+              {/* Button-like element matching the "Learn More About Us" styling from reference */}
+              <div className="bg-[#1E293B] text-white px-8 py-4 rounded-full w-max text-[13px] font-bold tracking-wide shadow-lg flex items-center gap-3 hover:bg-[#001D3D] transition-colors cursor-pointer">
+                SGNL – Simple Solutions, Stronger Finances <ArrowRight className="w-4 h-4" />
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════ WHY CHOOSE US GRID (ELEGANT) ══════════ */}
       <section className="bg-white py-16 lg:py-24 border-b border-slate-100">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 text-center mb-16 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
-          <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4">Banking & Investments</p>
-          <h2 className="text-4xl lg:text-5xl font-black text-[#001D3D] tracking-tight">Our Premium Services</h2>
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4">Why Choose Us?</p>
+          <h2 className="text-3xl lg:text-4xl font-black text-[#001D3D] tracking-tight max-w-4xl mx-auto leading-tight">
+            At Sarathi Germinate Nidhi Limited (SGNL), we don’t just offer financial services — we build lasting financial confidence. Here’s why individuals and investors choose us:
+          </h2>
         </div>
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out delay-100">
-            {quickServices.map((svc, i) => (
-              <Link key={svc.name} href="#" className="group relative flex flex-col items-center p-8 lg:p-12 rounded-[2.5rem] bg-white border border-slate-100 transition-all duration-500 hover:shadow-xl hover:shadow-sky-500/5 overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out delay-100">
+            {whyChooseUsData.map((svc, i) => (
+              <div key={svc.name} className="group relative flex flex-col items-center p-6 lg:p-8 rounded-[2rem] bg-white border border-slate-100 transition-all duration-500 hover:shadow-xl hover:shadow-sky-500/5 overflow-hidden">
                 {/* Colorful Gradient Background (Light) */}
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${svc.grad} opacity-[0.08]`} />
                 <div className={`absolute inset-0 ${svc.bg} opacity-30 group-hover:opacity-0 transition-opacity duration-500`} />
@@ -585,19 +654,19 @@ export default function Home() {
                 {/* Decorative Abstract Shape */}
                 <div className={`absolute -right-8 -top-8 w-32 h-32 rounded-full bg-gradient-to-br ${svc.grad} opacity-[0.1] group-hover:scale-150 transition-transform duration-700`} />
 
-                <div className={`relative w-20 h-20 lg:w-24 lg:h-24 rounded-3xl bg-gradient-to-br ${svc.grad} flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
-                  <svc.icon className="w-10 h-10 lg:w-12 lg:h-12 text-white" />
+                <div className={`relative w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br ${svc.grad} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                  <svc.icon className="w-7 h-7 lg:w-8 lg:h-8 text-white" />
                 </div>
 
-                <h3 className={`relative text-xl lg:text-2xl font-black text-[#001D3D] text-center mb-4 tracking-tight group-hover:scale-105 transition-transform duration-300`}>{svc.name}</h3>
+                <h3 className={`relative text-lg lg:text-xl font-black text-[#001D3D] text-center mb-3 tracking-tight group-hover:scale-105 transition-transform duration-300`}>{svc.name}</h3>
 
-                <div className="relative flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-sky-600 transition-colors">
-                  Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
+                <p className="relative text-slate-500 text-[13px] lg:text-sm text-center mb-0 leading-relaxed group-hover:text-slate-700 transition-colors">
+                  {svc.desc}
+                </p>
 
                 {/* Subtle Bottom Border Accent */}
                 <div className={`absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r ${svc.grad} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
-              </Link>
+              </div>
             ))}
           </div>
         </div>

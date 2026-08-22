@@ -757,30 +757,93 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════════ TRUST FEATURES ══════════ */}
-      <section className="py-24 lg:py-32 relative">
+      {/* ══════════ OUR WORK PROCESS ══════════ */}
+      <section className="py-24 lg:py-32 relative overflow-hidden min-h-[900px] flex flex-col justify-center">
+        
+        {/* Background Image & Overlays */}
         <div className="absolute inset-0">
           <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[#001D3D]/90 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#001D3D] via-[#001D3D]/80 to-transparent" />
         </div>
-        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-16 max-w-3xl mx-auto reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-500 mb-4">Our Guarantee</p>
-            <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tight">Why SGNL is the Right Choice</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out delay-100">
-            {trustFeatures.map((f, i) => (
-              <div key={i} className={`flex flex-col items-center text-center p-10 rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-white/20 transition-all duration-300 transform hover:-translate-y-2`}>
-                <div className="w-20 h-20 rounded-3xl bg-sky-500 flex items-center justify-center mb-6 shadow-lg border border-sky-400">
-                  <f.icon className="w-10 h-10 text-[#001D3D]" />
+
+        <div className="max-w-[1400px] w-full mx-auto px-4 lg:px-8 relative z-10 flex flex-col items-center">
+          
+          {/* Main Container for Desktop Layout matching reference */}
+          <div className="relative w-full max-w-[1300px] mx-auto hidden lg:block h-[700px] xl:h-[750px] reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out mt-16">
+            
+            {/* Desktop Cards arranged in a staggered floating Arch matching reference image sizes */}
+            <div className="absolute inset-0 w-full h-full z-10 pointer-events-none flex justify-between items-start">
+              {[
+                { step: '1', title: 'Understand Your Needs', desc: "We start by listening. Whether you're saving, investing, or protecting your future, we take time to understand your goals, challenges, and priorities.", offset: 'mt-[280px] xl:mt-[320px]', size: 'w-[210px] xl:w-[230px] min-h-[320px]' },
+                { step: '2', title: 'Recommend Tailored Solutions', desc: "No one-size-fits-all here. Based on your needs, we provide clear, customized financial solutions — from high-interest savings to insurance and investment plans.", offset: 'mt-[50px] xl:mt-[70px]', size: 'w-[240px] xl:w-[250px] min-h-[280px]' },
+                { step: '3', title: 'Simple & Transparent Onboarding', desc: "We make it easy. Our onboarding process is quick, secure, and hassle-free. We explain every step so you know exactly what you're signing up for.", offset: 'mt-[0px]', size: 'w-[270px] xl:w-[300px] min-h-[240px]' },
+                { step: '4', title: 'Ongoing Support & Guidance', desc: "Our relationship doesn’t end after you sign up. We offer continuous support, regular check-ins, and transparent updates to help you stay on track with your financial goals.", offset: 'mt-[50px] xl:mt-[70px]', size: 'w-[240px] xl:w-[250px] min-h-[280px]' },
+                { step: '5', title: 'Grow Together', desc: "Your growth is our mission. As your needs evolve, we’re here with smarter solutions, expert advice, and a long-term partnership that grows with you.", offset: 'mt-[280px] xl:mt-[320px]', size: 'w-[210px] xl:w-[230px] min-h-[320px]' }
+              ].map((s, i) => (
+                <div key={i} className={`${s.offset} ${s.size} relative z-10 pointer-events-auto flex flex-col justify-center bg-white rounded-[2.5rem] xl:rounded-[3rem] p-6 xl:p-8 shadow-[0_15px_50px_rgba(0,0,0,0.08)] border border-slate-100 hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(14,165,233,0.15)] transition-all duration-500 group cursor-default`}>
+                  <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center font-black text-xl mb-4 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-500 shadow-sm border border-sky-100 shrink-0">
+                    {s.step}
+                  </div>
+                  <h3 className="font-black text-[17px] xl:text-[18px] text-[#001D3D] mb-3 leading-tight tracking-tight group-hover:text-sky-600 transition-colors">{s.title}</h3>
+                  <p className="text-slate-500 text-[13px] leading-relaxed font-medium">{s.desc}</p>
                 </div>
-                <p className="font-black text-xl lg:text-2xl text-white leading-tight mb-3 tracking-tight">{f.label}</p>
-                <p className="text-base font-medium text-white/70 leading-relaxed">{f.desc}</p>
+              ))}
+            </div>
+
+            {/* Center Content Area Matching Reference Image */}
+            <div className="absolute left-1/2 -translate-x-1/2 bottom-[10%] w-full max-w-[700px] flex flex-col items-center text-center z-20">
+              <div className="bg-sky-500/10 border border-sky-400/20 px-5 py-2 rounded-full flex items-center gap-2 mb-6 shadow-sm">
+                <div className="w-2 h-2 rounded-full bg-sky-400" />
+                <span className="text-sky-400 font-black text-xs tracking-widest uppercase">Our Work Process</span>
               </div>
-            ))}
+              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-black text-white leading-[1.2] mb-6 tracking-tight max-w-xl">
+                Committed to Putting You First, Every Step of the Way
+              </h2>
+              <p className="text-white/70 text-sm md:text-[15px] font-medium leading-relaxed mb-8 max-w-lg">
+                At Sarathi Germinate Nidhi Limited (SGNL), we believe in making finance personal, transparent, and simple. Our step-by-step process is designed to ensure that you always feel informed, empowered, and supported — from the very first interaction.
+              </p>
+              
+              <div className="group inline-flex items-center gap-4 bg-white text-[#001D3D] pl-8 pr-2 py-2 rounded-full font-bold text-[14px] tracking-wide shadow-xl hover:bg-sky-500 hover:text-white transition-all duration-300 cursor-pointer hover:-translate-y-1">
+                <span>More About Us</span>
+                <div className="w-10 h-10 bg-[#001D3D] group-hover:bg-white rounded-full flex items-center justify-center transition-colors">
+                  <ArrowRight className="w-5 h-5 text-white group-hover:text-sky-500 transition-colors" />
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+
+          {/* Mobile Layout (Visible only on lg<) */}
+          <div className="lg:hidden mt-12 flex flex-col gap-6 relative w-full reveal-on-scroll opacity-0 translate-y-8 transition-all duration-700">
+            <div className="text-center flex flex-col items-center mb-8">
+              <div className="bg-sky-500/10 border border-sky-400/20 px-5 py-2 rounded-full flex items-center gap-2 mb-6 shadow-sm">
+                <div className="w-2 h-2 rounded-full bg-sky-400" />
+                <span className="text-sky-400 font-black text-xs tracking-widest uppercase">Our Work Process</span>
+              </div>
+              <h2 className="text-3xl font-black text-white leading-[1.2] mb-4 tracking-tight">
+                Committed to Putting You First
+              </h2>
+            </div>
+            
+            {[
+                { step: '1', title: 'Understand Your Needs', desc: "We start by listening. Whether you're saving, investing, or protecting your future, we take time to understand your goals, challenges, and priorities." },
+                { step: '2', title: 'Recommend Tailored Solutions', desc: "No one-size-fits-all here. Based on your needs, we provide clear, customized financial solutions — from high-interest savings to insurance and investment plans." },
+                { step: '3', title: 'Simple & Transparent Onboarding', desc: "We make it easy. Our onboarding process is quick, secure, and hassle-free. We explain every step so you know exactly what you're signing up for." },
+                { step: '4', title: 'Ongoing Support & Guidance', desc: "Our relationship doesn’t end after you sign up. We offer continuous support, regular check-ins, and transparent updates to help you stay on track with your financial goals." },
+                { step: '5', title: 'Grow Together', desc: "Your growth is our mission. As your needs evolve, we’re here with smarter solutions, expert advice, and a long-term partnership that grows with you." }
+              ].map((s, i) => (
+                <div key={i} className="flex gap-4 sm:gap-6 relative z-10 w-full group">
+                  <div className="bg-white rounded-[2rem] p-6 shadow-[0_15px_50px_rgba(0,0,0,0.06)] border border-slate-100 flex-1 hover:-translate-y-1 hover:border-sky-100 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center font-black text-xl mb-4 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-500 shadow-sm border border-sky-100 shrink-0">
+                      {s.step}
+                    </div>
+                    <h3 className="font-black text-lg text-[#001D3D] mb-2 leading-tight tracking-tight group-hover:text-sky-600 transition-colors">{s.title}</h3>
+                    <p className="text-slate-500 text-sm leading-relaxed font-medium">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
       </section>
 
       {/* ══════════ OUR CONCEPTS ══════════ */}

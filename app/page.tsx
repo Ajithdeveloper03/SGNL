@@ -225,12 +225,33 @@ export default function Home() {
 
   /* Slider Logic */
   const schemesCarouselRef = useRef<HTMLDivElement>(null);
-  const scrollSchemes = (direction: 'left' | 'right') => {
+  const carouselDirection = useRef<'left' | 'right'>('right');
+
+  const scrollSchemes = useCallback((direction: 'left' | 'right') => {
     if (schemesCarouselRef.current) {
       const scrollAmount = window.innerWidth < 768 ? 320 : 420;
       schemesCarouselRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (schemesCarouselRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = schemesCarouselRef.current;
+        const maxScroll = scrollWidth - clientWidth;
+        
+        if (scrollLeft >= maxScroll - 10 && carouselDirection.current === 'right') {
+          carouselDirection.current = 'left';
+        } else if (scrollLeft <= 10 && carouselDirection.current === 'left') {
+          carouselDirection.current = 'right';
+        }
+
+        scrollSchemes(carouselDirection.current);
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [scrollSchemes]);
 
   /* hero auto-play */
   const startTimer = useCallback(() => {
@@ -675,13 +696,16 @@ export default function Home() {
       {/* ══════════ BEAUTIFUL SCHEMES CAROUSEL ══════════ */}
       <section className="bg-slate-50 py-20 lg:py-28 border-b border-slate-100 shadow-sm overflow-hidden relative" style={{ scrollBehavior: 'smooth' }}>
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
-          <div>
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4 flex items-center gap-2">
-              <Star className="w-4 h-4" /> Exclusive Schemes
+          <div className="max-w-5xl">
+            <p className="text-xs lg:text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-2 flex items-center gap-2">
+              <Star className="w-4 h-4" /> What We’re Offering
             </p>
-            <h2 className="text-4xl lg:text-5xl font-black text-[#001D3D] tracking-tight">Tailored For Your Future</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#001D3D] tracking-tight mb-2">Protection Built for You, Shaped by Your Choices</h2>
+            <p className="text-slate-600 text-lg font-medium leading-relaxed max-w-4xl line-clamp-2">
+              At SGNL, we believe financial security should be personal, flexible, and empowering. That’s why we offer a range of customizable financial products designed to fit your goals and lifestyle.
+            </p>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 shrink-0 md:ml-auto">
             <button onClick={() => scrollSchemes('left')} className="w-12 h-12 rounded-full border-2 border-slate-200 flex items-center justify-center hover:bg-sky-500 hover:border-sky-500 hover:text-white transition-all text-slate-400 bg-white z-20 cursor-pointer">
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -695,25 +719,32 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out delay-100">
           <div ref={schemesCarouselRef} className="flex overflow-x-auto gap-6 lg:gap-8 pb-12 pt-4 snap-x snap-mandatory hide-scrollbars scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             {[
-              { name: 'Prime Wealth Gain', cat: 'Investment', img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800' },
-              { name: 'Students Savings Plan', cat: 'Education', img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800' },
-              { name: 'Vikas Money Savings', cat: 'Savings', img: 'https://images.pexels.com/photos/31513716/pexels-photo-31513716.jpeg' },
-              { name: 'Ecocial Savings Plan', cat: 'Growth', img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800' },
-              { name: 'Elite Wealth Gain', cat: 'Wealth', img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800' },
+              { name: 'High-Interest Savings Plans', cat: 'Savings', sub: 'Save smart with security and higher returns.', desc: 'Earn more with short-term and long-term savings options designed for flexibility, security, and high returns.', img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800' },
+              { name: 'Investment Solutions', cat: 'Investment', sub: 'Build your financial future with guided investments.', desc: 'Let your money work for you with personalized investment plans aligned with your financial goals and risk preferences.', img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800' },
+              { name: 'Life Insurance', cat: 'Insurance', sub: 'Secure your loved ones’ future.', desc: 'Secure your family’s future with affordable, flexible life insurance policies offering long-term peace of mind.', img: 'https://images.pexels.com/photos/31513716/pexels-photo-31513716.jpeg' },
+              { name: 'Health Insurance', cat: 'Health', sub: 'Protect your health, preserve your wealth.', desc: 'Protect yourself and your loved ones from unexpected medical expenses with comprehensive health coverage.', img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800' },
+              { name: 'General Insurance', cat: 'Insurance', sub: 'Safeguard your valuable assets.', desc: 'From vehicles to property, cover what matters most with trusted general insurance tailored to your lifestyle.', img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800' },
+              { name: 'Loan Services', cat: 'Loans', sub: 'Get the financial support you need—fast and fairly.', desc: 'Whether it’s for personal needs or business growth, we offer reliable and easy-to-access loans with competitive terms.', img: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&q=80&w=800' },
             ].map((scheme, i) => (
               <div key={scheme.name} className="relative group w-[280px] h-[340px] md:w-[320px] md:h-[380px] lg:w-[380px] lg:h-[420px] rounded-[2rem] overflow-hidden snap-center shrink-0 cursor-pointer shadow-md border border-slate-200 bg-white">
                 <img src={scheme.img} alt={scheme.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1000ms] ease-out" />
 
                 {/* Gradients */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#001D3D] via-[#001D3D]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001D3D] via-[#001D3D]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Content */}
                 <div className="absolute inset-0 p-6 lg:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="w-10 h-10 lg:w-12 lg:h-12 bg-sky-500 rounded-2xl flex items-center justify-center shadow-[0_10px_20px_rgba(14,165,233,0.3)] mb-4 lg:mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-75 group-hover:scale-100">
                     <ArrowRight className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="font-black text-2xl lg:text-3xl text-white drop-shadow-lg mb-3 leading-tight font-sans tracking-tight">{scheme.name}</h3>
-                  <div className="flex items-center gap-3">
+                  <h3 className="font-black text-2xl lg:text-3xl text-white drop-shadow-lg mb-2 leading-tight font-sans tracking-tight">{scheme.name}</h3>
+                  <p className="text-white/90 font-bold text-[13px] md:text-[14px] mb-3 drop-shadow-md">{scheme.sub}</p>
+                  
+                  <div className="h-0 overflow-hidden group-hover:h-[80px] transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
+                    <p className="text-white/70 text-[12px] md:text-[13px] leading-relaxed mb-4">{scheme.desc}</p>
+                  </div>
+                  
+                  <div className="flex items-center justify-end gap-3">
                     <span className="text-sky-400 font-black text-[10px] lg:text-[11px] uppercase tracking-widest bg-sky-500/10 px-3 py-1.5 rounded-full border border-sky-400/20 backdrop-blur-md relative overflow-hidden">
                       {scheme.cat}
                       <span className="absolute inset-0 bg-white/20 w-[100%] -translate-x-[150%] skew-x-12 group-hover:animate-[shimmer_1.5s_infinite]" />

@@ -758,7 +758,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ OUR WORK PROCESS ══════════ */}
-      <section className="py-24 lg:py-32 relative overflow-hidden min-h-[900px] flex flex-col justify-center">
+      <section className="py-16 relative overflow-hidden flex flex-col justify-center">
         
         {/* Background Image & Overlays */}
         <div className="absolute inset-0">
@@ -769,38 +769,19 @@ export default function Home() {
 
         <div className="max-w-[1400px] w-full mx-auto px-4 lg:px-8 relative z-10 flex flex-col items-center">
           
-          {/* Main Container for Desktop Layout matching reference */}
-          <div className="relative w-full max-w-[1300px] mx-auto hidden lg:block h-[700px] xl:h-[750px] reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out mt-16">
+          {/* Main Container for Desktop Layout */}
+          <div className="relative w-full max-w-[1300px] mx-auto hidden lg:flex flex-col gap-12 xl:gap-16 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out mt-8">
             
-            {/* Desktop Cards arranged in a staggered floating Arch matching reference image sizes */}
-            <div className="absolute inset-0 w-full h-full z-10 pointer-events-none flex justify-between items-start">
-              {[
-                { step: '1', title: 'Understand Your Needs', desc: "We start by listening. Whether you're saving, investing, or protecting your future, we take time to understand your goals, challenges, and priorities.", offset: 'mt-[280px] xl:mt-[320px]', size: 'w-[210px] xl:w-[230px] min-h-[320px]' },
-                { step: '2', title: 'Recommend Tailored Solutions', desc: "No one-size-fits-all here. Based on your needs, we provide clear, customized financial solutions — from high-interest savings to insurance and investment plans.", offset: 'mt-[50px] xl:mt-[70px]', size: 'w-[240px] xl:w-[250px] min-h-[280px]' },
-                { step: '3', title: 'Simple & Transparent Onboarding', desc: "We make it easy. Our onboarding process is quick, secure, and hassle-free. We explain every step so you know exactly what you're signing up for.", offset: 'mt-[0px]', size: 'w-[270px] xl:w-[300px] min-h-[240px]' },
-                { step: '4', title: 'Ongoing Support & Guidance', desc: "Our relationship doesn’t end after you sign up. We offer continuous support, regular check-ins, and transparent updates to help you stay on track with your financial goals.", offset: 'mt-[50px] xl:mt-[70px]', size: 'w-[240px] xl:w-[250px] min-h-[280px]' },
-                { step: '5', title: 'Grow Together', desc: "Your growth is our mission. As your needs evolve, we’re here with smarter solutions, expert advice, and a long-term partnership that grows with you.", offset: 'mt-[280px] xl:mt-[320px]', size: 'w-[210px] xl:w-[230px] min-h-[320px]' }
-              ].map((s, i) => (
-                <div key={i} className={`${s.offset} ${s.size} relative z-10 pointer-events-auto flex flex-col justify-center bg-white rounded-[2.5rem] xl:rounded-[3rem] p-6 xl:p-8 shadow-[0_15px_50px_rgba(0,0,0,0.08)] border border-slate-100 hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(14,165,233,0.15)] transition-all duration-500 group cursor-default`}>
-                  <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center font-black text-xl mb-4 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-500 shadow-sm border border-sky-100 shrink-0">
-                    {s.step}
-                  </div>
-                  <h3 className="font-black text-[17px] xl:text-[18px] text-[#001D3D] mb-3 leading-tight tracking-tight group-hover:text-sky-600 transition-colors">{s.title}</h3>
-                  <p className="text-slate-500 text-[13px] leading-relaxed font-medium">{s.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Center Content Area Matching Reference Image */}
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-[10%] w-full max-w-[700px] flex flex-col items-center text-center z-20">
+            {/* Center Content Area */}
+            <div className="w-full max-w-[800px] mx-auto flex flex-col items-center text-center z-20">
               <div className="bg-sky-500/10 border border-sky-400/20 px-5 py-2 rounded-full flex items-center gap-2 mb-6 shadow-sm">
                 <div className="w-2 h-2 rounded-full bg-sky-400" />
                 <span className="text-sky-400 font-black text-xs tracking-widest uppercase">Our Work Process</span>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-black text-white leading-[1.2] mb-6 tracking-tight max-w-xl">
+              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-black text-white leading-[1.2] mb-6 tracking-tight">
                 Committed to Putting You First, Every Step of the Way
               </h2>
-              <p className="text-white/70 text-sm md:text-[15px] font-medium leading-relaxed mb-8 max-w-lg">
+              <p className="text-white/70 text-sm md:text-[15px] font-medium leading-relaxed mb-8 max-w-2xl">
                 At Sarathi Germinate Nidhi Limited (SGNL), we believe in making finance personal, transparent, and simple. Our step-by-step process is designed to ensure that you always feel informed, empowered, and supported — from the very first interaction.
               </p>
               
@@ -810,6 +791,25 @@ export default function Home() {
                   <ArrowRight className="w-5 h-5 text-white group-hover:text-sky-500 transition-colors" />
                 </div>
               </div>
+            </div>
+
+            {/* Desktop Cards arranged in a staggered floating Arch */}
+            <div className="w-full z-10 pointer-events-none flex justify-between items-start">
+              {[
+                { step: '1', title: 'Understand Your Needs', desc: "We start by listening. Whether you're saving, investing, or protecting your future, we take time to understand your goals, challenges, and priorities.", offset: '-mt-[280px] xl:-mt-[320px]', size: 'w-[210px] xl:w-[230px] min-h-[320px]' },
+                { step: '2', title: 'Recommend Tailored Solutions', desc: "No one-size-fits-all here. Based on your needs, we provide clear, customized financial solutions — from high-interest savings to insurance and investment plans.", offset: '-mt-[80px] xl:-mt-[100px]', size: 'w-[240px] xl:w-[250px] min-h-[280px]' },
+                { step: '3', title: 'Simple & Transparent Onboarding', desc: "We make it easy. Our onboarding process is quick, secure, and hassle-free. We explain every step so you know exactly what you're signing up for.", offset: 'mt-[0px]', size: 'w-[270px] xl:w-[300px] min-h-[240px]' },
+                { step: '4', title: 'Ongoing Support & Guidance', desc: "Our relationship doesn’t end after you sign up. We offer continuous support, regular check-ins, and transparent updates to help you stay on track with your financial goals.", offset: '-mt-[80px] xl:-mt-[100px]', size: 'w-[240px] xl:w-[250px] min-h-[280px]' },
+                { step: '5', title: 'Grow Together', desc: "Your growth is our mission. As your needs evolve, we’re here with smarter solutions, expert advice, and a long-term partnership that grows with you.", offset: '-mt-[280px] xl:-mt-[320px]', size: 'w-[210px] xl:w-[230px] min-h-[320px]' }
+              ].map((s, i) => (
+                <div key={i} className={`${s.offset} ${s.size} relative z-10 pointer-events-auto flex flex-col justify-center bg-white rounded-[2.5rem] xl:rounded-[3rem] p-6 xl:p-8 shadow-[0_15px_50px_rgba(0,0,0,0.08)] border border-slate-100 hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(14,165,233,0.15)] transition-all duration-500 group cursor-default`}>
+                  <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center font-black text-xl mb-4 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-500 shadow-sm border border-sky-100 shrink-0">
+                    {s.step}
+                  </div>
+                  <h3 className="font-black text-[17px] xl:text-[18px] text-[#001D3D] mb-3 leading-tight tracking-tight group-hover:text-sky-600 transition-colors">{s.title}</h3>
+                  <p className="text-slate-500 text-[13px] leading-relaxed font-medium text-justify">{s.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -838,7 +838,7 @@ export default function Home() {
                       {s.step}
                     </div>
                     <h3 className="font-black text-lg text-[#001D3D] mb-2 leading-tight tracking-tight group-hover:text-sky-600 transition-colors">{s.title}</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed font-medium">{s.desc}</p>
+                    <p className="text-slate-500 text-sm leading-relaxed font-medium text-justify">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -917,62 +917,86 @@ export default function Home() {
 
 
 
-      {/* ══════════ BRANCH NETWORK ══════════ */}
-      <section className="py-24 lg:py-32 bg-[#001D3D] relative overflow-hidden">
-        {/* Subtle decorative background */}
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 80% 20%, #F59E0B 0%, transparent 40%)' }} />
-
+      {/* ══════════ CASE STUDIES ══════════ */}
+      <section className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-500 mb-4">Our Network</p>
-              <h2 className="text-4xl lg:text-6xl font-black text-white tracking-tight">Our Branches Across Tamil Nadu</h2>
-            </div>
-            <div className="md:text-right">
-              <p className="text-sm text-white/50 font-bold uppercase tracking-wider mb-3">Expanding Soon</p>
-              <p className="text-sm text-[#001D3D] font-black bg-white px-8 py-4 rounded-2xl shadow-xl inline-block border-[3px] border-sky-500 tracking-wide">
-                Vellore · Salem · Tirupur · Erode
-              </p>
-            </div>
+          <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4 flex items-center justify-center gap-2">
+              <span className="text-xl">📊</span> Case Studies
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-black text-[#001D3D] tracking-tight mb-6">Safeguarding Your Future with Confidence</h2>
+            <p className="text-slate-500 text-lg font-medium leading-relaxed">
+              At Sarathi Germinate Nidhi Limited, our mission is to empower individuals and families with smart, secure financial choices. Through high-interest savings, reliable insurance, and strategic investments, we help our clients protect their future with clarity and confidence. Every success story below reflects our commitment to client-first solutions and results that matter.
+            </p>
           </div>
 
-          {/* Interactive Expanding Gallery */}
-          <div className="flex flex-col lg:flex-row gap-4 h-[800px] lg:h-[650px] w-full">
-            {branches.map((b, i) => (
-              <div
-                key={i}
-                className="relative rounded-[2.5rem] overflow-hidden group flex-1 hover:flex-[3] transition-all duration-700 ease-in-out cursor-pointer border border-white/5 shadow-xl"
-              >
-                {/* Background Image */}
-                <img
-                  src={b.img}
-                  alt={b.city}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out opacity-60 group-hover:opacity-100"
-                />
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-[#001D3D]/50 to-transparent group-hover:via-transparent transition-all duration-700" />
-
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 p-8 lg:p-12 w-full flex flex-col justify-end h-full">
-                  <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-out flex flex-col gap-4">
-                    <div className="w-16 h-16 bg-sky-500 rounded-3xl flex items-center justify-center shadow-xl opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-500 delay-100 border-2 border-white/20">
-                      <MapPin className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-black text-white text-3xl lg:text-5xl tracking-tight mb-2 whitespace-nowrap drop-shadow-lg">
-                        {b.city}
-                      </h3>
-                      <div className="h-0 overflow-hidden group-hover:h-8 transition-all duration-500 ease-out delay-150">
-                        <p className="text-sky-400 font-black text-sm lg:text-base uppercase tracking-[0.25em] drop-shadow-md">
-                          {b.addr}
-                        </p>
-                      </div>
-                    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100">
+            {[
+              {
+                title: 'Smart Saving for a Stronger Future',
+                desc: "A salaried professional opted for SGNL's short-term savings plan with high interest rates. In just one year, she accumulated enough to make a down payment on her first home — without compromising her monthly budget.",
+                img: 'https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?auto=format&fit=crop&q=80&w=600',
+                icon: <Coins className="w-8 h-8" />
+              },
+              {
+                title: 'Health Insurance That Delivered in Crisis',
+                desc: "A family of three faced a sudden medical emergency. With SGNL’s health insurance, they received fast claims support and full coverage — easing emotional and financial stress when it mattered most.",
+                img: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=600',
+                icon: <ShieldCheck className="w-8 h-8" />
+              },
+              {
+                title: 'Home Protected, Peace Preserved',
+                desc: "A client experienced storm damage to their house. Thanks to our general insurance plan, repairs were quickly handled without financial burden, preserving the safety of their home and savings.",
+                img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600',
+                icon: <Building2 className="w-8 h-8" />
+              },
+              {
+                title: 'Investing with Confidence',
+                desc: "A small business owner wanted to diversify his income. With SGNL’s guided investment plan, he saw consistent returns and reinvested profits to expand his operations within 18 months.",
+                img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
+                icon: <TrendingUp className="w-8 h-8" />
+              }
+            ].map((s, i) => (
+              <div key={i} className="group bg-white flex flex-col shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-2xl hover:shadow-sky-500/10 transition-all duration-300">
+                {/* Image Section */}
+                <div className="relative h-60 overflow-hidden">
+                  <img src={s.img} alt={s.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-sky-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Floating Icon Box */}
+                  <div className="absolute -bottom-6 right-6 w-16 h-16 bg-sky-500 text-white flex items-center justify-center rounded-xl z-10 transition-all duration-500 group-hover:top-1/2 group-hover:left-1/2 group-hover:-translate-x-1/2 group-hover:-translate-y-1/2 group-hover:bg-[#001D3D] group-hover:w-20 group-hover:h-20 group-hover:shadow-2xl">
+                    {s.icon}
+                  </div>
+                </div>
+                
+                {/* Content Section */}
+                <div className="bg-white p-8 pt-12 flex flex-col items-start flex-1">
+                  <h3 className="text-xl font-black text-[#001D3D] mb-4 group-hover:text-sky-600 transition-colors">{s.title}</h3>
+                  <p className="text-slate-500 text-[13px] font-medium leading-relaxed mb-8 flex-1 text-justify">
+                    {s.desc}
+                  </p>
+                  <div className="w-10 h-10 rounded-full bg-[#001D3D] text-white flex items-center justify-center group-hover:bg-sky-500 transition-colors shadow-lg">
+                    <ArrowRight className="w-5 h-5" />
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Outro CTA */}
+          <div className="flex flex-col items-center text-center bg-white border border-slate-100 shadow-[0_15px_50px_rgba(0,0,0,0.05)] rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
+             <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #0EA5E9 0%, transparent 80%)' }} />
+             <p className="text-xl lg:text-3xl font-black text-[#001D3D] mb-10 max-w-4xl leading-tight relative z-10">
+               At SGNL, every product we offer is shaped by your needs — because your security is our priority.
+             </p>
+             <div className="flex flex-col sm:flex-row gap-5 relative z-10">
+               <button className="bg-sky-500 text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-[#001D3D] transition-all shadow-[0_15px_30px_rgba(14,165,233,0.25)] flex items-center justify-center gap-2 hover:-translate-y-1">
+                 <span className="text-lg">👉</span> Discover More
+               </button>
+               <button className="bg-white border-2 border-slate-200 text-[#001D3D] px-10 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:border-sky-500 hover:text-sky-600 transition-all flex items-center justify-center hover:-translate-y-1">
+                 Start Your Financial Journey
+               </button>
+             </div>
           </div>
         </div>
       </section>

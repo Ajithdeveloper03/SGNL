@@ -7,7 +7,8 @@ import {
   Download, Briefcase, HeartHandshake, Users,
   User, CreditCard, Wallet, Phone, Star,
   CheckCircle2, ChevronLeft, ChevronRight, TrendingUp,
-  Calculator, Clock, BadgeCheck, Globe2, Bell, Headset
+  Calculator, Clock, BadgeCheck, Globe2, Bell, Headset,
+  Facebook, Twitter, Linkedin, Instagram, HelpCircle, PhoneCall
 } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
@@ -288,39 +289,58 @@ export default function Home() {
       {/* ══════════ HEADER SECTION ══════════ */}
       <div className="w-full relative z-50 flex flex-col shadow-sm">
         {/* TOP BAR */}
-        <div className="bg-[#001D3D] h-10 w-full hidden lg:flex items-center justify-center text-[10px] xl:text-[11px] font-bold text-white tracking-widest uppercase">
+        <div className="bg-[#001D3D] h-10 w-full hidden lg:flex items-center justify-center text-[10px] xl:text-[11px] font-bold text-white tracking-widest uppercase relative">
           <div className="max-w-[1400px] w-full mx-auto flex items-center justify-between h-full px-4 lg:px-8">
+            
+            {/* Left Section */}
             <div className="flex items-center h-full">
               {/* Blue slant */}
               <div className="bg-sky-500 h-full flex items-center px-6 relative z-10 cursor-pointer">
-                <User className="w-3.5 h-3.5 mr-2" />
-                LOOKING: PERSONAL
-                <ChevronDown className="w-3.5 h-3.5 ml-2" />
+                <a href="mailto:support@sgnl.com" className="hover:text-white/80 transition-colors">
+                  SUPPORT@SGNL.COM
+                </a>
                 <div className="absolute top-0 -right-4 w-8 h-full bg-sky-500 transform skew-x-[30deg] -z-10" />
               </div>
 
-              <div className="flex items-center pl-10 pr-6 gap-6 h-full">
-                <button className="flex items-center gap-2 hover:text-sky-500 transition-colors">
-                  <ShieldCheck className="w-4 h-4" /> LOGIN <ChevronDown className="w-3.5 h-3.5" />
-                </button>
-                <div className="w-px h-4 bg-white/20 mx-2" />
-                <a href="mailto:support@sgnl.com" className="flex items-center gap-2 hover:text-sky-500 transition-colors">
-                  <Phone className="w-4 h-4" /> SUPPORT@SGNL.COM
-                </a>
+              <div className="flex items-center pl-10 pr-8 h-full border-r border-white/20">
+                <div className="flex items-center gap-2 text-white/90">
+                  <Clock className="w-4 h-4 text-sky-500" /> [Mon - Sat 8:00 AM - 6:00 PM]
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center h-full">
-              <div className="flex items-center gap-6 px-6">
-                <Link href="#" className="hover:text-sky-500 transition-colors">CAREERS</Link>
-                <Link href="#" className="hover:text-sky-500 transition-colors">FAQ'S</Link>
-                <Link href="#" className="hover:text-sky-500 transition-colors">BUSINESS</Link>
-                <Link href="#" className="hover:text-sky-500 transition-colors">REWARDS</Link>
+            {/* Center GET A QUOTE */}
+            <div className="flex-1 flex justify-start items-center h-full gap-4 whitespace-nowrap normal-case tracking-normal pl-8 pr-8 border-r border-white/20">
+              <div className="flex items-center gap-1.5 bg-white/10 px-3 py-1 rounded-full text-[10px] text-white font-black tracking-wider uppercase">
+                <Star className="w-3 h-3 text-sky-400 fill-sky-400" /> TRUSTED NIDHI
               </div>
-              <button className="flex items-center gap-2 px-6 h-full border-l border-white/20 hover:bg-white/5 transition-colors">
-                <Globe2 className="w-4 h-4" /> IN - EN <ChevronDown className="w-3.5 h-3.5" />
+              <span className="text-white font-bold text-[13px]">
+                Leading Nidhi Company in Tamil Nadu
+              </span>
+              <button className="flex items-center text-white font-black text-[13px] hover:text-sky-400 transition-colors group">
+                <span className="border-b-2 border-white group-hover:border-sky-400 pb-0.5">Get A Quote</span>
+                <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
+
+            {/* Right Section */}
+            <div className="flex items-center h-full">
+              <div className="flex items-center gap-5 px-8 h-full text-white">
+                <Link href="#" className="hover:text-sky-500 transition-colors">
+                  <Facebook className="w-4 h-4 fill-current" />
+                </Link>
+                <Link href="#" className="hover:text-sky-500 transition-colors">
+                  <Twitter className="w-4 h-4 fill-current" />
+                </Link>
+                <Link href="#" className="hover:text-sky-500 transition-colors">
+                  <Linkedin className="w-4 h-4 fill-current" />
+                </Link>
+                <Link href="#" className="hover:text-sky-500 transition-colors">
+                  <Instagram className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -333,7 +353,7 @@ export default function Home() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[15px] font-black text-[#001D3D] h-full ml-10">
+            <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[15px] font-black text-[#001D3D] h-full ml-auto mr-8">
               <Link href="/" className="text-sky-500 h-full flex items-center">Home</Link>
 
               {/* Services */}
@@ -398,20 +418,14 @@ export default function Home() {
             </nav>
 
             {/* Actions */}
-            <div className="hidden lg:flex items-center h-full ml-auto">
-              <button className="flex items-center gap-2 text-[12px] font-black text-gray-400 hover:text-[#001D3D] uppercase tracking-widest transition-colors mr-8 xl:mr-10">
-                <Search className="w-4 h-4" /> SEARCH
-              </button>
-
-              <div className="h-8 w-px bg-gray-200" />
-
-              <button className="flex items-center gap-3 text-[15px] font-black text-[#001D3D] hover:text-sky-500 transition-colors ml-8 xl:ml-10 mr-8 xl:mr-10">
-                <Headphones className="w-5 h-5 text-sky-500" /> Support
-              </button>
-
-              <button className="bg-sky-500 text-white h-full px-8 xl:px-12 text-[14px] font-black tracking-widest uppercase flex items-center gap-3 hover:bg-[#001D3D] transition-colors">
-                <ArrowRight className="w-4 h-4" /> NEW ACCOUNT
-              </button>
+            <div className="hidden lg:flex items-center h-full">
+              <div className="flex items-center gap-2 px-6 xl:px-8 h-full bg-sky-500 text-white hover:bg-[#001D3D] transition-colors cursor-pointer group">
+                <PhoneCall className="w-9 h-9 p-[2px] text-white stroke-[1.5] group-hover:scale-110 transition-transform" />
+                <div className="flex flex-col justify-center">
+                  <span className="text-[11px] font-bold tracking-widest text-white/80 uppercase mb-0.5">Call Anytime</span>
+                  <span className="text-[19px] font-black text-white tracking-tight">+1 9812310000</span>
+                </div>
+              </div>
             </div>
 
             {/* Mobile Toggle */}

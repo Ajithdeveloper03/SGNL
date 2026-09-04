@@ -4,7 +4,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: { unoptimized: true },
-  basePath: '/sarathi',
+  basePath: '/sgnl',
   output: 'export',
   trailingSlash: true,
 };

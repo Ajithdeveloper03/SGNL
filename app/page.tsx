@@ -18,7 +18,7 @@ import Link from 'next/link';
 const navItems = [
   {
     name: 'Savings',
-    items: ['Recurring Deposits', 'Fixed Deposits', 'Prime Wealth Gain', 'Student Savings Plan'],
+    items: ['Recurring Deposits', 'Fixed Deposits', 'Prime Wealth Gain'],
   },
   {
     name: 'Investments',
@@ -34,7 +34,7 @@ const navItems = [
 const heroSlides = [
   {
     tag: '✦ Sarathi Germinate Nidhi Limited',
-    headline: 'Empowering your finances,\none smart step at a time.',
+    headline: 'Empowering your\nfinances, one smart step\nat a time.',
     highlight: 'one smart step at a time.',
     sub: 'Savings · Investments · Insurance · Loans — your complete financial partner across Tamil Nadu.',
     cta: 'Explore Plans',
@@ -111,6 +111,16 @@ const loanProducts = [
     tag: 'With Bonus',
     tagColor: 'bg-blue-600',
   },
+  {
+    title: 'Health & Life Gain',
+    rate: 'Dual Protection',
+    maxAmt: 'Custom Coverage',
+    tenure: 'Annual / Monthly',
+    desc: 'Comprehensive protection combining life coverage with health insurance benefits, safeguarding your family against unforeseen emergencies.',
+    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=600&h=400',
+    tag: 'New Arrival',
+    tagColor: 'bg-rose-500',
+  },
 ];
 
 const promoBanners = [
@@ -177,6 +187,20 @@ const testimonials = [
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=80&h=80',
     rating: 5,
   },
+  {
+    name: 'Karthik Rajan',
+    role: 'IT Professional, Bangalore',
+    text: 'SGNL\'s recurring deposit scheme helped me save systematically for my new home. Their digital services make it easy to track everything.',
+    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=80&h=80',
+    rating: 5,
+  },
+  {
+    name: 'Meena Natarajan',
+    role: 'Home Maker, Salem',
+    text: 'The support staff at my local SGNL branch are like family. They guided me to choose the best health insurance for my parents.',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=80&h=80',
+    rating: 5,
+  }
 ];
 
 const branches = [
@@ -349,12 +373,12 @@ export default function Home() {
           <div className="max-w-[1400px] w-full mx-auto h-[85px] flex items-center justify-between px-4 lg:px-8">
             {/* Logo */}
             <Link href="/" className="flex flex-col items-center justify-center shrink-0">
-              <img src="/sarathi/logo.png" alt="SGNL Logo" className="w-[85px] h-[85px] object-contain" />
+              <img src="/sgnl/logo.png" alt="SGNL Logo" className="w-[85px] h-[85px] object-contain" />
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[15px] font-black text-[#001D3D] h-full ml-auto mr-8">
-              <Link href="/" className="text-sky-500 h-full flex items-center">Home</Link>
+            <nav className="hidden lg:flex items-center gap-8 xl:gap-12 text-[15px] font-black text-[#001D3D] h-full ml-auto mr-8">
+              <Link href="/" className="hover:text-sky-500 transition-colors h-full flex items-center">Home</Link>
 
               {/* Services */}
               <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('Services')} onMouseLeave={() => setActiveDropdown(null)}>
@@ -363,7 +387,7 @@ export default function Home() {
                 </button>
                 {activeDropdown === 'Services' && (
                   <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[240px] flex flex-col gap-1 z-50">
-                    {['Recurring Deposits', 'Fixed Deposits', 'Mutual Funds', 'Life Insurance', 'Health Insurance', 'Demat Account'].map(item => (
+                    {['High-Interest Savings Plans', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance', 'Loan Services'].map(item => (
                       <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
                     ))}
                   </div>
@@ -377,7 +401,7 @@ export default function Home() {
                 </button>
                 {activeDropdown === 'Schemes' && (
                   <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[260px] flex flex-col gap-1 z-50">
-                    {['Prime Wealth Gain', 'Elite Wealth Gain', 'Vikas Money Savings', 'Ecocial Savings Plan', 'Student Savings Plan'].map(item => (
+                    {['Prime Wealth Gain', 'Elite Wealth Gain', 'Vikas Money Savings', 'Ecocial Savings Plan'].map(item => (
                       <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
                     ))}
                   </div>
@@ -385,32 +409,14 @@ export default function Home() {
               </div>
 
               {/* About */}
-              <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('About')} onMouseLeave={() => setActiveDropdown(null)}>
-                <button className={`flex items-center gap-1.5 transition-colors h-full ${activeDropdown === 'About' ? 'text-sky-500' : 'hover:text-sky-500'}`}>
-                  About <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'About' ? 'rotate-180 text-sky-500' : 'text-gray-400'}`} />
-                </button>
-                {activeDropdown === 'About' && (
-                  <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[240px] flex flex-col gap-1 z-50">
-                    {['Company Overview', 'Mission & Vision', 'Leadership'].map(item => (
-                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">
+                About
+              </Link>
 
               {/* Branches */}
-              <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('Branches')} onMouseLeave={() => setActiveDropdown(null)}>
-                <button className={`flex items-center gap-1.5 transition-colors h-full ${activeDropdown === 'Branches' ? 'text-sky-500' : 'hover:text-sky-500'}`}>
-                  Branches <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'Branches' ? 'rotate-180 text-sky-500' : 'text-gray-400'}`} />
-                </button>
-                {activeDropdown === 'Branches' && (
-                  <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[200px] flex flex-col gap-1 z-50">
-                    {['Hosur', 'Chennai', 'Coimbatore', 'Trichy', 'Madurai'].map(item => (
-                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">
+                Branches
+              </Link>
 
               <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">
                 Get In Touch
@@ -447,10 +453,8 @@ export default function Home() {
         {mobileOpen && (
           <div className="lg:hidden absolute top-[85px] left-0 w-full bg-white shadow-2xl py-2 px-6 flex flex-col z-50">
             {[
-              { name: 'Services', links: ['Recurring Deposits', 'Fixed Deposits', 'Mutual Funds', 'Life Insurance', 'Health Insurance', 'Demat Account'] },
-              { name: 'Schemes', links: ['Prime Wealth Gain', 'Elite Wealth Gain', 'Vikas Money Savings', 'Ecocial Savings Plan', 'Student Savings Plan'] },
-              { name: 'About', links: ['Company Overview', 'Mission & Vision', 'Leadership'] },
-              { name: 'Branches', links: ['Hosur', 'Chennai', 'Coimbatore', 'Trichy', 'Madurai'] }
+              { name: 'Services', links: ['High-Interest Savings Plans', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance', 'Loan Services'] },
+              { name: 'Schemes', links: ['Prime Wealth Gain', 'Elite Wealth Gain', 'Vikas Money Savings', 'Ecocial Savings Plan'] }
             ].map((item) => (
               <div key={item.name} className="w-full flex flex-col">
                 <div 
@@ -472,9 +476,15 @@ export default function Home() {
                 )}
               </div>
             ))}
-            <div className="w-full py-5 cursor-pointer mb-2">
+            <Link href="#" className="w-full py-5 cursor-pointer">
+              <span className="text-[#001D3D] font-black text-[15px]">About</span>
+            </Link>
+            <Link href="#" className="w-full py-5 cursor-pointer">
+              <span className="text-[#001D3D] font-black text-[15px]">Branches</span>
+            </Link>
+            <Link href="#" className="w-full py-5 cursor-pointer mb-2">
               <span className="text-[#001D3D] font-black text-[15px]">Get In Touch</span>
-            </div>
+            </Link>
           </div>
         )}
       </div>
@@ -514,7 +524,7 @@ export default function Home() {
           </div>
 
           {/* Hero Typography — keyed for transition */}
-          <div className="max-w-2xl mt-8 lg:mt-0 px-2 sm:px-4">
+          <div className="max-w-3xl lg:max-w-4xl xl:max-w-5xl mt-8 lg:mt-0 px-2 sm:px-4">
             <div key={`tag-${currentSlide}`} className="flex flex-wrap items-center gap-4 mb-6 lg:mb-8 animate-fade-in-up">
               <div className="bg-sky-500 text-white text-[10px] md:text-[12px] font-black uppercase tracking-[0.2em] px-4 py-2 relative shadow-[0_10px_20px_rgba(14,165,233,0.3)]">
                 {slide.tag}
@@ -523,7 +533,7 @@ export default function Home() {
               <p className="text-white/80 font-bold text-sm md:text-base tracking-wide ml-1 drop-shadow-md">{slide.badge}</p>
             </div>
 
-            <h1 key={`head-${currentSlide}`} className="text-[24px] sm:text-[32px] md:text-4xl lg:text-[48px] xl:text-[56px] font-black text-white leading-[1.08] tracking-tight drop-shadow-2xl mb-5 lg:mb-8 animate-fade-in-up [animation-delay:200ms] whitespace-pre-line">
+            <h1 key={`head-${currentSlide}`} className="text-[24px] sm:text-[32px] md:text-4xl lg:text-[48px] xl:text-[56px] font-black text-white tracking-tight drop-shadow-2xl mb-5 lg:mb-8 animate-fade-in-up [animation-delay:200ms] whitespace-pre-line" style={{ lineHeight: '1.1' }}>
               {slide.headline}
             </h1>
 
@@ -671,12 +681,15 @@ export default function Home() {
       </section>
 
       {/* ══════════ WHY CHOOSE US GRID (ELEGANT) ══════════ */}
-      <section className="bg-white py-16 lg:py-24 border-b border-slate-100">
+      <section className="bg-white pt-8 pb-16 lg:pt-10 lg:pb-24 border-b border-slate-100">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 text-center mb-16 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4">Why Choose Us?</p>
-          <h2 className="text-3xl lg:text-4xl font-black text-[#001D3D] tracking-tight max-w-4xl mx-auto leading-tight">
-            At Sarathi Germinate Nidhi Limited (SGNL), we don’t just offer financial services — we build lasting financial confidence. Here’s why individuals and investors choose us:
+          <h2 className="text-3xl lg:text-4xl font-black text-[#001D3D] tracking-tight max-w-4xl mx-auto leading-tight mb-6">
+            At Sarathi Germinate Nidhi Limited (SGNL)
           </h2>
+          <p className="text-slate-600 text-lg leading-relaxed font-medium max-w-3xl mx-auto">
+            We don’t just offer financial services — we build lasting financial confidence. Here’s why individuals and investors choose us:
+          </p>
         </div>
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out delay-100">
@@ -708,7 +721,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ BEAUTIFUL SCHEMES CAROUSEL ══════════ */}
-      <section className="bg-slate-50 py-20 lg:py-28 border-b border-slate-100 shadow-sm overflow-hidden relative" style={{ scrollBehavior: 'smooth' }}>
+      <section className="bg-slate-50 pt-8 pb-10 lg:pt-12 lg:pb-12 border-b border-slate-100 shadow-sm overflow-hidden relative" style={{ scrollBehavior: 'smooth' }}>
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
           <div className="max-w-5xl">
             <p className="text-xs lg:text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-2 flex items-center gap-2">
@@ -784,7 +797,7 @@ export default function Home() {
         <div className="max-w-[1400px] w-full mx-auto px-4 lg:px-8 relative z-10 flex flex-col items-center">
           
           {/* Main Container for Desktop Layout */}
-          <div className="relative w-full max-w-[1300px] mx-auto hidden lg:flex flex-col gap-12 xl:gap-16 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out mt-8">
+          <div className="relative w-full max-w-[1300px] mx-auto hidden lg:flex flex-col gap-12 xl:gap-16 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out">
             
             {/* Center Content Area */}
             <div className="w-full max-w-[800px] mx-auto flex flex-col items-center text-center z-20">
@@ -828,7 +841,7 @@ export default function Home() {
           </div>
 
           {/* Mobile Layout (Visible only on lg<) */}
-          <div className="lg:hidden mt-12 flex flex-col gap-6 relative w-full reveal-on-scroll opacity-0 translate-y-8 transition-all duration-700">
+          <div className="lg:hidden flex flex-col gap-6 relative w-full reveal-on-scroll opacity-0 translate-y-8 transition-all duration-700">
             <div className="text-center flex flex-col items-center mb-8">
               <div className="bg-sky-500/10 border border-sky-400/20 px-5 py-2 rounded-full flex items-center gap-2 mb-6 shadow-sm">
                 <div className="w-2 h-2 rounded-full bg-sky-400" />
@@ -863,7 +876,7 @@ export default function Home() {
       {/* ══════════ OUR CONCEPTS ══════════ */}
 
       {/* ══════════ OUR SOLUTIONS (ENHANCED PREMIUM) ══════════ */}
-      <section className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
+      <section className="pt-8 pb-10 lg:pt-12 lg:pb-12 bg-slate-50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-100/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-100/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4" />
 
@@ -878,47 +891,57 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out delay-100">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out delay-100">
             {loanProducts.map((p, i) => (
-              <div key={i} className="group relative bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-sky-500/5 transition-all duration-700 flex flex-col h-full hover:-translate-y-3">
-                {/* Header with Float Image */}
-                <div className="relative h-64 overflow-hidden rounded-t-[2.5rem]">
-                  <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1500ms]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#001D3D]/80 via-transparent to-transparent opacity-60" />
+              <div key={i} className="group relative bg-white rounded-[2.5rem] border border-slate-100 shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-2xl hover:shadow-sky-500/10 transition-all duration-700 flex flex-col md:flex-row hover:-translate-y-2">
+                
+                {/* Left: Image Section */}
+                <div className="relative h-64 md:h-auto md:w-[45%] md:shrink-0 overflow-visible rounded-t-[2.5rem] md:rounded-tr-none md:rounded-l-[2.5rem] z-10">
+                  <div className="absolute inset-0 overflow-hidden rounded-t-[2.5rem] md:rounded-tr-none md:rounded-l-[2.5rem]">
+                    <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1500ms]" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#001D3D]/90 via-[#001D3D]/20 to-transparent md:bg-gradient-to-r md:from-transparent md:via-[#001D3D]/30 md:to-[#001D3D]/90 opacity-80" />
+                  </div>
 
                   {/* Floating Tag */}
-                  <div className={`absolute top-6 left-6 px-5 py-2 ${p.tagColor} text-white text-[11px] font-black rounded-full uppercase tracking-widest shadow-xl flex items-center gap-2`}>
+                  <div className={`absolute top-6 left-6 px-5 py-2 ${p.tagColor} text-white text-[11px] font-black rounded-full uppercase tracking-widest shadow-xl flex items-center gap-2 z-10`}>
                     <Star className="w-3.5 h-3.5 fill-current" /> {p.tag}
                   </div>
 
                   {/* Rate Badge */}
-                  <div className="absolute bottom-6 left-8 bg-white/90 backdrop-blur-md px-6 py-3 rounded-2xl shadow-lg">
-                    <p className="text-[#001D3D] font-black text-2xl lg:text-3xl tracking-tight">{p.rate}</p>
-                    <p className="text-slate-500 font-bold text-[10px] uppercase tracking-wider">Estimated Returns</p>
+                  <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] z-10 border border-white/50">
+                    <p className="text-[#001D3D] font-black text-lg tracking-tight">{p.rate}</p>
+                    <p className="text-slate-500 font-bold text-[8px] uppercase tracking-wider mt-0.5">Estimated Returns</p>
+                  </div>
+
+                  {/* Overlapping Circular Icon (Visible on desktop/horizontal) */}
+                  <div className="hidden md:flex absolute top-1/2 -right-7 -translate-y-1/2 w-14 h-14 bg-white rounded-full items-center justify-center shadow-[0_5px_15px_rgba(0,0,0,0.08)] z-20 group-hover:scale-110 group-hover:shadow-sky-500/20 transition-all duration-500 border border-slate-50">
+                     <div className="w-10 h-10 rounded-full bg-sky-50 flex items-center justify-center group-hover:bg-sky-500 transition-colors duration-500">
+                        <ArrowRight className="w-5 h-5 text-sky-500 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
+                     </div>
                   </div>
                 </div>
 
-                {/* Content Section */}
-                <div className="p-8 lg:p-10 flex flex-col flex-1">
-                  <h3 className="text-2xl lg:text-3xl font-black text-[#001D3D] mb-4 tracking-tight group-hover:text-sky-600 transition-colors">{p.title}</h3>
-                  <p className="text-base text-slate-500 leading-relaxed mb-8 flex-1 font-medium">{p.desc}</p>
+                {/* Right: Content Section */}
+                <div className="p-5 lg:p-6 flex flex-col flex-1 relative z-20 bg-white md:rounded-r-[2.5rem] rounded-b-[2.5rem] md:rounded-bl-none">
+                  <h3 className="text-xl lg:text-2xl font-black text-[#001D3D] mb-1 tracking-tight group-hover:text-sky-600 transition-colors leading-tight">{p.title}</h3>
+                  <p className="text-[13px] lg:text-[14px] text-slate-500 leading-relaxed mb-4 flex-1 font-medium">{p.desc}</p>
 
-                  <div className="grid grid-cols-2 gap-4 mb-10">
-                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 group-hover:bg-sky-50 group-hover:border-sky-100 transition-colors">
-                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Duration</p>
-                      <p className="text-[#001D3D] font-black text-sm">{p.tenure || 'Flexible'}</p>
+                  <div className="grid grid-cols-2 gap-3 mb-4">
+                    <div className="bg-slate-50 p-3 rounded-2xl border border-slate-100 group-hover:bg-sky-50 group-hover:border-sky-100 transition-colors">
+                      <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-0.5">Duration</p>
+                      <p className="text-[#001D3D] font-black text-[12px]">{p.tenure || 'Flexible'}</p>
                     </div>
-                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 group-hover:bg-emerald-50 group-hover:border-emerald-100 transition-colors">
-                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Min Investment</p>
-                      <p className="text-[#001D3D] font-black text-sm">{p.maxAmt}</p>
+                    <div className="bg-slate-50 p-3 rounded-2xl border border-slate-100 group-hover:bg-emerald-50 group-hover:border-emerald-100 transition-colors">
+                      <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-0.5">Min Invest</p>
+                      <p className="text-[#001D3D] font-black text-[12px]">{p.maxAmt}</p>
                     </div>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-                    <button className="flex-1 bg-[#001D3D] text-white py-5 rounded-2xl font-black text-sm uppercase tracking-wider hover:bg-sky-500 transition-all shadow-lg hover:shadow-sky-500/30 flex items-center justify-center gap-2">
-                      Apply Now <ArrowRight className="w-4 h-4" />
+                  <div className="flex flex-col xl:flex-row gap-3 mt-auto">
+                    <button className="flex-1 bg-[#001D3D] text-white py-3 rounded-xl font-black text-[11px] uppercase tracking-wider hover:bg-sky-500 transition-all shadow-lg hover:shadow-sky-500/30 flex items-center justify-center gap-2 group/btn">
+                      Apply Now <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
-                    <button className="flex-[0.7] border-2 border-slate-100 text-[#001D3D] py-5 rounded-2xl font-black text-sm uppercase tracking-wider hover:border-sky-500 hover:text-sky-600 transition-all">
+                    <button className="flex-[0.7] border-2 border-slate-100 text-[#001D3D] py-3 rounded-xl font-black text-[11px] uppercase tracking-wider hover:border-sky-500 hover:text-sky-600 transition-all">
                       Details
                     </button>
                   </div>
@@ -932,9 +955,9 @@ export default function Home() {
 
 
       {/* ══════════ CASE STUDIES ══════════ */}
-      <section className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
+      <section className="pt-8 pb-10 lg:pt-12 lg:pb-16 bg-slate-50 relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
+          <div className="text-center max-w-5xl mx-auto mb-16 lg:mb-20 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
             <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4 flex items-center justify-center gap-2">
               <span className="text-xl">📊</span> Case Studies
             </p>
@@ -944,7 +967,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-0 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100">
             {[
               {
                 title: 'Smart Saving for a Stronger Future',
@@ -986,53 +1009,46 @@ export default function Home() {
                 {/* Content Section */}
                 <div className="bg-white p-8 pt-12 flex flex-col items-start flex-1">
                   <h3 className="text-xl font-black text-[#001D3D] mb-4 group-hover:text-sky-600 transition-colors">{s.title}</h3>
-                  <p className="text-slate-500 text-[13px] font-medium leading-relaxed mb-8 flex-1 text-justify">
+                  <p className="text-slate-500 text-[13px] font-medium leading-relaxed flex-1 text-justify">
                     {s.desc}
                   </p>
-                  <div className="w-10 h-10 rounded-full bg-[#001D3D] text-white flex items-center justify-center group-hover:bg-sky-500 transition-colors shadow-lg">
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Outro CTA */}
-          <div className="flex flex-col items-center text-center bg-white border border-slate-100 shadow-[0_15px_50px_rgba(0,0,0,0.05)] rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
-             <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #0EA5E9 0%, transparent 80%)' }} />
-             <p className="text-xl lg:text-3xl font-black text-[#001D3D] mb-10 max-w-4xl leading-tight relative z-10">
-               At SGNL, every product we offer is shaped by your needs — because your security is our priority.
-             </p>
-             <div className="flex flex-col sm:flex-row gap-5 relative z-10">
-               <button className="bg-sky-500 text-white px-10 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-[#001D3D] transition-all shadow-[0_15px_30px_rgba(14,165,233,0.25)] flex items-center justify-center gap-2 hover:-translate-y-1">
-                 <span className="text-lg">👉</span> Discover More
-               </button>
-               <button className="bg-white border-2 border-slate-200 text-[#001D3D] px-10 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:border-sky-500 hover:text-sky-600 transition-all flex items-center justify-center hover:-translate-y-1">
-                 Start Your Financial Journey
-               </button>
-             </div>
+          <div className="flex justify-center my-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-150">
+            <button className="bg-white border-2 border-slate-200 text-[#001D3D] px-8 py-4 rounded-2xl font-black tracking-widest uppercase text-sm hover:border-sky-500 hover:text-sky-600 transition-all flex items-center justify-center gap-2 group shadow-sm hover:shadow-md">
+              View All Case Studies <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
         </div>
       </section>
 
       {/* ══════════ COMPANY OVERVIEW ══════════ */}
 
-      {/* ══════════ EMI CALCULATOR CTA ══════════ */}
-      <section className="py-14 bg-sky-500">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="text-center lg:text-left">
-              <h2 className="text-2xl lg:text-3xl font-black text-[#001D3D] leading-tight">Calculate Your EMI in Seconds</h2>
-              <p className="text-[#001D3D]/70 mt-2 font-medium text-sm max-w-md">
-                Find out your monthly instalment amount with our free online EMI calculator before you apply.
+      {/* ══════════ FINAL CTA BANNER ══════════ */}
+      <section className="py-16 bg-sky-500 relative">
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 0%, transparent 80%)' }} />
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
+          
+          {/* Character Illustration */}
+          <div className="absolute -top-[140px] lg:-top-[180px] right-4 lg:right-24 w-32 lg:w-44 z-20 pointer-events-none drop-shadow-2xl">
+            <img src="/sgnl/person.png" alt="Character" className="w-full h-auto object-contain" />
+          </div>
+
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+            <div className="text-center lg:text-left max-w-3xl">
+              <p className="text-2xl lg:text-3xl font-black text-white leading-tight tracking-tight">
+                At SGNL, every product we offer is shaped by your needs — because your security is our priority.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <button className="flex items-center gap-2 px-8 py-4 bg-[#001D3D] text-white font-black rounded-xl hover:bg-slate-800 transition-all text-sm shadow-xl">
-                <Calculator className="w-5 h-5" /> EMI Calculator
+            <div className="flex flex-col sm:flex-row gap-4 justify-center shrink-0 w-full lg:w-auto">
+              <button className="w-full sm:w-auto bg-[#001D3D] text-white px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-900 transition-all shadow-xl flex items-center justify-center gap-2 hover:-translate-y-1">
+                Discover More
               </button>
-              <button className="flex items-center gap-2 px-8 py-4 border-2 border-[#001D3D] text-[#001D3D] font-black rounded-xl hover:bg-[#001D3D] hover:text-white transition-all text-sm">
-                <Phone className="w-5 h-5" /> Call Us Now
+              <button className="w-full sm:w-auto bg-white text-[#001D3D] px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-50 transition-all flex items-center justify-center shadow-lg hover:-translate-y-1">
+                Start Your Financial Journey
               </button>
             </div>
           </div>
@@ -1060,27 +1076,50 @@ export default function Home() {
             </div>
 
             {/* Testimonial cards */}
-            <div className="lg:w-2/3 grid sm:grid-cols-2 gap-6 w-full">
-              {testimonials.map((t, i) => (
-                <div
-                  key={i}
-                  className="bg-white border border-slate-100 shadow-lg shadow-slate-200/30 rounded-[2.5rem] p-8 sm:p-10 flex flex-col gap-6 hover:-translate-y-1 transition-all duration-300"
+            <div className="lg:w-2/3 flex flex-col w-full relative">
+              <div className="overflow-hidden w-full py-4 -my-4 relative">
+                <div 
+                  className="flex transition-all duration-700 ease-in-out relative gap-6"
+                  style={{ left: `calc(-${(testimonialIdx / 2) * 100}% - ${(testimonialIdx / 2) * 1.5}rem)` }}
                 >
-                  <div className="flex gap-1">
-                    {Array(t.rating).fill(0).map((_, j) => (
-                      <Star key={j} className="w-5 h-5 fill-sky-400 text-sky-400" />
-                    ))}
-                  </div>
-                  <p className="text-slate-600 font-medium leading-relaxed flex-1 text-lg">"{t.text}"</p>
-                  <div className="flex items-center gap-4 pt-6 border-t border-slate-100">
-                    <img src={t.avatar} alt={t.name} className="w-14 h-14 rounded-full object-cover border-4 border-sky-50 shadow-sm" />
-                    <div>
-                      <p className="font-black text-[#001D3D] text-[17px]">{t.name}</p>
-                      <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">{t.role}</p>
+                  {testimonials.map((t, i) => (
+                    <div
+                      key={i}
+                      className="bg-white border border-slate-100 shadow-lg shadow-slate-200/30 rounded-[2.5rem] p-8 sm:p-10 flex flex-col gap-6 hover:-translate-y-1 transition-all duration-300 shrink-0 w-full sm:w-[calc(50%-0.75rem)]"
+                    >
+                      <div className="flex gap-1">
+                        {Array(t.rating).fill(0).map((_, j) => (
+                          <Star key={j} className="w-5 h-5 fill-sky-400 text-sky-400" />
+                        ))}
+                      </div>
+                      <p className="text-slate-600 font-medium leading-relaxed flex-1 text-lg">"{t.text}"</p>
+                      <div className="flex items-center gap-4 pt-6 border-t border-slate-100">
+                        <img src={t.avatar} alt={t.name} className="w-14 h-14 rounded-full object-cover border-4 border-sky-50 shadow-sm" />
+                        <div>
+                          <p className="font-black text-[#001D3D] text-[17px]">{t.name}</p>
+                          <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">{t.role}</p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              
+              {/* Navigation Arrows */}
+              <button 
+                onClick={() => setTestimonialIdx(Math.max(0, testimonialIdx - 2))} 
+                className={`absolute top-1/2 -translate-y-1/2 -left-4 md:-left-6 z-10 w-12 h-12 rounded-full border-2 bg-white flex items-center justify-center transition-all shadow-xl hover:scale-110 ${testimonialIdx === 0 ? 'border-slate-200 text-slate-300 cursor-not-allowed opacity-0 pointer-events-none' : 'border-[#001D3D] text-[#001D3D] hover:bg-[#001D3D] hover:text-white cursor-pointer opacity-100'}`}
+                disabled={testimonialIdx === 0}
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button 
+                onClick={() => setTestimonialIdx(Math.min(testimonials.length - 2, testimonialIdx + 2))} 
+                className={`absolute top-1/2 -translate-y-1/2 -right-4 md:-right-6 z-10 w-12 h-12 rounded-full border-2 bg-white flex items-center justify-center transition-all shadow-xl hover:scale-110 ${testimonialIdx >= testimonials.length - 2 ? 'border-slate-200 text-slate-300 cursor-not-allowed opacity-0 pointer-events-none' : 'border-[#001D3D] text-[#001D3D] hover:bg-[#001D3D] hover:text-white cursor-pointer opacity-100'}`}
+                disabled={testimonialIdx >= testimonials.length - 2}
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
             </div>
           </div>
         </div>
@@ -1101,7 +1140,7 @@ export default function Home() {
             {/* Brand */}
             <div className="lg:col-span-2 space-y-5">
               <Link href="/" className="flex items-center gap-3">
-                <img src="/sarathi/logo.png" alt="SGNL Logo" className="h-20 w-auto object-contain bg-white rounded-2xl p-2" />
+                <img src="/sgnl/logo.png" alt="SGNL Logo" className="h-20 w-auto object-contain bg-white rounded-2xl p-2" />
               </Link>
               <p className="text-white/50 text-sm leading-relaxed max-w-sm">
                 A trusted Nidhi Company dedicated to empowering communities through ethical savings, low-interest loans, and transparent financial services.
@@ -1117,9 +1156,9 @@ export default function Home() {
 
             {/* Links */}
             {[
-              { head: 'Our Schemes', links: ['Prime Wealth Gain', 'Student Savings Plan', 'Vikas Money Savings', 'Ecocial Savings Plan', 'Elite Wealth Gain'] },
-              { head: 'Services', links: ['Recurring Deposits', 'Fixed Deposits', 'Life Insurance', 'Mutual Funds', 'Demat Account'] },
-              { head: 'Company', links: ['About Us', 'Our Branches', 'Fair Practice Code', 'Contact Us'] },
+              { head: 'Our Schemes', links: ['Prime Wealth Gain', 'Vikas Money Savings', 'Ecocial Savings Plan', 'Elite Wealth Gain'] },
+              { head: 'Services', links: ['High-Interest Savings Plans', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance', 'Loan Services'] },
+              { head: 'Company', links: ['About Us', 'Our Branches', 'Home', 'Contact Us'] },
             ].map(col => (
               <div key={col.head}>
                 <p className="text-white font-black text-xs uppercase tracking-widest mb-5">{col.head}</p>
@@ -1138,7 +1177,7 @@ export default function Home() {
               © 2026 Sarathi Germinate Nidhi Limited. All rights reserved.
             </p>
             <div className="flex gap-6 text-[11px] font-bold uppercase tracking-wider text-white/30">
-              {['Privacy Policy', 'Terms of Service', 'Fair Practice Code', 'Sitemap'].map(l => (
+              {['Privacy Policy', 'Terms of Service', 'Home', 'Sitemap'].map(l => (
                 <Link key={l} href="#" className="hover:text-sky-400 transition-colors">{l}</Link>
               ))}
             </div>

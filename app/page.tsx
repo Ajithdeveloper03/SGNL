@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
+import ContactPopup from '../components/ContactPopup';
 
 /* ─────────────────────────── DATA ─────────────────────────── */
 
@@ -220,6 +221,8 @@ export default function Home() {
   const [testimonialIdx, setTestimonialIdx] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isSchemesHovered, setIsSchemesHovered] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   /* scroll & Intersection Observer */
@@ -260,6 +263,8 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    if (isSchemesHovered) return;
+
     const interval = setInterval(() => {
       if (schemesCarouselRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = schemesCarouselRef.current;
@@ -276,7 +281,7 @@ export default function Home() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [scrollSchemes]);
+  }, [scrollSchemes, isSchemesHovered]);
 
   /* hero auto-play */
   const startTimer = useCallback(() => {
@@ -341,7 +346,10 @@ export default function Home() {
               <span className="text-white font-bold text-[13px]">
                 Leading Nidhi Company in Tamil Nadu
               </span>
-              <button className="flex items-center text-white font-black text-[13px] hover:text-sky-400 transition-colors group">
+              <button 
+                onClick={() => setIsPopupOpen(true)}
+                className="flex items-center text-white font-black text-[13px] hover:text-sky-400 transition-colors group"
+              >
                 <span className="border-b-2 border-white group-hover:border-sky-400 pb-0.5">Get A Quote</span>
                 <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -388,7 +396,7 @@ export default function Home() {
                 {activeDropdown === 'Services' && (
                   <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[240px] flex flex-col gap-1 z-50">
                     {['High-Interest Savings Plans', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance', 'Loan Services'].map(item => (
-                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                      <Link key={item} href={item === 'Life Insurance' || item === 'Health Insurance' ? '/services/life-insurance' : '#'} className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
                     ))}
                   </div>
                 )}
@@ -425,7 +433,10 @@ export default function Home() {
 
             {/* Actions */}
             <div className="hidden lg:flex items-center h-full">
-              <div className="flex items-center gap-2 px-6 xl:px-8 h-full bg-sky-500 text-white hover:bg-[#001D3D] transition-colors cursor-pointer group">
+              <div 
+                onClick={() => setIsPopupOpen(true)}
+                className="flex items-center gap-2 px-6 xl:px-8 h-full bg-sky-500 text-white hover:bg-[#001D3D] transition-colors cursor-pointer group"
+              >
                 <PhoneCall className="w-9 h-9 p-[2px] text-white stroke-[1.5] group-hover:scale-110 transition-transform" />
                 <div className="flex flex-col justify-center">
                   <span className="text-[11px] font-bold tracking-widest text-white/80 uppercase mb-0.5">Call Anytime</span>
@@ -436,8 +447,12 @@ export default function Home() {
 
             {/* Mobile Toggle */}
             <div className="lg:hidden flex items-center gap-3">
-              <button className="bg-sky-500 text-white px-5 py-2 rounded-xl text-sm font-black tracking-wider hover:bg-sky-600 transition-colors uppercase">
-                Apply
+              <button 
+                onClick={() => setIsPopupOpen(true)}
+                className="flex items-center text-[#001D3D] font-black text-[13px] hover:text-sky-500 transition-colors group px-2"
+              >
+                <span className="border-b-2 border-[#001D3D] group-hover:border-sky-500 pb-0.5 whitespace-nowrap">Get A Quote</span>
+                <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform shrink-0" />
               </button>
               <button 
                 className={`flex items-center justify-center transition-colors ${mobileOpen ? 'w-10 h-10 rounded-xl border border-gray-200 text-[#001D3D] hover:bg-gray-50' : 'p-2 text-[#001D3D]'}`} 
@@ -468,7 +483,7 @@ export default function Home() {
                 {activeDropdown === item.name && (
                   <div className="flex flex-col gap-4 pb-5 pl-4">
                     {item.links.map(link => (
-                      <Link key={link} href="#" className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
+                      <Link key={link} href={link === 'Life Insurance' || link === 'Health Insurance' ? '/services/life-insurance' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
                         {link}
                       </Link>
                     ))}
@@ -495,6 +510,8 @@ export default function Home() {
         {heroSlides.map((s, i) => (
           <div key={i} className={`absolute top-0 right-0 w-full lg:w-[65%] h-full transition-opacity duration-1000 ease-in-out ${i === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
             <img src={s.image} alt={s.headline} className="w-full h-full object-cover lg:object-[center_right]" />
+            {/* Mobile Overlay */}
+            <div className="absolute inset-0 bg-[#001D3D]/70 lg:hidden" />
           </div>
         ))}
 
@@ -542,10 +559,16 @@ export default function Home() {
             </p>
 
             <div key={`cta-${currentSlide}`} className="flex flex-wrap gap-4 animate-fade-in-up [animation-delay:600ms]">
-              <button className="bg-sky-500 text-white px-8 lg:px-10 py-4 lg:py-5 font-black flex items-center justify-center gap-3 hover:bg-white hover:text-[#001D3D] transition-all shadow-xl shadow-sky-500/30 text-[12px] md:text-[14px] uppercase tracking-wider rounded-sm">
+              <button 
+                onClick={() => setIsPopupOpen(true)}
+                className="bg-sky-500 text-white px-8 lg:px-10 py-4 lg:py-5 font-black flex items-center justify-center gap-3 hover:bg-white hover:text-[#001D3D] transition-all shadow-xl shadow-sky-500/30 text-[12px] md:text-[14px] uppercase tracking-wider rounded-sm"
+              >
                 <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5" /> {slide.cta}
               </button>
-              <button className="border-2 border-white/30 text-white px-6 lg:px-8 py-4 lg:py-5 font-black flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/50 transition-all text-[12px] md:text-[14px] uppercase tracking-wider rounded-sm">
+              <button 
+                onClick={() => setIsPopupOpen(true)}
+                className="border-2 border-white/30 text-white px-6 lg:px-8 py-4 lg:py-5 font-black flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/50 transition-all text-[12px] md:text-[14px] uppercase tracking-wider rounded-sm"
+              >
                 {slide.ctaSecondary}
               </button>
             </div>
@@ -565,11 +588,11 @@ export default function Home() {
               <div className="absolute -bottom-[8px] left-1/2 -translate-x-1/2 border-l-[10px] border-r-[10px] border-t-[10px] border-transparent border-t-sky-500" />
             </div>
             <div className="flex flex-col">
-              {['Prime Wealth Gain', 'Vikas Money Savings', 'Elite Wealth Gain'].map(os => (
-                <button key={os} className="flex items-center justify-between px-6 py-4 border-b border-slate-100 hover:bg-slate-50 text-[#001D3D] font-black text-[14px] transition-colors group">
+              {['Prime Wealth Gain', 'Vikas Money Savings', 'Elite Wealth Gain', 'Health & Life Gain'].map(os => (
+                <button key={os} className="flex items-center justify-between px-6 py-[10px] border-b border-slate-100 hover:bg-slate-50 text-[#001D3D] font-black text-[14px] transition-colors group">
                   {os}
-                  <div className="w-7 h-7 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-sky-500 group-hover:bg-sky-50 transition-all">
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-sky-500" />
+                  <div className="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-sky-500 group-hover:bg-sky-50 transition-all">
+                    <ArrowRight className="w-3 h-3 text-slate-400 group-hover:text-sky-500" />
                   </div>
                 </button>
               ))}
@@ -660,19 +683,23 @@ export default function Home() {
                 About Sarathi Germinate Nidhi Limited (SGNL)
               </h3>
               
-              <p className="text-slate-600 text-lg leading-relaxed font-medium mb-6">
+              <p className="text-slate-600 text-lg leading-relaxed font-medium mb-6 text-justify lg:text-left">
                 Sarathi Germinate Nidhi Limited (SGNL) is a trusted name in the banking sector, committed to creating a safe, transparent, and growth-focused financial environment. Registered under the guidelines of the Reserve Bank of India (RBI), we aim to bridge the gap between investors and individuals seeking financial security and progress.
               </p>
               
               {/* Services list moved to image overlay */}
               
-              <p className="text-slate-600 text-lg leading-relaxed font-medium mb-10">
+              <p className="text-slate-600 text-lg leading-relaxed font-medium mb-10 text-justify lg:text-left">
                 Our solutions are designed to be simple, accessible, and tailored to your needs—whether you’re just getting started or planning for long-term financial growth. Driven by integrity, professionalism, and transparency, we make banking easy to understand and even easier to trust.
               </p>
               
               {/* Button-like element matching the "Learn More About Us" styling from reference */}
-              <div className="bg-[#1E293B] text-white px-8 py-4 rounded-full w-max text-[13px] font-bold tracking-wide shadow-lg flex items-center gap-3 hover:bg-[#001D3D] transition-colors cursor-pointer">
-                SGNL – Simple Solutions, Stronger Finances <ArrowRight className="w-4 h-4" />
+              <div 
+                onClick={() => setIsPopupOpen(true)}
+                className="bg-[#1E293B] text-white px-6 py-4 rounded-[2rem] inline-flex items-center justify-center gap-3 hover:bg-[#001D3D] transition-colors cursor-pointer max-w-full"
+              >
+                <span className="text-[13px] font-bold tracking-wide text-center leading-snug">SGNL – Simple Solutions, Stronger Finances</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </div>
               
             </div>
@@ -744,7 +771,13 @@ export default function Home() {
 
         {/* Carousel Track */}
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out delay-100">
-          <div ref={schemesCarouselRef} className="flex overflow-x-auto gap-6 lg:gap-8 pb-12 pt-4 snap-x snap-mandatory hide-scrollbars scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <div 
+            ref={schemesCarouselRef} 
+            className="flex overflow-x-auto gap-6 lg:gap-8 pb-12 pt-4 snap-x snap-mandatory hide-scrollbars scroll-smooth" 
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            onMouseEnter={() => setIsSchemesHovered(true)}
+            onMouseLeave={() => setIsSchemesHovered(false)}
+          >
             {[
               { name: 'High-Interest Savings Plans', cat: 'Savings', sub: 'Save smart with security and higher returns.', desc: 'Earn more with short-term and long-term savings options designed for flexibility, security, and high returns.', img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800' },
               { name: 'Investment Solutions', cat: 'Investment', sub: 'Build your financial future with guided investments.', desc: 'Let your money work for you with personalized investment plans aligned with your financial goals and risk preferences.', img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800' },
@@ -753,7 +786,7 @@ export default function Home() {
               { name: 'General Insurance', cat: 'Insurance', sub: 'Safeguard your valuable assets.', desc: 'From vehicles to property, cover what matters most with trusted general insurance tailored to your lifestyle.', img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800' },
               { name: 'Loan Services', cat: 'Loans', sub: 'Get the financial support you need—fast and fairly.', desc: 'Whether it’s for personal needs or business growth, we offer reliable and easy-to-access loans with competitive terms.', img: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&q=80&w=800' },
             ].map((scheme, i) => (
-              <div key={scheme.name} className="relative group w-[280px] h-[340px] md:w-[320px] md:h-[380px] lg:w-[380px] lg:h-[420px] rounded-[2rem] overflow-hidden snap-center shrink-0 cursor-pointer shadow-md border border-slate-200 bg-white">
+              <Link key={scheme.name} href={scheme.name === 'Life Insurance' || scheme.name === 'Health Insurance' ? '/services/life-insurance' : '#'} className="relative block group w-[280px] h-[340px] md:w-[320px] md:h-[380px] lg:w-[380px] lg:h-[420px] rounded-[2rem] overflow-hidden snap-center shrink-0 cursor-pointer shadow-md border border-slate-200 bg-white">
                 <img src={scheme.img} alt={scheme.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1000ms] ease-out" />
 
                 {/* Gradients */}
@@ -778,7 +811,7 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -812,7 +845,10 @@ export default function Home() {
                 At Sarathi Germinate Nidhi Limited (SGNL), we believe in making finance personal, transparent, and simple. Our step-by-step process is designed to ensure that you always feel informed, empowered, and supported — from the very first interaction.
               </p>
               
-              <div className="group inline-flex items-center gap-4 bg-white text-[#001D3D] pl-8 pr-2 py-2 rounded-full font-bold text-[14px] tracking-wide shadow-xl hover:bg-sky-500 hover:text-white transition-all duration-300 cursor-pointer hover:-translate-y-1">
+              <div 
+                onClick={() => setIsPopupOpen(true)}
+                className="group inline-flex items-center gap-4 bg-white text-[#001D3D] pl-8 pr-2 py-2 rounded-full font-bold text-[14px] tracking-wide shadow-xl hover:bg-sky-500 hover:text-white transition-all duration-300 cursor-pointer hover:-translate-y-1"
+              >
                 <span>More About Us</span>
                 <div className="w-10 h-10 bg-[#001D3D] group-hover:bg-white rounded-full flex items-center justify-center transition-colors">
                   <ArrowRight className="w-5 h-5 text-white group-hover:text-sky-500 transition-colors" />
@@ -861,10 +897,12 @@ export default function Home() {
               ].map((s, i) => (
                 <div key={i} className="flex gap-4 sm:gap-6 relative z-10 w-full group">
                   <div className="bg-white rounded-[2rem] p-6 shadow-[0_15px_50px_rgba(0,0,0,0.06)] border border-slate-100 flex-1 hover:-translate-y-1 hover:border-sky-100 transition-all duration-300">
-                    <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center font-black text-xl mb-4 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-500 shadow-sm border border-sky-100 shrink-0">
-                      {s.step}
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center font-black text-xl group-hover:bg-sky-500 group-hover:text-white transition-colors duration-500 shadow-sm border border-sky-100 shrink-0">
+                        {s.step}
+                      </div>
+                      <h3 className="font-black text-lg text-[#001D3D] leading-tight tracking-tight group-hover:text-sky-600 transition-colors">{s.title}</h3>
                     </div>
-                    <h3 className="font-black text-lg text-[#001D3D] mb-2 leading-tight tracking-tight group-hover:text-sky-600 transition-colors">{s.title}</h3>
                     <p className="text-slate-500 text-sm leading-relaxed font-medium text-justify">{s.desc}</p>
                   </div>
                 </div>
@@ -881,10 +919,10 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-100/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4" />
 
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-8 lg:mb-20 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
             <div className="max-w-2xl">
               <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4 bg-sky-50 w-fit px-4 py-1.5 rounded-full">Our Superstar Products</p>
-              <h2 className="text-4xl lg:text-6xl font-black text-[#001D3D] tracking-tight leading-[1.1]">The Smarter Way to <span className="text-sky-500">Grow Your Wealth</span></h2>
+              <h2 className="text-[32px] sm:text-4xl lg:text-6xl font-black text-[#001D3D] tracking-tight leading-[1.15]">The Smarter Way to <br className="sm:hidden" /><span className="text-sky-500">Grow Your Wealth</span></h2>
             </div>
             <Link href="#" className="flex items-center gap-3 text-lg font-black text-[#001D3D] hover:text-sky-600 transition-all group pb-2 border-b-2 border-transparent hover:border-sky-500">
               Explore All Products <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
@@ -938,7 +976,10 @@ export default function Home() {
                   </div>
 
                   <div className="flex flex-col xl:flex-row gap-3 mt-auto">
-                    <button className="flex-1 bg-[#001D3D] text-white py-3 rounded-xl font-black text-[11px] uppercase tracking-wider hover:bg-sky-500 transition-all shadow-lg hover:shadow-sky-500/30 flex items-center justify-center gap-2 group/btn">
+                    <button 
+                      onClick={() => setIsPopupOpen(true)}
+                      className="flex-1 bg-[#001D3D] text-white py-3 rounded-xl font-black text-[11px] uppercase tracking-wider hover:bg-sky-500 transition-all shadow-lg hover:shadow-sky-500/30 flex items-center justify-center gap-2 group/btn"
+                    >
                       Apply Now <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                     <button className="flex-[0.7] border-2 border-slate-100 text-[#001D3D] py-3 rounded-xl font-black text-[11px] uppercase tracking-wider hover:border-sky-500 hover:text-sky-600 transition-all">
@@ -957,7 +998,7 @@ export default function Home() {
       {/* ══════════ CASE STUDIES ══════════ */}
       <section className="pt-8 pb-10 lg:pt-12 lg:pb-16 bg-slate-50 relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center max-w-5xl mx-auto mb-16 lg:mb-20 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
+          <div className="text-center max-w-5xl mx-auto mb-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
             <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4 flex items-center justify-center gap-2">
               <span className="text-xl">📊</span> Case Studies
             </p>
@@ -1018,7 +1059,10 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center my-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-150">
-            <button className="bg-white border-2 border-slate-200 text-[#001D3D] px-8 py-4 rounded-2xl font-black tracking-widest uppercase text-sm hover:border-sky-500 hover:text-sky-600 transition-all flex items-center justify-center gap-2 group shadow-sm hover:shadow-md">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-white border-2 border-slate-200 text-[#001D3D] px-8 py-4 rounded-2xl font-black tracking-widest uppercase text-sm hover:border-sky-500 hover:text-sky-600 transition-all flex items-center justify-center gap-2 group shadow-sm hover:shadow-md"
+            >
               View All Case Studies <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
@@ -1032,9 +1076,9 @@ export default function Home() {
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 0%, transparent 80%)' }} />
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
           
-          {/* Character Illustration */}
-          <div className="absolute -top-[140px] lg:-top-[180px] right-4 lg:right-24 w-32 lg:w-44 z-20 pointer-events-none drop-shadow-2xl">
-            <img src="/sgnl/person.png" alt="Character" className="w-full h-auto object-contain" />
+          {/* Desktop Character Illustration */}
+          <div className="hidden lg:block absolute -top-[186px] right-24 w-44 z-20 pointer-events-none drop-shadow-2xl">
+            <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain" />
           </div>
 
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
@@ -1043,11 +1087,23 @@ export default function Home() {
                 At SGNL, every product we offer is shaped by your needs — because your security is our priority.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center shrink-0 w-full lg:w-auto">
-              <button className="w-full sm:w-auto bg-[#001D3D] text-white px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-900 transition-all shadow-xl flex items-center justify-center gap-2 hover:-translate-y-1">
-                Discover More
-              </button>
-              <button className="w-full sm:w-auto bg-white text-[#001D3D] px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-50 transition-all flex items-center justify-center shadow-lg hover:-translate-y-1">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center shrink-0 w-full lg:w-auto mt-24 sm:mt-0">
+              <div className="relative w-full sm:w-auto">
+                {/* Mobile Character Illustration */}
+                <div className="lg:hidden absolute bottom-[calc(100%-10px)] right-4 w-36 z-20 pointer-events-none drop-shadow-2xl">
+                  <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain" />
+                </div>
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className="w-full sm:w-auto bg-[#001D3D] text-white px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-900 transition-all shadow-xl flex items-center justify-center gap-2 hover:-translate-y-1 relative z-30"
+                >
+                  Discover More
+                </button>
+              </div>
+              <button 
+                onClick={() => setIsPopupOpen(true)}
+                className="w-full sm:w-auto bg-white text-[#001D3D] px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-50 transition-all flex items-center justify-center shadow-lg hover:-translate-y-1 relative z-30"
+              >
                 Start Your Financial Journey
               </button>
             </div>
@@ -1056,7 +1112,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ TESTIMONIALS ══════════ */}
-      <section className="py-24 lg:py-32 relative bg-slate-50 overflow-hidden">
+      <section className="py-8 lg:py-10 relative bg-slate-50 overflow-hidden">
         {/* Decorative Image background in a corner */}
         <div className="absolute top-0 right-0 w-1/3 h-full mix-blend-multiply opacity-30 pointer-events-none hidden lg:block">
           <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover rounded-bl-[150px]" />
@@ -1064,23 +1120,24 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 lg:px-6 relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-center">
 
-            <div className="lg:w-1/3 space-y-8">
+            <div className="lg:w-1/3 space-y-8 text-center lg:text-left">
               <div>
                 <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4">Testimonials</p>
                 <h2 className="text-4xl lg:text-5xl font-black text-[#001D3D] leading-tight">What Our Members Say</h2>
               </div>
               <p className="text-lg text-slate-500 font-medium leading-relaxed">Join thousands of satisfied members who have secured their financial future with Sarathi Germinate Nidhi Limited. Your trust is our greatest asset.</p>
-              <button className="px-8 py-4 bg-white border-2 border-slate-200 text-[#001D3D] font-black rounded-xl hover:border-sky-500 hover:text-sky-600 transition-colors shadow-sm">
-                Read All Reviews
-              </button>
             </div>
 
             {/* Testimonial cards */}
             <div className="lg:w-2/3 flex flex-col w-full relative">
               <div className="overflow-hidden w-full py-4 -my-4 relative">
+                <style dangerouslySetInnerHTML={{__html: `
+                  .testimonial-slider { left: calc(var(--idx) * -100% - var(--idx) * 1.5rem); }
+                  @media (min-width: 640px) { .testimonial-slider { left: calc(var(--idx) * -50% - var(--idx) * 0.75rem); } }
+                `}} />
                 <div 
-                  className="flex transition-all duration-700 ease-in-out relative gap-6"
-                  style={{ left: `calc(-${(testimonialIdx / 2) * 100}% - ${(testimonialIdx / 2) * 1.5}rem)` }}
+                  className="testimonial-slider flex transition-all duration-700 ease-in-out relative gap-6"
+                  style={{ '--idx': testimonialIdx } as React.CSSProperties}
                 >
                   {testimonials.map((t, i) => (
                     <div
@@ -1107,16 +1164,16 @@ export default function Home() {
               
               {/* Navigation Arrows */}
               <button 
-                onClick={() => setTestimonialIdx(Math.max(0, testimonialIdx - 2))} 
+                onClick={() => setTestimonialIdx(Math.max(0, testimonialIdx - 1))} 
                 className={`absolute top-1/2 -translate-y-1/2 -left-4 md:-left-6 z-10 w-12 h-12 rounded-full border-2 bg-white flex items-center justify-center transition-all shadow-xl hover:scale-110 ${testimonialIdx === 0 ? 'border-slate-200 text-slate-300 cursor-not-allowed opacity-0 pointer-events-none' : 'border-[#001D3D] text-[#001D3D] hover:bg-[#001D3D] hover:text-white cursor-pointer opacity-100'}`}
                 disabled={testimonialIdx === 0}
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button 
-                onClick={() => setTestimonialIdx(Math.min(testimonials.length - 2, testimonialIdx + 2))} 
-                className={`absolute top-1/2 -translate-y-1/2 -right-4 md:-right-6 z-10 w-12 h-12 rounded-full border-2 bg-white flex items-center justify-center transition-all shadow-xl hover:scale-110 ${testimonialIdx >= testimonials.length - 2 ? 'border-slate-200 text-slate-300 cursor-not-allowed opacity-0 pointer-events-none' : 'border-[#001D3D] text-[#001D3D] hover:bg-[#001D3D] hover:text-white cursor-pointer opacity-100'}`}
-                disabled={testimonialIdx >= testimonials.length - 2}
+                onClick={() => setTestimonialIdx(Math.min(testimonials.length - 1, testimonialIdx + 1))} 
+                className={`absolute top-1/2 -translate-y-1/2 -right-4 md:-right-6 z-10 w-12 h-12 rounded-full border-2 bg-white flex items-center justify-center transition-all shadow-xl hover:scale-110 ${testimonialIdx >= testimonials.length - 1 ? 'border-slate-200 text-slate-300 cursor-not-allowed opacity-0 pointer-events-none' : 'border-[#001D3D] text-[#001D3D] hover:bg-[#001D3D] hover:text-white cursor-pointer opacity-100'}`}
+                disabled={testimonialIdx >= testimonials.length - 1}
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -1133,8 +1190,10 @@ export default function Home() {
 
 
       {/* ══════════ FOOTER ══════════ */}
-      <footer className="bg-[#001D3D] pt-20 pb-10">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+      <footer className="relative pt-20 pb-10 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/sgnl/footer 1.png')" }}>
+        {/* Dark overlay for text visibility */}
+        <div className="absolute inset-0 bg-[#001D3D]/80" />
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 relative z-10">
           {/* Top grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-12 pb-12 border-b border-white/10">
             {/* Brand */}
@@ -1142,13 +1201,18 @@ export default function Home() {
               <Link href="/" className="flex items-center gap-3">
                 <img src="/sgnl/logo.png" alt="SGNL Logo" className="h-20 w-auto object-contain bg-white rounded-2xl p-2" />
               </Link>
-              <p className="text-white/50 text-sm leading-relaxed max-w-sm">
+              <p className="text-white text-sm leading-relaxed max-w-sm">
                 A trusted Nidhi Company dedicated to empowering communities through ethical savings, low-interest loans, and transparent financial services.
               </p>
               <div className="flex items-center gap-3">
-                {['f', 'in', 'tw', 'ig'].map(s => (
-                  <Link key={s} href="#" className="w-9 h-9 rounded-xl border border-white/10 bg-white/5 hover:bg-sky-500 hover:border-sky-500 flex items-center justify-center text-white/50 hover:text-white text-xs font-black transition-all">
-                    {s}
+                {[
+                  { icon: Facebook, href: '#' },
+                  { icon: Linkedin, href: '#' },
+                  { icon: Twitter, href: '#' },
+                  { icon: Instagram, href: '#' }
+                ].map((social, i) => (
+                  <Link key={i} href={social.href} className="w-9 h-9 rounded-xl border border-white/10 bg-white/5 hover:bg-sky-500 hover:border-sky-500 flex items-center justify-center text-white hover:text-white transition-all">
+                    <social.icon className="w-4 h-4" />
                   </Link>
                 ))}
               </div>
@@ -1164,7 +1228,7 @@ export default function Home() {
                 <p className="text-white font-black text-xs uppercase tracking-widest mb-5">{col.head}</p>
                 <ul className="space-y-3">
                   {col.links.map(l => (
-                    <li key={l}><Link href="#" className="text-white/50 text-sm hover:text-sky-400 font-medium transition-colors">{l}</Link></li>
+                    <li key={l}><Link href={l === 'Life Insurance' || l === 'Health Insurance' ? '/services/life-insurance' : '#'} className="text-white text-sm hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
                   ))}
                 </ul>
               </div>
@@ -1172,18 +1236,15 @@ export default function Home() {
           </div>
 
           {/* Bottom bar */}
-          <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-white/30 text-xs font-bold uppercase tracking-wider">
+          <div className="pt-8 flex justify-center items-center gap-4 text-center">
+            <p className="text-white text-xs font-bold uppercase tracking-wider">
               © 2026 Sarathi Germinate Nidhi Limited. All rights reserved.
             </p>
-            <div className="flex gap-6 text-[11px] font-bold uppercase tracking-wider text-white/30">
-              {['Privacy Policy', 'Terms of Service', 'Home', 'Sitemap'].map(l => (
-                <Link key={l} href="#" className="hover:text-sky-400 transition-colors">{l}</Link>
-              ))}
-            </div>
           </div>
         </div>
       </footer>
+      
+      <ContactPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </div>
   );
 }

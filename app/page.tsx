@@ -388,6 +388,20 @@ export default function Home() {
             <nav className="hidden lg:flex items-center gap-8 xl:gap-12 text-[15px] font-black text-[#001D3D] h-full ml-auto mr-8">
               <Link href="/" className="hover:text-sky-500 transition-colors h-full flex items-center">Home</Link>
 
+              {/* About Us */}
+              <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('About')} onMouseLeave={() => setActiveDropdown(null)}>
+                <button className={`flex items-center gap-1.5 transition-colors h-full ${activeDropdown === 'About' ? 'text-sky-500' : 'hover:text-sky-500'}`}>
+                  About Us <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'About' ? 'rotate-180 text-sky-500' : 'text-gray-400'}`} />
+                </button>
+                {activeDropdown === 'About' && (
+                  <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[200px] flex flex-col gap-1 z-50">
+                    {['Mission', 'Vision', 'Why Us'].map(item => (
+                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               {/* Services */}
               <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('Services')} onMouseLeave={() => setActiveDropdown(null)}>
                 <button className={`flex items-center gap-1.5 transition-colors h-full ${activeDropdown === 'Services' ? 'text-sky-500' : 'hover:text-sky-500'}`}>
@@ -395,8 +409,8 @@ export default function Home() {
                 </button>
                 {activeDropdown === 'Services' && (
                   <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[240px] flex flex-col gap-1 z-50">
-                    {['High-Interest Savings Plans', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance', 'Loan Services'].map(item => (
-                      <Link key={item} href={item === 'Life Insurance' || item === 'Health Insurance' ? '/services/life-insurance' : '#'} className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                    {['High-Interest Savings', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance'].map(item => (
+                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
                     ))}
                   </div>
                 )}
@@ -409,22 +423,12 @@ export default function Home() {
                 </button>
                 {activeDropdown === 'Schemes' && (
                   <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[260px] flex flex-col gap-1 z-50">
-                    {['Prime Wealth Gain', 'Elite Wealth Gain', 'Vikas Money Savings', 'Ecocial Savings Plan'].map(item => (
+                    {['Short Term Plans', 'Long Term Plans'].map(item => (
                       <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
                     ))}
                   </div>
                 )}
               </div>
-
-              {/* About */}
-              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">
-                About
-              </Link>
-
-              {/* Branches */}
-              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">
-                Branches
-              </Link>
 
               <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">
                 Get In Touch
@@ -467,13 +471,17 @@ export default function Home() {
         {/* Mobile Dropdown Menu */}
         {mobileOpen && (
           <div className="lg:hidden absolute top-[85px] left-0 w-full bg-white shadow-2xl py-2 px-6 flex flex-col z-50">
+            <Link href="/" className="w-full py-5 cursor-pointer">
+              <span className="text-[#001D3D] font-black text-[15px]">Home</span>
+            </Link>
             {[
-              { name: 'Services', links: ['High-Interest Savings Plans', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance', 'Loan Services'] },
-              { name: 'Schemes', links: ['Prime Wealth Gain', 'Elite Wealth Gain', 'Vikas Money Savings', 'Ecocial Savings Plan'] }
+              { name: 'About Us', links: ['Mission', 'Vision', 'Why Us'] },
+              { name: 'Services', links: ['High-Interest Savings', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance'] },
+              { name: 'Schemes', links: ['Short Term Plans', 'Long Term Plans'] }
             ].map((item) => (
               <div key={item.name} className="w-full flex flex-col">
                 <div 
-                  className="w-full flex items-center justify-between py-5 cursor-pointer"
+                  className="w-full flex items-center justify-between py-5 cursor-pointer border-t border-gray-100"
                   onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
                 >
                   <span className={`font-black text-[15px] ${activeDropdown === item.name ? 'text-sky-500' : 'text-[#001D3D]'}`}>{item.name}</span>
@@ -483,7 +491,7 @@ export default function Home() {
                 {activeDropdown === item.name && (
                   <div className="flex flex-col gap-4 pb-5 pl-4">
                     {item.links.map(link => (
-                      <Link key={link} href={link === 'Life Insurance' || link === 'Health Insurance' ? '/services/life-insurance' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
+                      <Link key={link} href="#" className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
                         {link}
                       </Link>
                     ))}
@@ -491,13 +499,7 @@ export default function Home() {
                 )}
               </div>
             ))}
-            <Link href="#" className="w-full py-5 cursor-pointer">
-              <span className="text-[#001D3D] font-black text-[15px]">About</span>
-            </Link>
-            <Link href="#" className="w-full py-5 cursor-pointer">
-              <span className="text-[#001D3D] font-black text-[15px]">Branches</span>
-            </Link>
-            <Link href="#" className="w-full py-5 cursor-pointer mb-2">
+            <Link href="#" className="w-full py-5 cursor-pointer border-t border-gray-100 mb-2">
               <span className="text-[#001D3D] font-black text-[15px]">Get In Touch</span>
             </Link>
           </div>
@@ -588,7 +590,7 @@ export default function Home() {
               <div className="absolute -bottom-[8px] left-1/2 -translate-x-1/2 border-l-[10px] border-r-[10px] border-t-[10px] border-transparent border-t-sky-500" />
             </div>
             <div className="flex flex-col">
-              {['Prime Wealth Gain', 'Vikas Money Savings', 'Elite Wealth Gain', 'Health & Life Gain'].map(os => (
+              {['Short Term Plans', 'Long Term Plans'].map(os => (
                 <button key={os} className="flex items-center justify-between px-6 py-[10px] border-b border-slate-100 hover:bg-slate-50 text-[#001D3D] font-black text-[14px] transition-colors group">
                   {os}
                   <div className="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-sky-500 group-hover:bg-sky-50 transition-all">
@@ -784,9 +786,8 @@ export default function Home() {
               { name: 'Life Insurance', cat: 'Insurance', sub: 'Secure your loved ones’ future.', desc: 'Secure your family’s future with affordable, flexible life insurance policies offering long-term peace of mind.', img: 'https://images.pexels.com/photos/31513716/pexels-photo-31513716.jpeg' },
               { name: 'Health Insurance', cat: 'Health', sub: 'Protect your health, preserve your wealth.', desc: 'Protect yourself and your loved ones from unexpected medical expenses with comprehensive health coverage.', img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800' },
               { name: 'General Insurance', cat: 'Insurance', sub: 'Safeguard your valuable assets.', desc: 'From vehicles to property, cover what matters most with trusted general insurance tailored to your lifestyle.', img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800' },
-              { name: 'Loan Services', cat: 'Loans', sub: 'Get the financial support you need—fast and fairly.', desc: 'Whether it’s for personal needs or business growth, we offer reliable and easy-to-access loans with competitive terms.', img: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&q=80&w=800' },
             ].map((scheme, i) => (
-              <Link key={scheme.name} href={scheme.name === 'Life Insurance' || scheme.name === 'Health Insurance' ? '/services/life-insurance' : '#'} className="relative block group w-[280px] h-[340px] md:w-[320px] md:h-[380px] lg:w-[380px] lg:h-[420px] rounded-[2rem] overflow-hidden snap-center shrink-0 cursor-pointer shadow-md border border-slate-200 bg-white">
+              <div key={scheme.name} className="relative group w-[280px] h-[340px] md:w-[320px] md:h-[380px] lg:w-[380px] lg:h-[420px] rounded-[2rem] overflow-hidden snap-center shrink-0 cursor-pointer shadow-md border border-slate-200 bg-white">
                 <img src={scheme.img} alt={scheme.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1000ms] ease-out" />
 
                 {/* Gradients */}
@@ -811,7 +812,7 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -1221,14 +1222,14 @@ export default function Home() {
             {/* Links */}
             {[
               { head: 'Our Schemes', links: ['Prime Wealth Gain', 'Vikas Money Savings', 'Ecocial Savings Plan', 'Elite Wealth Gain'] },
-              { head: 'Services', links: ['High-Interest Savings Plans', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance', 'Loan Services'] },
+              { head: 'Services', links: ['High-Interest Savings Plans', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance'] },
               { head: 'Company', links: ['About Us', 'Our Branches', 'Home', 'Contact Us'] },
             ].map(col => (
               <div key={col.head}>
                 <p className="text-white font-black text-xs uppercase tracking-widest mb-5">{col.head}</p>
                 <ul className="space-y-3">
                   {col.links.map(l => (
-                    <li key={l}><Link href={l === 'Life Insurance' || l === 'Health Insurance' ? '/services/life-insurance' : '#'} className="text-white text-sm hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
+                    <li key={l}><Link href="#" className="text-white text-sm hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
                   ))}
                 </ul>
               </div>

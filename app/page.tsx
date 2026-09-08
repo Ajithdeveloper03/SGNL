@@ -34,25 +34,25 @@ const navItems = [
 
 const heroSlides = [
   {
-    tag: '✦ Sarathi Germinate Nidhi Limited',
-    headline: 'Empowering your\nfinances, one smart step\nat a time.',
-    highlight: 'one smart step at a time.',
-    sub: 'Savings · Investments · Insurance · Loans — your complete financial partner across Tamil Nadu.',
-    cta: 'Explore Plans',
-    ctaSecondary: 'Our Branches',
+    tag: '✦ TRUSTED NIDHI COMPANY IN TAMIL NADU',
+    headline: 'Building Financial Confidence\nThrough Smarter Choices',
+    highlight: 'Through Smarter Choices',
+    sub: 'SGNL (Sarathi Germinate Nidhi Limited) offers savings, fixed deposit, investment and insurance solutions designed to help individuals and families plan, protect and grow their finances with confidence.',
+    cta: 'Start Saving Today',
+    ctaSecondary: 'View Top Schemes',
     image: 'https://images.pexels.com/photos/10958528/pexels-photo-10958528.jpeg',
-    badge: 'Nidhi Company · Est. 2020',
+    badge: 'SGNL · Established 2020 · Registered Nidhi Company',
   },
   {
-    tag: '✦ Fixed Deposits & Savings Plans',
-    headline: 'Make your next move\nyour smartest move.',
-    highlight: 'your smartest move.',
-    sub: 'Earn up to 12% p.a. with our Elite Wealth Gain plans. Transparent returns, no hidden charges.',
-    cta: 'View FD Plans',
-    ctaSecondary: 'Calculate Returns',
-    image: 'https://images.pexels.com/photos/7260884/pexels-photo-7260884.jpeg',
-    badge: 'Up to 12% p.a.',
-  },
+    tag: '✦ SMART PLANS FOR EVERY FINANCIAL GOAL',
+    headline: 'Save Smarter. Grow Faster.\nSecure Your Future.',
+    highlight: 'Secure Your Future.',
+    sub: 'From high-interest savings plans to flexible fixed deposits and investment options — SGNL helps you build wealth systematically, with plans starting at just ₹1,000/month.',
+    cta: 'Explore Schemes',
+    ctaSecondary: 'Talk to an Advisor',
+    image: '/sgnl/banner.avif',
+    badge: '1000+ Happy Members · Flexible Savings & FD Options',
+  }
 ];
 
 const quickServices = [
@@ -68,10 +68,10 @@ const quickServices = [
 
 const whyChooseUsData = [
   { icon: ShieldCheck, name: 'Regulated & Trusted', desc: 'We operate under the guidelines of the Reserve Bank of India (RBI), ensuring full compliance, safety, and accountability.', grad: 'from-sky-500 to-sky-400', bg: 'bg-sky-50', text: 'text-sky-700' },
-  { icon: HeartHandshake, name: 'Customer-Centric Approach', desc: 'Your goals are our priority. We offer tailored financial solutions that match your unique needs — no one-size-fits-all advice.', grad: 'from-emerald-500 to-emerald-400', bg: 'bg-emerald-50', text: 'text-emerald-700' },
-  { icon: TrendingUp, name: 'Competitive Interest Rates', desc: 'Maximize your savings and grow your wealth with our high-return Fixed Deposits and investment options.', grad: 'from-violet-500 to-violet-400', bg: 'bg-violet-50', text: 'text-violet-700' },
-  { icon: Zap, name: 'Simple & Transparent', desc: 'We make banking clear and understandable — no jargon, no hidden terms, just honest financial support.', grad: 'from-orange-500 to-orange-400', bg: 'bg-orange-50', text: 'text-orange-700' },
-  { icon: BadgeCheck, name: 'Integrity & Professionalism', desc: 'Our team is committed to ethical practices, professional service, and long-term client relationships built on trust.', grad: 'from-rose-500 to-rose-400', bg: 'bg-rose-50', text: 'text-rose-700' },
+  { icon: HeartHandshake, name: 'Customer-Centric Approach', desc: 'Your financial goals come first. We take time to understand your needs and help you explore solutions that suit your requirements.', grad: 'from-emerald-500 to-emerald-400', bg: 'bg-emerald-50', text: 'text-emerald-700' },
+  { icon: TrendingUp, name: 'Growth-Focused Plans', desc: 'Choose from savings and fixed deposit options designed to help you build disciplined savings and work towards your long-term financial goals.', grad: 'from-violet-500 to-violet-400', bg: 'bg-violet-50', text: 'text-violet-700' },
+  { icon: Zap, name: 'Simple & Transparent', desc: 'We keep financial information clear and easy to understand, helping you make informed decisions without unnecessary complexity.', grad: 'from-orange-500 to-orange-400', bg: 'bg-orange-50', text: 'text-orange-700' },
+  { icon: BadgeCheck, name: 'Integrity & Professionalism', desc: 'We believe long-term relationships are built through honest communication, professional service and consistent support.', grad: 'from-rose-500 to-rose-400', bg: 'bg-rose-50', text: 'text-rose-700' },
 ];
 
 const trustFeatures = [
@@ -84,30 +84,30 @@ const trustFeatures = [
 const loanProducts = [
   {
     title: 'Prime Wealth Gain',
-    rate: '12.5% returns',
-    maxAmt: '1-Year Plan',
-    tenure: 'Min ₹1,000/month',
-    desc: 'Invest monthly and grow your savings — ₹1,000/mo becomes ₹13,500 at maturity in just 12 months.',
+    rate: 'Attractive Monthly Growth',
+    maxAmt: 'Duration: 1-Year Plan',
+    tenure: 'Minimum Investment: Starting from ₹1,000/month',
+    desc: 'A structured monthly savings plan designed to help you build a lump sum through disciplined saving.',
     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=600&h=400',
     tag: 'Most Popular',
     tagColor: 'bg-sky-500',
   },
   {
     title: 'Elite Wealth Gain',
-    rate: '12% p.a.',
-    maxAmt: '₹30K – 1 Crore',
-    tenure: '6 Months – 5 Years',
-    desc: 'Term deposit plan with monthly interest payouts. ₹1 Lakh earns ₹1,000 every month, ₹1.12 Lakh at maturity.',
+    rate: 'Steady Monthly Payouts',
+    maxAmt: 'Duration: 6 Months – 5 Years',
+    tenure: 'Minimum Investment: ₹30,000 – ₹1 Crore',
+    desc: 'A term deposit option designed for those seeking regular interest payouts from their savings.',
     image: 'https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&q=80&w=600&h=400',
     tag: 'High Returns',
     tagColor: 'bg-emerald-600',
   },
   {
     title: 'Vikas Money Savings',
-    rate: '12.5% + Bonus',
-    maxAmt: '3 or 5-Year Plan',
-    tenure: 'Monthly / Quarterly',
-    desc: 'Long-term savings with a bonus of ₹250–₹300/year per ₹1,000 premium. Flexible payment frequency.',
+    rate: 'Growth Plus Bonus',
+    maxAmt: 'Duration: Monthly / Quarterly',
+    tenure: 'Plan: 3 or 5 Years',
+    desc: 'A long-term savings plan with an additional yearly bonus and flexible payment options.',
     image: 'https://images.pexels.com/photos/31513716/pexels-photo-31513716.jpeg',
     tag: 'With Bonus',
     tagColor: 'bg-blue-600',
@@ -115,9 +115,9 @@ const loanProducts = [
   {
     title: 'Health & Life Gain',
     rate: 'Dual Protection',
-    maxAmt: 'Custom Coverage',
-    tenure: 'Annual / Monthly',
-    desc: 'Comprehensive protection combining life coverage with health insurance benefits, safeguarding your family against unforeseen emergencies.',
+    maxAmt: 'Duration: Annual / Monthly',
+    tenure: 'Coverage: Based on individual requirements',
+    desc: 'A combined protection solution bringing life and health insurance benefits together for added financial security.',
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=600&h=400',
     tag: 'New Arrival',
     tagColor: 'bg-rose-500',
@@ -161,13 +161,6 @@ const promoBanners = [
 
 const testimonials = [
   {
-    name: 'Priya Sharma',
-    role: 'Small Business Owner, Chennai',
-    text: 'The gold loan process was incredibly smooth. I got the money in my account within 2 hours! SGNL has been a lifesaver for my business.',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=80&h=80',
-    rating: 5,
-  },
-  {
     name: 'Rajesh Kumar',
     role: 'Retired Teacher, Coimbatore',
     text: 'I have been investing in their Fixed Deposits for 3 years. The returns are excellent and the staff is always helpful and transparent.',
@@ -177,14 +170,14 @@ const testimonials = [
   {
     name: 'Lakshmi Devi',
     role: 'Women Entrepreneur, Madurai',
-    text: 'The women\'s loan scheme helped me start my tailoring unit. The team guided me through every step with patience and professionalism.',
+    text: 'SGNL\'s savings scheme helped me start my tailoring unit with confidence. The team guided me through every step with patience and professionalism.',
     avatar: 'https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&q=80&w=80&h=80',
     rating: 5,
   },
   {
     name: 'Anand Selvam',
     role: 'Farmer, Trichy',
-    text: 'Applied for a personal loan online and it got approved within the same day. Interest rates are the best I have found in my area.',
+    text: 'Opened my investment plan online and the process was smooth and quick. Their team gave the best guidance I have found in my area.',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=80&h=80',
     rating: 5,
   },
@@ -201,6 +194,13 @@ const testimonials = [
     text: 'The support staff at my local SGNL branch are like family. They guided me to choose the best health insurance for my parents.',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=80&h=80',
     rating: 5,
+  },
+  {
+    name: 'Priya Sharma',
+    role: 'Small Business Owner, Chennai',
+    text: 'The onboarding process was incredibly smooth. My savings account was set up within an hour — SGNL has been a great financial partner for my business.',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=80&h=80',
+    rating: 5,
   }
 ];
 
@@ -210,6 +210,14 @@ const branches = [
   { city: 'Coimbatore', addr: 'Active Branch', img: 'https://s3.india.com/wp-content/uploads/2025/07/Coimbatore-seasonal-guide.jpg?impolicy=Medium_Widthonly&w=350&h=263' },
   { city: 'Trichy', addr: 'Active Branch', img: 'https://www.iimtrichy.ac.in/yuva/assets/images/istockphoto-1326914115-612x612.jpg' },
   { city: 'Madurai', addr: 'Active Branch', img: 'https://hblimg.mmtcdn.com/content/hubble/img/desttvimg/mmt/destination/m_Madurai_tv_destination_img_1_l_542_967.jpg' },
+];
+
+const faqs = [
+  { q: 'Is SGNL a Nidhi company in Tamil Nadu?', a: 'Yes. Sarathi Germinate Nidhi Limited (SGNL) operates as a Nidhi company in Tamil Nadu, following applicable regulatory and compliance requirements.' },
+  { q: 'What makes SGNL a trusted Nidhi company?', a: 'SGNL focuses on transparent processes, customer-oriented service and accessible savings, investment and insurance solutions designed around member needs.' },
+  { q: 'What financial services does SGNL offer?', a: 'SGNL offers savings plans, fixed deposits, investment solutions, life insurance, health insurance and general insurance solutions.' },
+  { q: 'What savings and investment options does SGNL provide?', a: 'SGNL provides structured savings and fixed deposit options along with investment solutions designed for different financial goals and requirements.' },
+  { q: 'How can I get started with SGNL?', a: 'You can explore SGNL\'s plans online, visit a nearby branch or contact the SGNL team to understand the available financial solutions.' }
 ];
 
 /* ─────────────────────────── COMPONENT ─────────────────────────── */
@@ -223,6 +231,7 @@ export default function Home() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isSchemesHovered, setIsSchemesHovered] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   /* scroll & Intersection Observer */
@@ -552,7 +561,7 @@ export default function Home() {
               <p className="text-white/80 font-bold text-sm md:text-base tracking-wide ml-1 drop-shadow-md">{slide.badge}</p>
             </div>
 
-            <h1 key={`head-${currentSlide}`} className="text-[24px] sm:text-[32px] md:text-4xl lg:text-[48px] xl:text-[56px] font-black text-white tracking-tight drop-shadow-2xl mb-5 lg:mb-8 animate-fade-in-up [animation-delay:200ms] whitespace-pre-line" style={{ lineHeight: '1.1' }}>
+            <h1 key={`head-${currentSlide}`} className="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[36px] xl:text-[44px] font-black text-white tracking-tight drop-shadow-2xl mb-5 lg:mb-8 animate-fade-in-up [animation-delay:200ms] whitespace-pre-line" style={{ lineHeight: '1.2' }}>
               {slide.headline}
             </h1>
 
@@ -567,12 +576,14 @@ export default function Home() {
               >
                 <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5" /> {slide.cta}
               </button>
-              <button 
-                onClick={() => setIsPopupOpen(true)}
-                className="border-2 border-white/30 text-white px-6 lg:px-8 py-4 lg:py-5 font-black flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/50 transition-all text-[12px] md:text-[14px] uppercase tracking-wider rounded-sm"
-              >
-                {slide.ctaSecondary}
-              </button>
+              {slide.ctaSecondary && (
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className="border-2 border-white/30 text-white px-6 lg:px-8 py-4 lg:py-5 font-black flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/50 transition-all text-[12px] md:text-[14px] uppercase tracking-wider rounded-sm"
+                >
+                  {slide.ctaSecondary}
+                </button>
+              )}
             </div>
 
             {/* Mobile dots */}
@@ -681,18 +692,20 @@ export default function Home() {
                 </span>
               </div>
               
-              <h3 className="text-2xl lg:text-[28px] font-black text-[#001D3D] leading-tight mb-4 tracking-tight">
-                About Sarathi Germinate Nidhi Limited (SGNL)
+              <h3 className="text-3xl lg:text-[36px] font-bold text-[#001D3D] leading-tight mb-6 tracking-tight">
+                Financial solutions built around trust, transparency and your goals.
               </h3>
               
               <p className="text-slate-600 text-lg leading-relaxed font-medium mb-6 text-justify lg:text-left">
-                Sarathi Germinate Nidhi Limited (SGNL) is a trusted name in the banking sector, committed to creating a safe, transparent, and growth-focused financial environment. Registered under the guidelines of the Reserve Bank of India (RBI), we aim to bridge the gap between investors and individuals seeking financial security and progress.
+                Sarathi Germinate Nidhi Limited (SGNL) is a registered Nidhi firm serving members across Tamil Nadu, focused on helping individuals and families build financial security through simple, accessible solutions.
               </p>
               
-              {/* Services list moved to image overlay */}
+              <p className="text-slate-600 text-lg leading-relaxed font-medium mb-6 text-justify lg:text-left">
+                With a commitment to transparency, responsible practices and member-focused service, SGNL provides savings, fixed deposit, investment and insurance solutions designed around different financial goals and stages of life.
+              </p>
               
               <p className="text-slate-600 text-lg leading-relaxed font-medium mb-10 text-justify lg:text-left">
-                Our solutions are designed to be simple, accessible, and tailored to your needs—whether you’re just getting started or planning for long-term financial growth. Driven by integrity, professionalism, and transparency, we make banking easy to understand and even easier to trust.
+                Our approach is simple — understand your needs, offer suitable solutions and support you throughout your financial journey.
               </p>
               
               {/* Button-like element matching the "Learn More About Us" styling from reference */}
@@ -717,7 +730,7 @@ export default function Home() {
             At Sarathi Germinate Nidhi Limited (SGNL)
           </h2>
           <p className="text-slate-600 text-lg leading-relaxed font-medium max-w-3xl mx-auto">
-            We don’t just offer financial services — we build lasting financial confidence. Here’s why individuals and investors choose us:
+            We combine transparent processes, customer-focused service and practical financial solutions to help you make confident financial decisions.
           </p>
         </div>
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
@@ -754,11 +767,11 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
           <div className="max-w-5xl">
             <p className="text-xs lg:text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-2 flex items-center gap-2">
-              <Star className="w-4 h-4" /> What We’re Offering
+              <Star className="w-4 h-4" /> What We're Offering
             </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#001D3D] tracking-tight mb-2">Protection Built for You, Shaped by Your Choices</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#001D3D] tracking-tight mb-2">Financial Solutions Designed Around Your Goals</h2>
             <p className="text-slate-600 text-lg font-medium leading-relaxed max-w-4xl line-clamp-2">
-              At SGNL, we believe financial security should be personal, flexible, and empowering. That’s why we offer a range of customizable financial products designed to fit your goals and lifestyle.
+              At SGNL, we offer a range of financial solutions to help you save, invest and protect what matters most.
             </p>
           </div>
           <div className="flex gap-4 shrink-0 md:ml-auto">
@@ -781,11 +794,11 @@ export default function Home() {
             onMouseLeave={() => setIsSchemesHovered(false)}
           >
             {[
-              { name: 'High-Interest Savings Plans', cat: 'Savings', sub: 'Save smart with security and higher returns.', desc: 'Earn more with short-term and long-term savings options designed for flexibility, security, and high returns.', img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800' },
-              { name: 'Investment Solutions', cat: 'Investment', sub: 'Build your financial future with guided investments.', desc: 'Let your money work for you with personalized investment plans aligned with your financial goals and risk preferences.', img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800' },
-              { name: 'Life Insurance', cat: 'Insurance', sub: 'Secure your loved ones’ future.', desc: 'Secure your family’s future with affordable, flexible life insurance policies offering long-term peace of mind.', img: 'https://images.pexels.com/photos/31513716/pexels-photo-31513716.jpeg' },
-              { name: 'Health Insurance', cat: 'Health', sub: 'Protect your health, preserve your wealth.', desc: 'Protect yourself and your loved ones from unexpected medical expenses with comprehensive health coverage.', img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800' },
-              { name: 'General Insurance', cat: 'Insurance', sub: 'Safeguard your valuable assets.', desc: 'From vehicles to property, cover what matters most with trusted general insurance tailored to your lifestyle.', img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800' },
+              { name: 'High-Interest Savings Plans', cat: 'Savings', sub: 'Flexible savings for your goals.', desc: 'Build disciplined savings with flexible options designed to support your short-term and long-term financial goals.', img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800' },
+              { name: 'Investment Solutions', cat: 'Investment', sub: 'Invest aligned with your goals.', desc: 'Explore investment options aligned with your financial objectives, preferences and long-term plans.', img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800' },
+              { name: 'Life Insurance', cat: 'Insurance', sub: 'Protect your family\'s future.', desc: 'Help protect your family\'s financial future with life insurance solutions designed to provide long-term security.', img: 'https://images.pexels.com/photos/31513716/pexels-photo-31513716.jpeg' },
+              { name: 'Health Insurance', cat: 'Health', sub: 'Prepare for medical expenses.', desc: 'Prepare for unexpected medical expenses with health insurance solutions that help protect you and your loved ones.', img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800' },
+              { name: 'General Insurance', cat: 'Insurance', sub: 'Protect your valuable assets.', desc: 'Protect your valuable assets with insurance solutions covering important needs such as vehicles and property.', img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800' },
             ].map((scheme, i) => (
               <div key={scheme.name} className="relative group w-[280px] h-[340px] md:w-[320px] md:h-[380px] lg:w-[380px] lg:h-[420px] rounded-[2rem] overflow-hidden snap-center shrink-0 cursor-pointer shadow-md border border-slate-200 bg-white">
                 <img src={scheme.img} alt={scheme.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1000ms] ease-out" />
@@ -840,10 +853,10 @@ export default function Home() {
                 <span className="text-sky-400 font-black text-xs tracking-widest uppercase">Our Work Process</span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-[40px] font-black text-white leading-[1.2] mb-6 tracking-tight">
-                Committed to Putting You First, Every Step of the Way
+                Putting You First, Every Step of the Way
               </h2>
               <p className="text-white/70 text-sm md:text-[15px] font-medium leading-relaxed mb-8 max-w-2xl">
-                At Sarathi Germinate Nidhi Limited (SGNL), we believe in making finance personal, transparent, and simple. Our step-by-step process is designed to ensure that you always feel informed, empowered, and supported — from the very first interaction.
+                At SGNL, we make the process of choosing financial solutions simple, transparent and supportive — from your first enquiry to ongoing assistance.
               </p>
               
               <div 
@@ -860,11 +873,11 @@ export default function Home() {
             {/* Desktop Cards arranged in a staggered floating Arch */}
             <div className="w-full z-10 pointer-events-none flex justify-between items-start">
               {[
-                { step: '1', title: 'Understand Your Needs', desc: "We start by listening. Whether you're saving, investing, or protecting your future, we take time to understand your goals, challenges, and priorities.", offset: '-mt-[280px] xl:-mt-[320px]', size: 'w-[210px] xl:w-[230px] min-h-[320px]' },
-                { step: '2', title: 'Recommend Tailored Solutions', desc: "No one-size-fits-all here. Based on your needs, we provide clear, customized financial solutions — from high-interest savings to insurance and investment plans.", offset: '-mt-[80px] xl:-mt-[100px]', size: 'w-[240px] xl:w-[250px] min-h-[280px]' },
-                { step: '3', title: 'Simple & Transparent Onboarding', desc: "We make it easy. Our onboarding process is quick, secure, and hassle-free. We explain every step so you know exactly what you're signing up for.", offset: 'mt-[0px]', size: 'w-[270px] xl:w-[300px] min-h-[240px]' },
-                { step: '4', title: 'Ongoing Support & Guidance', desc: "Our relationship doesn’t end after you sign up. We offer continuous support, regular check-ins, and transparent updates to help you stay on track with your financial goals.", offset: '-mt-[80px] xl:-mt-[100px]', size: 'w-[240px] xl:w-[250px] min-h-[280px]' },
-                { step: '5', title: 'Grow Together', desc: "Your growth is our mission. As your needs evolve, we’re here with smarter solutions, expert advice, and a long-term partnership that grows with you.", offset: '-mt-[280px] xl:-mt-[320px]', size: 'w-[210px] xl:w-[230px] min-h-[320px]' }
+                { step: '01', title: 'Understand Your Needs', desc: "We begin by understanding your financial goals, priorities and requirements.", offset: '-mt-[280px] xl:-mt-[320px]', size: 'w-[210px] xl:w-[230px] min-h-[320px]' },
+                { step: '02', title: 'Recommend Suitable Solutions', desc: "Based on your needs, we help you explore suitable savings, investment and insurance options.", offset: '-mt-[80px] xl:-mt-[100px]', size: 'w-[240px] xl:w-[250px] min-h-[280px]' },
+                { step: '03', title: 'Simple & Transparent Onboarding', desc: "We guide you through the process and explain the important details clearly before you proceed.", offset: 'mt-[0px]', size: 'w-[270px] xl:w-[300px] min-h-[240px]' },
+                { step: '04', title: 'Ongoing Support', desc: "Our relationship continues beyond onboarding with guidance and support whenever you need it.", offset: '-mt-[80px] xl:-mt-[100px]', size: 'w-[240px] xl:w-[250px] min-h-[280px]' },
+                { step: '05', title: 'Grow Together', desc: "As your financial needs evolve, we remain committed to supporting your journey with suitable solutions.", offset: '-mt-[280px] xl:-mt-[320px]', size: 'w-[210px] xl:w-[230px] min-h-[320px]' }
               ].map((s, i) => (
                 <div key={i} className={`${s.offset} ${s.size} relative z-10 pointer-events-auto flex flex-col justify-center bg-white rounded-[2.5rem] xl:rounded-[3rem] p-6 xl:p-8 shadow-[0_15px_50px_rgba(0,0,0,0.08)] border border-slate-100 hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(14,165,233,0.15)] transition-all duration-500 group cursor-default`}>
                   <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center font-black text-xl mb-4 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-500 shadow-sm border border-sky-100 shrink-0">
@@ -885,16 +898,16 @@ export default function Home() {
                 <span className="text-sky-400 font-black text-xs tracking-widest uppercase">Our Work Process</span>
               </div>
               <h2 className="text-3xl font-black text-white leading-[1.2] mb-4 tracking-tight">
-                Committed to Putting You First
+                Putting You First, Every Step of the Way
               </h2>
             </div>
             
             {[
-                { step: '1', title: 'Understand Your Needs', desc: "We start by listening. Whether you're saving, investing, or protecting your future, we take time to understand your goals, challenges, and priorities." },
-                { step: '2', title: 'Recommend Tailored Solutions', desc: "No one-size-fits-all here. Based on your needs, we provide clear, customized financial solutions — from high-interest savings to insurance and investment plans." },
-                { step: '3', title: 'Simple & Transparent Onboarding', desc: "We make it easy. Our onboarding process is quick, secure, and hassle-free. We explain every step so you know exactly what you're signing up for." },
-                { step: '4', title: 'Ongoing Support & Guidance', desc: "Our relationship doesn’t end after you sign up. We offer continuous support, regular check-ins, and transparent updates to help you stay on track with your financial goals." },
-                { step: '5', title: 'Grow Together', desc: "Your growth is our mission. As your needs evolve, we’re here with smarter solutions, expert advice, and a long-term partnership that grows with you." }
+                { step: '01', title: 'Understand Your Needs', desc: "We begin by understanding your financial goals, priorities and requirements." },
+                { step: '02', title: 'Recommend Suitable Solutions', desc: "Based on your needs, we help you explore suitable savings, investment and insurance options." },
+                { step: '03', title: 'Simple & Transparent Onboarding', desc: "We guide you through the process and explain the important details clearly before you proceed." },
+                { step: '04', title: 'Ongoing Support', desc: "Our relationship continues beyond onboarding with guidance and support whenever you need it." },
+                { step: '05', title: 'Grow Together', desc: "As your financial needs evolve, we remain committed to supporting your journey with suitable solutions." }
               ].map((s, i) => (
                 <div key={i} className="flex gap-4 sm:gap-6 relative z-10 w-full group">
                   <div className="bg-white rounded-[2rem] p-6 shadow-[0_15px_50px_rgba(0,0,0,0.06)] border border-slate-100 flex-1 hover:-translate-y-1 hover:border-sky-100 transition-all duration-300">
@@ -922,8 +935,8 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-8 lg:mb-20 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
             <div className="max-w-2xl">
-              <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4 bg-sky-50 w-fit px-4 py-1.5 rounded-full">Our Superstar Products</p>
-              <h2 className="text-[32px] sm:text-4xl lg:text-6xl font-black text-[#001D3D] tracking-tight leading-[1.15]">The Smarter Way to <br className="sm:hidden" /><span className="text-sky-500">Grow Your Wealth</span></h2>
+              <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4 bg-sky-50 w-fit px-4 py-1.5 rounded-full">Superstar Products</p>
+              <h2 className="text-[32px] sm:text-4xl lg:text-6xl font-black text-[#001D3D] tracking-tight leading-[1.15]">Smart Plans for <br className="sm:hidden" /><span className="text-sky-500">Your Financial Goals</span></h2>
             </div>
             <Link href="#" className="flex items-center gap-3 text-lg font-black text-[#001D3D] hover:text-sky-600 transition-all group pb-2 border-b-2 border-transparent hover:border-sky-500">
               Explore All Products <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
@@ -1003,9 +1016,9 @@ export default function Home() {
             <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4 flex items-center justify-center gap-2">
               <span className="text-xl">📊</span> Case Studies
             </p>
-            <h2 className="text-4xl lg:text-5xl font-black text-[#001D3D] tracking-tight mb-6">Safeguarding Your Future with Confidence</h2>
+            <h2 className="text-4xl lg:text-5xl font-black text-[#001D3D] tracking-tight mb-6">Real Financial Goals. Practical Solutions.</h2>
             <p className="text-slate-500 text-lg font-medium leading-relaxed">
-              At Sarathi Germinate Nidhi Limited, our mission is to empower individuals and families with smart, secure financial choices. Through high-interest savings, reliable insurance, and strategic investments, we help our clients protect their future with clarity and confidence. Every success story below reflects our commitment to client-first solutions and results that matter.
+              At SGNL, our financial solutions are designed to support different needs — from building savings and protecting families to planning for future growth.
             </p>
           </div>
 
@@ -1013,25 +1026,25 @@ export default function Home() {
             {[
               {
                 title: 'Smart Saving for a Stronger Future',
-                desc: "A salaried professional opted for SGNL's short-term savings plan with high interest rates. In just one year, she accumulated enough to make a down payment on her first home — without compromising her monthly budget.",
+                desc: "A salaried professional chose an SGNL savings plan to work towards a home down payment while maintaining her regular monthly budget.",
                 img: 'https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?auto=format&fit=crop&q=80&w=600',
                 icon: <Coins className="w-8 h-8" />
               },
               {
                 title: 'Health Insurance That Delivered in Crisis',
-                desc: "A family of three faced a sudden medical emergency. With SGNL’s health insurance, they received fast claims support and full coverage — easing emotional and financial stress when it mattered most.",
+                desc: "A family facing an unexpected medical emergency received support through their health insurance coverage, helping reduce the financial pressure during a difficult time.",
                 img: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=600',
                 icon: <ShieldCheck className="w-8 h-8" />
               },
               {
                 title: 'Home Protected, Peace Preserved',
-                desc: "A client experienced storm damage to their house. Thanks to our general insurance plan, repairs were quickly handled without financial burden, preserving the safety of their home and savings.",
+                desc: "When storm damage affected a client's home, their general insurance coverage helped support the repair expenses and protect their financial stability.",
                 img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600',
                 icon: <Building2 className="w-8 h-8" />
               },
               {
                 title: 'Investing with Confidence',
-                desc: "A small business owner wanted to diversify his income. With SGNL’s guided investment plan, he saw consistent returns and reinvested profits to expand his operations within 18 months.",
+                desc: "A small business owner explored an SGNL investment solution to diversify his financial planning and work towards expanding his business.",
                 img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
                 icon: <TrendingUp className="w-8 h-8" />
               }
@@ -1124,9 +1137,9 @@ export default function Home() {
             <div className="lg:w-1/3 space-y-8 text-center lg:text-left">
               <div>
                 <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4">Testimonials</p>
-                <h2 className="text-4xl lg:text-5xl font-black text-[#001D3D] leading-tight">What Our Members Say</h2>
+                <h2 className="text-4xl lg:text-5xl font-black text-[#001D3D] leading-tight">Trusted by Members Across Tamil Nadu</h2>
               </div>
-              <p className="text-lg text-slate-500 font-medium leading-relaxed">Join thousands of satisfied members who have secured their financial future with Sarathi Germinate Nidhi Limited. Your trust is our greatest asset.</p>
+              <p className="text-lg text-slate-500 font-medium leading-relaxed">Hear from members who have chosen SGNL for their savings, investment and insurance needs.</p>
             </div>
 
             {/* Testimonial cards */}
@@ -1183,6 +1196,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ══════════ FAQ ══════════ */}
+      <section className="py-16 lg:py-24 relative bg-white overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 relative z-10">
+          <div className="text-center mb-12 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-sky-600 mb-4">FAQ</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#001D3D] tracking-tight">Frequently Asked Questions</h2>
+          </div>
+          <div className="flex flex-col gap-4 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100">
+            {faqs.map((faq, i) => (
+              <div 
+                key={i} 
+                className={`border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 ${openFaq === i ? 'shadow-lg border-sky-200 bg-sky-50/30' : 'hover:border-slate-300 bg-white'}`}
+              >
+                <button 
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between py-4 px-5 lg:py-4 lg:px-6 text-left cursor-pointer"
+                >
+                  <span className={`font-bold text-base lg:text-lg pr-6 transition-colors duration-300 ${openFaq === i ? 'text-sky-600' : 'text-[#001D3D]'}`}>{faq.q}</span>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === i ? 'bg-sky-500 text-white rotate-180' : 'bg-slate-100 text-slate-500'}`}>
+                    <ChevronDown className="w-5 h-5" />
+                  </div>
+                </button>
+                <div 
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${openFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                >
+                  <div className="px-5 pb-4 lg:px-6 lg:pb-5 pt-0 text-slate-600 text-sm lg:text-base leading-relaxed font-medium">
+                    {faq.a}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* ══════════ DOWNLOAD APP ══════════ */}
 
@@ -1191,18 +1239,18 @@ export default function Home() {
 
 
       {/* ══════════ FOOTER ══════════ */}
-      <footer className="relative pt-20 pb-10 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/sgnl/footer 1.png')" }}>
+      <footer className="relative pt-28 pb-16 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/sgnl/footer 1.png')" }}>
         {/* Dark overlay for text visibility */}
         <div className="absolute inset-0 bg-[#001D3D]/80" />
         <div className="max-w-7xl mx-auto px-4 lg:px-6 relative z-10">
           {/* Top grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-12 pb-12 border-b border-white/10">
+          <div className="flex flex-wrap lg:flex-nowrap justify-between gap-10 lg:gap-8 pb-12 border-b border-white/10">
             {/* Brand */}
-            <div className="lg:col-span-2 space-y-5">
+            <div className="w-full lg:w-auto lg:max-w-[280px] space-y-5">
               <Link href="/" className="flex items-center gap-3">
                 <img src="/sgnl/logo.png" alt="SGNL Logo" className="h-20 w-auto object-contain bg-white rounded-2xl p-2" />
               </Link>
-              <p className="text-white text-sm leading-relaxed max-w-sm">
+              <p className="text-white text-base leading-relaxed max-w-[280px]">
                 A trusted Nidhi Company dedicated to empowering communities through ethical savings, low-interest loans, and transparent financial services.
               </p>
               <div className="flex items-center gap-3">
@@ -1223,22 +1271,37 @@ export default function Home() {
             {[
               { head: 'Our Schemes', links: ['Prime Wealth Gain', 'Vikas Money Savings', 'Ecocial Savings Plan', 'Elite Wealth Gain'] },
               { head: 'Services', links: ['High-Interest Savings Plans', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance'] },
-              { head: 'Company', links: ['About Us', 'Our Branches', 'Home', 'Contact Us'] },
+              { head: 'Company', links: ['Home', 'About Us', 'Services', 'Schemes', 'Get In Touch'] },
             ].map(col => (
-              <div key={col.head}>
-                <p className="text-white font-black text-xs uppercase tracking-widest mb-5">{col.head}</p>
-                <ul className="space-y-3">
+              <div key={col.head} className="w-[45%] sm:w-auto shrink-0">
+                <p className="text-white font-black text-sm uppercase tracking-widest mb-6">{col.head}</p>
+                <ul className="space-y-4">
                   {col.links.map(l => (
-                    <li key={l}><Link href="#" className="text-white text-sm hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
+                    <li key={l}><Link href="#" className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
                   ))}
                 </ul>
               </div>
             ))}
+
+            {/* Head Quarters */}
+            <div className="w-full sm:w-auto lg:max-w-[280px] space-y-8">
+              <div>
+                <p className="text-white font-black text-sm uppercase tracking-widest mb-6">Head Quarters</p>
+                <div className="text-white/80 text-[15px] leading-relaxed space-y-4">
+                  <p>No 37, 1st floor, Yesotha plaza,<br/>inner ring road, Sivam Nagar,<br/>Hosur, TAMIL NADU - 635126</p>
+                  <div className="space-y-1">
+                    <p className="hover:text-sky-500 transition-colors cursor-pointer">info@sgsgnl.com</p>
+                    <p className="hover:text-sky-500 transition-colors cursor-pointer">+91-85249-17170</p>
+                    <p>Mon - Sat: 9am - 5pm</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Bottom bar */}
           <div className="pt-8 flex justify-center items-center gap-4 text-center">
-            <p className="text-white text-xs font-bold uppercase tracking-wider">
+            <p className="text-white text-[13px] md:text-sm font-bold uppercase tracking-wider">
               © 2026 Sarathi Germinate Nidhi Limited. All rights reserved.
             </p>
           </div>

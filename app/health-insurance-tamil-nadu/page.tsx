@@ -6,9 +6,10 @@ import {
   ShieldCheck, HeartPulse, GraduationCap, TrendingUp, 
   PiggyBank, Wallet, CheckCircle2, ChevronDown, 
   Phone, MessageCircle, ArrowRight, Shield, HeartHandshake,
-  Check, Info, X, Clock, Star, Facebook, Twitter, Linkedin, Instagram, PhoneCall, Menu
+  Check, Info, X, Clock, Star, Facebook, Twitter, Linkedin, Instagram, PhoneCall, Menu,
+  Layers, Compass, FileText, Sparkles, Activity, Headset
 } from 'lucide-react';
-import ContactPopup from '../../../components/ContactPopup';
+import ContactPopup from '../../components/ContactPopup';
 
 export default function LifeInsurancePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -45,54 +46,47 @@ export default function LifeInsurancePage() {
   };
 
   const whyNeedInsurance = [
-    "Financial security for your family, no matter what happens",
-    "Protection against life's uncertainties",
-    "Long-term savings and wealth creation",
-    "Tax benefits under applicable rules"
+    "Rising healthcare costs",
+    "Unexpected hospitalization expenses",
+    "Financial pressure on family savings",
+    "Need for planned healthcare protection"
   ];
 
   const plansOffered = [
     {
-      title: "Family Life Protection",
+      title: "Family Health Plan",
       icon: ShieldCheck,
       color: "bg-emerald-500 text-white",
       image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800",
-      desc: "Your family shouldn't have to compromise on their lifestyle if you're not around. This plan gives them a guaranteed payout to cover daily expenses, loans, and other essentials — so they can stay financially secure even in your absence."
+      desc: "A single policy designed to cover eligible family members under one sum insured, subject to the policy terms. It can be a practical option for families looking for shared health coverage."
     },
     {
-      title: "Child Education",
-      icon: GraduationCap,
-      color: "bg-sky-500 text-white",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800",
-      desc: "Every parent dreams big for their child — good education, a strong career, a happy wedding. This plan helps you build that fund steadily over the years, so those dreams never have to wait on your bank balance."
-    },
-    {
-      title: "Wealth Creation",
-      icon: TrendingUp,
-      color: "bg-indigo-500 text-white",
-      image: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&q=80&w=800",
-      desc: "Why let your money sit idle when it can grow? These plans combine the safety of life insurance with the benefits of disciplined, long-term investing — helping you build real wealth over time."
-    },
-    {
-      title: "Retirement Planning",
-      icon: PiggyBank,
-      color: "bg-orange-500 text-white",
-      image: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=800",
-      desc: "After years of hard work, you deserve to relax without worrying about money. Our retirement solutions are designed to help you plan for a more financially secure and independent future."
-    },
-    {
-      title: "Monthly Income",
-      icon: Wallet,
-      color: "bg-rose-500 text-white",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
-      desc: "Want an extra income stream without extra effort? These plans are designed to give you regular monthly payouts, adding a cushion of comfort to your everyday life."
-    },
-    {
-      title: "Health & Illness Cover",
+      title: "Individual Health Plan",
       icon: HeartPulse,
-      color: "bg-teal-500 text-white",
+      color: "bg-sky-500 text-white",
       image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800",
-      desc: "Medical emergencies can wipe out savings in an instant. This acts as a financial shield, providing a lump-sum payout upon diagnosis of covered critical illnesses, letting you focus on recovery."
+      desc: "A health insurance policy designed around one individual's healthcare needs, with coverage and sum insured applicable to the insured person as per the policy terms."
+    },
+    {
+      title: "Critical Illness Cover",
+      icon: Shield,
+      color: "bg-rose-500 text-white",
+      image: "https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?auto=format&fit=crop&q=80&w=800",
+      desc: "A plan that may provide a lump-sum benefit upon diagnosis of a listed critical illness, subject to the policy's conditions, exclusions, and applicable terms."
+    },
+    {
+      title: "Senior Citizen Health Plan",
+      icon: HeartHandshake,
+      color: "bg-indigo-500 text-white",
+      image: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=800",
+      desc: "Health insurance options designed for older adults, with coverage features suited to age-related healthcare and hospitalization needs."
+    },
+    {
+      title: "Top-Up & Super Top-Up Plans",
+      icon: TrendingUp,
+      color: "bg-orange-500 text-white",
+      image: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&q=80&w=800",
+      desc: "Additional health insurance options that can increase your overall coverage beyond a base policy, subject to the applicable deductible, limits, and policy terms."
     }
   ];
 
@@ -118,13 +112,13 @@ export default function LifeInsurancePage() {
   ];
 
   const faqs = [
-    { q: "What is the best age to buy life insurance?", a: "There is no single ideal age for everyone. Buying life insurance earlier can often mean lower premiums and longer coverage, depending on your age, health and policy terms." },
-    { q: "How much life insurance coverage do I actually need?", a: "Coverage needs depend on your income, liabilities, lifestyle, dependants and long-term financial goals. A qualified advisor can help you estimate a suitable amount." },
-    { q: "What's the difference between term insurance and a savings-linked plan?", a: "Term insurance is pure protection — low cost, high cover, but no payout if nothing happens to you. Savings-linked plans cost a bit more but combine life cover with an investment return, so you get something back at maturity too." },
-    { q: "Can I save on tax with a life insurance policy?", a: "Life insurance premiums and benefits may receive tax treatment under applicable Indian income-tax provisions, subject to prevailing rules and eligibility conditions." },
-    { q: "Which insurance companies can I choose from through SGNL?", a: "You get access to 15+ trusted insurers — including SBI Life, HDFC Life, ICICI Prudential, and Tata AIA — so you're not stuck with just one option." },
-    { q: "Can life insurance help with my child's education planning?", a: "Definitely. Our child future planning policies are built specifically to grow a dedicated fund over the years, covering education, career, and even wedding expenses down the line." },
-    { q: "Is SGNL a trustworthy platform for insurance?", a: "We maintain a transparent process with clear documentation, applicable charges and dedicated end-to-end support for documentation and claims." }
+    { q: "What is health insurance and why do I need it?", a: "Health insurance is a policy designed to help cover eligible medical and hospitalization expenses, subject to the policy's terms, limits, exclusions, and conditions. It can help reduce the financial impact of unexpected healthcare expenses." },
+    { q: "How much health insurance coverage do I need for my family?", a: "The right sum insured depends on factors such as your family size, ages, location, healthcare needs, existing coverage, financial commitments, and budget. There is no single coverage amount that works for every family." },
+    { q: "What is cashless health insurance?", a: "Cashless health insurance allows eligible treatment expenses to be settled directly between the insurer and a network hospital, subject to policy terms and applicable conditions. You may still need to pay expenses that are not covered by the policy." },
+    { q: "Does health insurance cover pre-existing diseases?", a: "Pre-existing diseases may be covered after the applicable waiting period, depending on the insurer and selected policy. Coverage, waiting periods, exclusions, and conditions vary by plan." },
+    { q: "Does SGNL assist with the health insurance claim process?", a: "Yes. SGNL provides support in understanding the applicable claim process, required documentation, and policy-related steps. Claim approval and settlement remain subject to the insurer's policy terms and conditions." },
+    { q: "Which health insurance companies can I choose from through SGNL?", a: "SGNL works with participating insurers including Star Health, Niva Bupa, HDFC ERGO, Care Health, and ManipalCigna, along with other participating health and general insurers. Specific products and availability may vary." },
+    { q: "Can I claim tax benefits on health insurance premiums?", a: "Health insurance premiums may qualify for tax deductions under applicable Indian income-tax provisions, including Section 80D, subject to prevailing rules and eligibility conditions." }
   ];
 
   return (
@@ -335,15 +329,15 @@ export default function LifeInsurancePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#001D3D]/50 border border-sky-400/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 backdrop-blur-sm">
-              <Shield className="w-4 h-4" /> Compare Life Insurance Plans from 15+ Leading Insurers in Tamil Nadu
+              <Shield className="w-4 h-4" /> Compare Health Insurance Plans in Tamil Nadu
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100">
-              Protect Your Family’s Tomorrow, <span className="text-sky-400">Starting Today</span>
+              Protect Your Family's Health — <span className="text-sky-400">Compare Insurance Plans</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
-              Life is unpredictable, but your family's future doesn't have to be. SGNL helps you compare and choose the right life insurance plan from leading life insurers in India — SBI Life, HDFC Life, ICICI Prudential, Tata AIA, and Max Life Insurance — so your loved ones are always taken care of.
+              A medical emergency can bring unexpected expenses at any time. SGNL helps you compare health insurance options from participating insurers such as Star Health, Niva Bupa, HDFC ERGO, Care Health, and Manipal Cigna, so you can explore coverage based on your family's healthcare needs and budget.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-300">
@@ -368,7 +362,26 @@ export default function LifeInsurancePage() {
       <section className="pt-20 lg:pt-28 pb-10 lg:pb-12 bg-[#fafafa] relative overflow-hidden">
         <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: Image */}
+            {/* Left: Paragraph Content + Ticks */}
+            <div className="flex flex-col justify-center reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 py-4 order-1 lg:order-2">
+              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-black mb-6 text-[#001D3D] leading-[1.15]">
+                Why Do You Need Health Insurance?
+              </h2>
+              <p className="text-slate-900 font-medium text-[17px] leading-relaxed mb-8">
+                Medical emergencies can happen without warning, and healthcare expenses can quickly put pressure on your savings. From hospitalization and surgeries to diagnostic tests and follow-up care, medical costs can become difficult to manage without adequate financial planning. Health insurance helps you prepare for these unexpected expenses, so a health emergency doesn't have to become a major financial setback for your family.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-3">
+                {whyNeedInsurance.map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-[0_8px_30px_rgba(14,165,233,0.15)] transition-all duration-300 cursor-pointer">
+                    <Check className="w-5 h-5 text-sky-500 shrink-0" strokeWidth={3} />
+                    <p className="font-bold text-[#001D3D] text-[13.5px] leading-snug">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Right: Image */}
             <div className="relative reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100 min-h-[450px] w-full order-2 lg:order-1">
               <div className="w-full h-full rounded-[40px] overflow-hidden shadow-2xl absolute inset-0">
                 <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=800" alt="Happy family outdoors" className="w-full h-full object-cover" />
@@ -385,25 +398,6 @@ export default function LifeInsurancePage() {
                 </div>
               </div>
             </div>
-
-            {/* Right: Paragraph Content + Ticks */}
-            <div className="flex flex-col justify-center reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 py-4 order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-black mb-6 text-[#001D3D] leading-[1.15]">
-                Why Do You Need Life Insurance?
-              </h2>
-              <p className="text-slate-900 font-medium text-[17px] leading-relaxed mb-8">
-                Life insurance is one of the simplest ways to make sure your family never has to worry about money if something happens to you. It covers everyday expenses, pending loans, and your children's education, while also helping you build long-term savings. Many plans also come with tax benefits, so you're not just protecting your family — you're growing your wealth at the same time.
-              </p>
-              
-              <div className="grid sm:grid-cols-2 gap-3">
-                {whyNeedInsurance.map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-[0_8px_30px_rgba(14,165,233,0.15)] transition-all duration-300 cursor-pointer">
-                    <Check className="w-5 h-5 text-sky-500 shrink-0" strokeWidth={3} />
-                    <p className="font-bold text-[#001D3D] text-[13.5px] leading-snug">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -412,8 +406,8 @@ export default function LifeInsurancePage() {
       <section className="pt-10 lg:pt-12 pb-20 lg:pb-28 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-5xl mx-auto mb-6 lg:mb-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
-            <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-4">Life Insurance Plans We Offer</h2>
-            <p className="text-slate-600 text-lg truncate whitespace-normal lg:whitespace-nowrap">Comprehensive solutions designed to protect your family's future and grow your wealth at every stage of life.</p>
+            <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-4">Health Insurance Plans We Offer</h2>
+            <p className="text-slate-600 text-lg truncate whitespace-normal lg:whitespace-nowrap">Whether you're looking to protect yourself, your family, children, or senior citizens, different health insurance options are available based on your healthcare requirements.</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
@@ -467,36 +461,34 @@ export default function LifeInsurancePage() {
         </div>
       </section>
 
-      {/* WHY CHOOSE SGNL / COMPARISON */}
+      {/* WHY CHOOSE SGNL */}
       <section className="pt-10 pb-20 lg:pt-16 lg:pb-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center max-w-3xl mx-auto mb-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
-            <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-6">Why Choose <span className="text-sky-500">SGNL</span> for Life Insurance?</h2>
-            <p className="text-slate-600 text-lg">Compare your options and see how SGNL makes insurance planning simpler, more transparent, and highly personalized for your needs.</p>
+          <div className="text-center max-w-3xl mx-auto mb-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
+            <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-6">Why Choose <span className="text-sky-500">SGNL</span> for Health Insurance?</h2>
+            <p className="text-slate-600 text-lg">Choosing health insurance can be complicated when every insurer offers different coverage, premiums, waiting periods, and policy conditions. SGNL helps simplify the comparison process.</p>
           </div>
             
-          <div className="bg-white rounded-3xl p-6 md:p-10 text-[#001D3D] shadow-2xl reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse border border-slate-200">
-                <thead>
-                  <tr>
-                    <th className="py-3 px-4 border border-slate-200 font-bold text-slate-500 w-1/4">Feature</th>
-                    <th className="py-3 px-4 border border-slate-200 font-bold text-slate-500 w-1/4">Traditional Approach</th>
-                    <th className="py-3 px-4 border border-slate-200 font-black text-sky-600 w-1/2 bg-sky-50">SGNL</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonData.map((row, i) => (
-                    <tr key={i} className="group hover:bg-slate-50 transition-colors">
-                      <td className="py-3 px-4 border border-slate-200 font-semibold text-sm md:text-base">{row.feature}</td>
-                      <td className="py-3 px-4 border border-slate-200 text-sm md:text-base text-slate-500">{row.traditional}</td>
-                      <td className="py-3 px-4 border border-slate-200 text-sm md:text-base font-bold text-sky-700 bg-sky-50/50 group-hover:bg-sky-100 transition-colors">{row.sgnl}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
+            {[
+              { icon: Layers, title: "Compare Multiple Insurers", desc: "Explore health insurance options from multiple participating insurers based on your coverage requirements and budget." },
+              { icon: Compass, title: "Guidance Based on Your Needs", desc: "Understand important policy features such as coverage, premiums, waiting periods, exclusions, benefits, and applicable conditions." },
+              { icon: FileText, title: "Clear Comparison of Plans", desc: "Compare key policy details so you can better understand what each option offers before making a decision." },
+              { icon: Sparkles, title: "Simple & Transparent Process", desc: "From comparing available plans to completing the application, we aim to keep the process clear and easy to understand." },
+              { icon: Activity, title: "Dedicated Claims Support", desc: "Get assistance in understanding the applicable claim process, required documentation, and policy-related steps when support is needed." },
+              { icon: Headset, title: "Support Beyond Purchase", desc: "Receive assistance with policy-related queries and renewals even after selecting your health insurance plan." }
+            ].map((item, i) => (
+              <div key={i} className="group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-sky-500/50 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-sm border border-slate-100 group-hover:bg-sky-500 group-hover:border-sky-500 transition-colors duration-300">
+                    <item.icon className="w-6 h-6 text-sky-500 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <h3 className="text-[18px] md:text-[19px] font-black text-[#001D3D] leading-tight">{item.title}</h3>
+                </div>
+                <p className="text-slate-600 text-[15px] leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
           </div>
           
         </div>
@@ -506,15 +498,15 @@ export default function LifeInsurancePage() {
       <section className="py-8 lg:py-10 bg-slate-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
-            <h2 className="text-3xl font-black text-[#001D3D] mb-6">Our Trusted Life Insurance Partners</h2>
-            <p className="text-slate-600 text-lg mb-10">We're not tied to just one company — and that's a good thing for you. SGNL works with leading, IRDAI-approved life insurers, so we can help you explore and compare suitable plans from multiple insurers.</p>
+            <h2 className="text-3xl font-black text-[#001D3D] mb-6">Our Trusted Health & General Insurance Partners</h2>
+            <p className="text-slate-600 text-lg mb-10">SGNL works with participating health and general insurers regulated by IRDAI, giving customers access to different health coverage options based on their requirements.</p>
             
             <div className="relative w-full flex overflow-hidden py-4 group">
               <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
               <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
 
               <div className="flex gap-4 lg:gap-8 items-center w-max animate-marquee group-hover:[animation-play-state:paused] opacity-80 hover:opacity-100 transition-opacity duration-500" style={{ animationDuration: '30s' }}>
-                {[...['SBI Life', 'HDFC Life', 'Max Life Insurance', 'Tata AIA Life', 'ICICI Prudential', 'Bajaj Allianz Life'], ...['SBI Life', 'HDFC Life', 'Max Life Insurance', 'Tata AIA Life', 'ICICI Prudential', 'Bajaj Allianz Life']].map((partner, i) => (
+                {[...['Star Health Insurance', 'Niva Bupa Health Insurance', 'HDFC ERGO', 'Care Health Insurance', 'ManipalCigna', 'Digit Insurance', 'SBI General', 'Royal Sundaram', 'ICICI Lombard', 'Tata AIG'], ...['Star Health Insurance', 'Niva Bupa Health Insurance', 'HDFC ERGO', 'Care Health Insurance', 'ManipalCigna', 'Digit Insurance', 'SBI General', 'Royal Sundaram', 'ICICI Lombard', 'Tata AIG']].map((partner, i) => (
                   <div key={i} className="shrink-0 px-6 py-3 bg-white rounded-xl border border-slate-200 font-black text-slate-700 text-xl tracking-tight hover:border-sky-500 hover:text-sky-500 hover:shadow-lg transition-all cursor-default">
                     {partner}
                   </div>
@@ -529,16 +521,18 @@ export default function LifeInsurancePage() {
       <section className="py-10 lg:py-12 bg-[#001D3D] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Trust and How it Works */}
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div className="reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10">
-              <h2 className="text-3xl font-black text-white mb-8">Why Customers <span className="text-sky-400">Trust SGNL</span></h2>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+            <div className="lg:col-span-7 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10">
+              <h2 className="text-3xl font-black text-white mb-6">What Makes Our Plans <span className="text-sky-400">Worth It?</span></h2>
+              <p className="text-slate-300 text-[15px] mb-8 leading-relaxed">Health insurance plans can offer different features designed to make healthcare protection more practical and flexible. Depending on the insurer and policy selected, available benefits may include:</p>
               <div className="grid gap-6">
                 {[
-                  { title: "Honest guidance", desc: "We recommend what fits you, not what pays us the most." },
-                  { title: "Plans tailored to you", desc: "No generic packages, just what actually works for your family." },
-                  { title: "Transparent process", desc: "Clear terms, no hidden surprises." },
-                  { title: "Multiple protection options", desc: "Life, health, and general insurance, all under one roof." },
-                  { title: "A dedicated support team", desc: "That's there when it matters — not just during sign-up." }
+                  { title: "Cashless Hospitalization", desc: "Eligible treatment at network hospitals, subject to policy terms." },
+                  { title: "Family Floater Option", desc: "Cover eligible family members under a shared sum insured." },
+                  { title: "Pre & Post-Hospitalization Cover", desc: "Eligible medical expenses before and after hospitalization, as specified in the policy." },
+                  { title: "No-Claim Benefits", desc: "Additional benefits available on eligible policies for claim-free periods." },
+                  { title: "Top-Up & Super Top-Up Options", desc: "Additional coverage beyond a base policy, subject to applicable deductibles and terms." },
+                  { title: "Critical Illness Benefits", desc: "Selected plans may provide a lump-sum benefit for listed critical illnesses." }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="mt-1 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
@@ -553,14 +547,15 @@ export default function LifeInsurancePage() {
               </div>
             </div>
 
-            <div className="reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10">
+            <div className="lg:col-span-5 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10">
               <h2 className="text-3xl font-black text-white mb-8">How It Works</h2>
               <div className="ml-4 flex flex-col gap-8">
                 {[
-                  { step: 1, title: "Tell us about yourself", desc: "Your age, income, and what you're hoping to secure for your family." },
-                  { step: 2, title: "We compare plans for you", desc: "Across 15+ insurers, so you don't have to do the legwork." },
-                  { step: 3, title: "You choose, we handle the rest", desc: "Paperwork, documentation, all sorted for you." },
-                  { step: 4, title: "Stay covered, stay supported", desc: "We're here for claims, renewals, and everything in between." }
+                  { step: 1, title: "Tell Us Your Requirements", desc: "Share your age, family size, healthcare needs, existing coverage, and preferred coverage level." },
+                  { step: 2, title: "Review Available Options", desc: "Explore suitable health insurance plans from participating insurers based on your requirements." },
+                  { step: 3, title: "Compare & Choose", desc: "Review the coverage, premium, waiting periods, exclusions, benefits, and applicable policy terms before selecting a plan." },
+                  { step: 4, title: "Complete the Application", desc: "Complete the required documentation, KYC, medical requirements, and application process as applicable." },
+                  { step: 5, title: "Stay Supported", desc: "Get assistance with policy-related queries, renewals, and understanding the applicable claims process when required." }
                 ].map((item, i, arr) => (
                   <div key={i} className="relative pl-8">
                     {i !== arr.length - 1 && (
@@ -631,10 +626,10 @@ export default function LifeInsurancePage() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
             <div className="text-center lg:text-left max-w-3xl">
               <h2 className="text-3xl lg:text-4xl font-black text-white leading-none tracking-tight mb-2">
-                Plan Today for a Secure Tomorrow
+                Stay Protected, Stay Prepared
               </h2>
               <p className="text-lg text-white/90 leading-snug font-medium">
-                Life doesn't wait, and neither should your family's financial security. Whether it's protecting your loved ones, saving for your child's future, or planning for retirement, we're here to help you find the right plan — without the confusion.
+                Medical emergencies can happen unexpectedly. Having suitable health insurance can help you prepare for eligible healthcare expenses and protect your family from unnecessary financial pressure. Whether you're looking to protect yourself, your children, your parents, or your entire family, SGNL can help you explore available health insurance options.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center shrink-0 w-full lg:w-auto mt-24 sm:mt-0">

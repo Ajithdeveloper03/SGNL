@@ -419,7 +419,7 @@ export default function Home() {
                 {activeDropdown === 'Services' && (
                   <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[240px] flex flex-col gap-1 z-50">
                     {['High-Interest Savings', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance'].map(item => (
-                      <Link key={item} href={item === 'Life Insurance' ? '/services/life-insurance' : '#'} className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                      <Link key={item} href={item === 'Life Insurance' ? '/services/life-insurance' : item === 'Health Insurance' ? '/health-insurance-tamil-nadu' : '#'} className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
                     ))}
                   </div>
                 )}
@@ -500,7 +500,7 @@ export default function Home() {
                 {activeDropdown === item.name && (
                   <div className="flex flex-col gap-4 pb-5 pl-4">
                     {item.links.map(link => (
-                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
+                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : link === 'Health Insurance' ? '/health-insurance-tamil-nadu' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
                         {link}
                       </Link>
                     ))}
@@ -800,7 +800,7 @@ export default function Home() {
               { name: 'Health Insurance', cat: 'Health', sub: 'Prepare for medical expenses.', desc: 'Prepare for unexpected medical expenses with health insurance solutions that help protect you and your loved ones.', img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800' },
               { name: 'General Insurance', cat: 'Insurance', sub: 'Protect your valuable assets.', desc: 'Protect your valuable assets with insurance solutions covering important needs such as vehicles and property.', img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800' },
             ].map((scheme, i) => (
-              <div key={scheme.name} className="relative group w-[280px] h-[340px] md:w-[320px] md:h-[380px] lg:w-[380px] lg:h-[420px] rounded-[2rem] overflow-hidden snap-center shrink-0 cursor-pointer shadow-md border border-slate-200 bg-white">
+              <Link href={scheme.name === 'Life Insurance' ? '/services/life-insurance' : scheme.name === 'Health Insurance' ? '/health-insurance-tamil-nadu' : '#'} key={scheme.name} className="relative group w-[280px] h-[340px] md:w-[320px] md:h-[380px] lg:w-[380px] lg:h-[420px] rounded-[2rem] overflow-hidden snap-center shrink-0 cursor-pointer shadow-md border border-slate-200 bg-white block">
                 <img src={scheme.img} alt={scheme.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1000ms] ease-out" />
 
                 {/* Gradients */}
@@ -825,7 +825,7 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -1277,7 +1277,7 @@ export default function Home() {
                 <p className="text-white font-black text-sm uppercase tracking-widest mb-6">{col.head}</p>
                 <ul className="space-y-4">
                   {col.links.map(l => (
-                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
+                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
                   ))}
                 </ul>
               </div>

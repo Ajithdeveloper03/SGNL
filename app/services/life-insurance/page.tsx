@@ -475,10 +475,10 @@ export default function LifeInsurancePage() {
       </section>
 
       {/* WHY CHOOSE SGNL / COMPARISON */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-10 pb-20 lg:pt-16 lg:pb-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
+          <div className="text-center max-w-3xl mx-auto mb-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
             <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-6">Why Choose <span className="text-sky-500">SGNL</span> for Life Insurance?</h2>
             <p className="text-slate-600 text-lg">Compare your options and see how SGNL makes insurance planning simpler, more transparent, and highly personalized for your needs.</p>
           </div>
@@ -509,30 +509,35 @@ export default function LifeInsurancePage() {
         </div>
       </section>
 
-      {/* TRUSTED PARTNERS & HOW IT WORKS */}
-      <section className="py-20 lg:py-28 bg-[#001D3D] text-white relative overflow-hidden">
+      {/* TRUSTED PARTNERS */}
+      <section className="py-8 lg:py-10 bg-slate-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Partners */}
-          <div className="text-center max-w-4xl mx-auto mb-20 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
-            <h2 className="text-3xl font-black text-white mb-6">Our Trusted Life Insurance Partners</h2>
-            <p className="text-slate-300 text-lg mb-10">We're not tied to just one company — and that's a good thing for you. SGNL works with leading, IRDAI-approved life insurers, so we can help you explore and compare suitable plans from multiple insurers.</p>
+          <div className="text-center max-w-4xl mx-auto reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
+            <h2 className="text-3xl font-black text-[#001D3D] mb-6">Our Trusted Life Insurance Partners</h2>
+            <p className="text-slate-600 text-lg mb-10">We're not tied to just one company — and that's a good thing for you. SGNL works with leading, IRDAI-approved life insurers, so we can help you explore and compare suitable plans from multiple insurers.</p>
             
-            <div className="flex flex-wrap justify-center gap-4 lg:gap-8 items-center opacity-80 hover:opacity-100 transition-all duration-500">
-              {['SBI Life', 'HDFC Life', 'Max Life Insurance', 'Tata AIA Life', 'ICICI Prudential', 'Bajaj Allianz Life'].map((partner, i) => (
-                <div key={i} className="px-6 py-3 bg-white/5 rounded-xl border border-white/10 font-black text-white text-xl tracking-tight hover:border-sky-400 hover:text-sky-400 transition-all cursor-default">
-                  {partner}
-                </div>
-              ))}
+            <div className="relative w-full flex overflow-hidden py-4 group">
+              <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+
+              <div className="flex gap-4 lg:gap-8 items-center w-max animate-marquee group-hover:[animation-play-state:paused] opacity-80 hover:opacity-100 transition-opacity duration-500" style={{ animationDuration: '30s' }}>
+                {[...['SBI Life', 'HDFC Life', 'Max Life Insurance', 'Tata AIA Life', 'ICICI Prudential', 'Bajaj Allianz Life'], ...['SBI Life', 'HDFC Life', 'Max Life Insurance', 'Tata AIA Life', 'ICICI Prudential', 'Bajaj Allianz Life']].map((partner, i) => (
+                  <div key={i} className="shrink-0 px-6 py-3 bg-white rounded-xl border border-slate-200 font-black text-slate-700 text-xl tracking-tight hover:border-sky-500 hover:text-sky-500 hover:shadow-lg transition-all cursor-default">
+                    {partner}
+                  </div>
+                ))}
+              </div>
             </div>
-            <p className="text-xs text-slate-400 mt-6">All brand names and logos belong to their respective companies. SGNL is an authorized advisor for these insurance products.</p>
           </div>
+        </div>
+      </section>
 
-          <div className="border-t border-white/10 my-20"></div>
-
+      {/* HOW IT WORKS */}
+      <section className="py-10 lg:py-12 bg-[#001D3D] text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Trust and How it Works */}
           <div className="grid lg:grid-cols-2 gap-16">
-            <div className="reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
+            <div className="reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10">
               <h2 className="text-3xl font-black text-white mb-8">Why Customers <span className="text-sky-400">Trust SGNL</span></h2>
               <div className="grid gap-6">
                 {[
@@ -547,8 +552,8 @@ export default function LifeInsurancePage() {
                       <Check className="w-3.5 h-3.5" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-white">{item.title}</h4>
-                      <p className="text-slate-300 text-sm mt-1">{item.desc}</p>
+                      <h4 className="font-bold text-lg text-white">{item.title}</h4>
+                      <p className="text-slate-300 mt-2">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -557,15 +562,18 @@ export default function LifeInsurancePage() {
 
             <div className="reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10">
               <h2 className="text-3xl font-black text-white mb-8">How It Works</h2>
-              <div className="relative border-l-2 border-sky-500/30 ml-4 space-y-8">
+              <div className="ml-4 flex flex-col gap-8">
                 {[
                   { step: 1, title: "Tell us about yourself", desc: "Your age, income, and what you're hoping to secure for your family." },
                   { step: 2, title: "We compare plans for you", desc: "Across 15+ insurers, so you don't have to do the legwork." },
                   { step: 3, title: "You choose, we handle the rest", desc: "Paperwork, documentation, all sorted for you." },
                   { step: 4, title: "Stay covered, stay supported", desc: "We're here for claims, renewals, and everything in between." }
-                ].map((item, i) => (
+                ].map((item, i, arr) => (
                   <div key={i} className="relative pl-8">
-                    <div className="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-sky-500 text-white flex items-center justify-center font-black text-sm ring-4 ring-[#001D3D]">
+                    {i !== arr.length - 1 && (
+                      <div className="absolute left-0 top-8 bottom-[-2rem] w-[2px] bg-sky-500/30 -translate-x-1/2"></div>
+                    )}
+                    <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-sky-500 text-white flex items-center justify-center font-black text-sm ring-4 ring-[#001D3D] -translate-x-1/2">
                       {item.step}
                     </div>
                     <h4 className="font-bold text-lg text-white">{item.title}</h4>
@@ -580,7 +588,7 @@ export default function LifeInsurancePage() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="py-20 lg:py-28 bg-slate-50">
+      <section className="py-12 lg:py-16 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
             <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-4">Frequently Asked Questions</h2>
@@ -595,7 +603,7 @@ export default function LifeInsurancePage() {
               >
                 <button 
                   onClick={() => toggleFaq(i)}
-                  className="w-full flex items-center justify-between p-6 text-left cursor-pointer"
+                  className="w-full flex items-center justify-between px-6 py-2 text-left cursor-pointer"
                 >
                   <span className={`font-bold text-lg transition-colors duration-300 pr-8 ${openFaq === i ? 'text-sky-600' : 'text-[#001D3D]'}`}>
                     {faq.q}
@@ -607,7 +615,7 @@ export default function LifeInsurancePage() {
                 <div 
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
-                  <div className="px-6 pb-6 pt-0 text-slate-600 text-base leading-relaxed">
+                  <div className="px-6 pb-2 pt-0 text-slate-600 text-base leading-relaxed">
                     {faq.a}
                   </div>
                 </div>
@@ -617,39 +625,118 @@ export default function LifeInsurancePage() {
         </div>
       </section>
 
-      {/* CTA / FOOTER OVERLAY */}
-      <section className="py-20 lg:py-28 relative bg-sky-600 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-sky-600 to-sky-800 opacity-90"></div>
-        
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">Plan Today for a <span className="text-sky-200">Secure Tomorrow</span></h2>
-          <p className="text-xl text-sky-100 mb-10 leading-relaxed reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100">
-            Life doesn't wait, and neither should your family's financial security. Whether it's protecting your loved ones, saving for your child's future, or planning for retirement, we're here to help you find the right plan — without the confusion.
-          </p>
+      {/* ══════════ FINAL CTA BANNER ══════════ */}
+      <section className="py-16 bg-sky-500 relative">
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 0%, transparent 80%)' }} />
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
-            <button className="bg-white text-sky-700 hover:bg-slate-50 px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-xl shadow-black/10">
-              Get a Free Quote
-            </button>
-            <button className="bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-xl shadow-[#25D366]/20">
-              <MessageCircle className="w-5 h-5" /> WhatsApp Us
-            </button>
+          {/* Desktop Character Illustration */}
+          <div className="hidden lg:block absolute -top-[186px] right-24 w-44 z-20 pointer-events-none drop-shadow-2xl">
+            <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain" />
           </div>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm font-semibold text-sky-100 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-300">
-            <div className="flex items-center gap-2 bg-sky-900/30 px-4 py-2 rounded-full">
-              <Phone className="w-4 h-4" /> Call: [Add phone number]
+
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+            <div className="text-center lg:text-left max-w-3xl">
+              <h2 className="text-3xl lg:text-4xl font-black text-white leading-none tracking-tight mb-2">
+                Plan Today for a Secure Tomorrow
+              </h2>
+              <p className="text-lg text-white/90 leading-snug font-medium">
+                Life doesn't wait, and neither should your family's financial security. Whether it's protecting your loved ones, saving for your child's future, or planning for retirement, we're here to help you find the right plan — without the confusion.
+              </p>
             </div>
-            <div className="flex items-center gap-2 bg-sky-900/30 px-4 py-2 rounded-full">
-              <Info className="w-4 h-4" /> Visit: [Add unified website link]
-            </div>
-            <div className="flex items-center gap-2 bg-sky-900/30 px-4 py-2 rounded-full">
-              <CheckCircle2 className="w-4 h-4" /> Serving families across Tamil Nadu
+            <div className="flex flex-col sm:flex-row gap-4 justify-center shrink-0 w-full lg:w-auto mt-24 sm:mt-0">
+              <div className="relative w-full sm:w-auto">
+                {/* Mobile Character Illustration */}
+                <div className="lg:hidden absolute bottom-[calc(100%-10px)] right-4 w-36 z-20 pointer-events-none drop-shadow-2xl">
+                  <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain" />
+                </div>
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className="w-full sm:w-auto bg-[#001D3D] text-white px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-900 transition-all shadow-xl flex items-center justify-center gap-2 hover:-translate-y-1 relative z-30"
+                >
+                  Discover More
+                </button>
+              </div>
+              <button 
+                onClick={() => setIsPopupOpen(true)}
+                className="w-full sm:w-auto bg-white text-[#001D3D] px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-50 transition-all flex items-center justify-center shadow-lg hover:-translate-y-1 relative z-30"
+              >
+                Start Your Financial Journey
+              </button>
             </div>
           </div>
         </div>
       </section>
+
+      {/* ══════════ FOOTER ══════════ */}
+      <footer className="relative pt-28 pb-16 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/sgnl/footer 1.png')" }}>
+        {/* Dark overlay for text visibility */}
+        <div className="absolute inset-0 bg-[#001D3D]/80" />
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 relative z-10">
+          {/* Top grid */}
+          <div className="flex flex-wrap lg:flex-nowrap justify-between gap-10 lg:gap-8 pb-12 border-b border-white/10">
+            {/* Brand */}
+            <div className="w-full lg:w-auto lg:max-w-[280px] space-y-5">
+              <Link href="/" className="flex items-center gap-3">
+                <img src="/sgnl/logo.png" alt="SGNL Logo" className="h-20 w-auto object-contain bg-white rounded-2xl p-2" />
+              </Link>
+              <p className="text-white text-base leading-relaxed max-w-[280px]">
+                A trusted Nidhi Company dedicated to empowering communities through ethical savings, low-interest loans, and transparent financial services.
+              </p>
+              <div className="flex items-center gap-3">
+                {[
+                  { icon: Facebook, href: '#' },
+                  { icon: Linkedin, href: '#' },
+                  { icon: Twitter, href: '#' },
+                  { icon: Instagram, href: '#' }
+                ].map((social, i) => (
+                  <Link key={i} href={social.href} className="w-9 h-9 rounded-xl border border-white/10 bg-white/5 hover:bg-sky-500 hover:border-sky-500 flex items-center justify-center text-white hover:text-white transition-all">
+                    <social.icon className="w-4 h-4" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Links */}
+            {[
+              { head: 'Our Schemes', links: ['Prime Wealth Gain', 'Vikas Money Savings', 'Ecocial Savings Plan', 'Elite Wealth Gain'] },
+              { head: 'Services', links: ['High-Interest Savings Plans', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance'] },
+              { head: 'Company', links: ['Home', 'About Us', 'Services', 'Schemes', 'Get In Touch'] },
+            ].map(col => (
+              <div key={col.head} className="w-[45%] sm:w-auto shrink-0">
+                <p className="text-white font-black text-sm uppercase tracking-widest mb-6">{col.head}</p>
+                <ul className="space-y-4">
+                  {col.links.map(l => (
+                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            {/* Head Quarters */}
+            <div className="w-full sm:w-auto lg:max-w-[280px] space-y-8">
+              <div>
+                <p className="text-white font-black text-sm uppercase tracking-widest mb-6">Head Quarters</p>
+                <div className="text-white/80 text-[15px] leading-relaxed space-y-4">
+                  <p>No 37, 1st floor, Yesotha plaza,<br/>inner ring road, Sivam Nagar,<br/>Hosur, TAMIL NADU - 635126</p>
+                  <div className="space-y-1">
+                    <p className="hover:text-sky-500 transition-colors cursor-pointer">info@sgsgnl.com</p>
+                    <p className="hover:text-sky-500 transition-colors cursor-pointer">+91-85249-17170</p>
+                    <p>Mon - Sat: 9am - 5pm</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="pt-8 flex justify-center items-center gap-4 text-center">
+            <p className="text-white text-[13px] md:text-sm font-bold uppercase tracking-wider">
+              © 2026 Sarathi Germinate Nidhi Limited. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
 
       <ContactPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </div>

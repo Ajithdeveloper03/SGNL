@@ -419,7 +419,7 @@ export default function Home() {
                 {activeDropdown === 'Services' && (
                   <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[240px] flex flex-col gap-1 z-50">
                     {['High-Interest Savings', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance'].map(item => (
-                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                      <Link key={item} href={item === 'Life Insurance' ? '/services/life-insurance' : '#'} className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
                     ))}
                   </div>
                 )}
@@ -500,7 +500,7 @@ export default function Home() {
                 {activeDropdown === item.name && (
                   <div className="flex flex-col gap-4 pb-5 pl-4">
                     {item.links.map(link => (
-                      <Link key={link} href="#" className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
+                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
                         {link}
                       </Link>
                     ))}
@@ -1277,7 +1277,7 @@ export default function Home() {
                 <p className="text-white font-black text-sm uppercase tracking-widest mb-6">{col.head}</p>
                 <ul className="space-y-4">
                   {col.links.map(l => (
-                    <li key={l}><Link href="#" className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
+                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
                   ))}
                 </ul>
               </div>

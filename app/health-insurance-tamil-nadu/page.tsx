@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { 
   ShieldCheck, HeartPulse, GraduationCap, TrendingUp, 
@@ -17,6 +17,8 @@ export default function LifeInsurancePage() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 60);
@@ -40,6 +42,24 @@ export default function LifeInsurancePage() {
       observer.disconnect();
     };
   }, []);
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (!isPaused && scrollContainerRef.current) {
+      interval = setInterval(() => {
+        if (scrollContainerRef.current) {
+          const { scrollTop, scrollHeight } = scrollContainerRef.current;
+          // Reset to 0 when we reach exactly halfway (the duplicate set)
+          if (scrollTop >= scrollHeight / 2) {
+            scrollContainerRef.current.scrollTop = 1;
+          } else {
+            scrollContainerRef.current.scrollTop += 1;
+          }
+        }
+      }, 30);
+    }
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -218,8 +238,8 @@ export default function LifeInsurancePage() {
                 </button>
                 {activeDropdown === 'Services' && (
                   <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[240px] flex flex-col gap-1 z-50">
-                    {['High-Interest Savings', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance'].map(item => (
-                      <Link key={item} href={item === 'Life Insurance' ? '/services/life-insurance' : item === 'Health Insurance' ? '/health-insurance-tamil-nadu' : '#'} className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                    {['Life Insurance', 'Health Insurance', 'General Insurance', 'High-Interest Savings', 'Investment Solutions'].map(item => (
+                      <Link key={item} href={item === 'Life Insurance' ? '/services/life-insurance' : item === 'Health Insurance' ? '/health-insurance-tamil-nadu' : item === 'General Insurance' ? '/general-insurance-tamil-nadu' : item === 'High-Interest Savings' ? '/high-interest-savings-plans-tamil-nadu' : item === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : '#'} className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
                     ))}
                   </div>
                 )}
@@ -285,7 +305,7 @@ export default function LifeInsurancePage() {
             </Link>
             {[
               { name: 'About Us', links: ['Mission', 'Vision', 'Why Us'] },
-              { name: 'Services', links: ['High-Interest Savings', 'Investment Solutions', 'Life Insurance', 'Health Insurance', 'General Insurance'] },
+              { name: 'Services', links: ['Life Insurance', 'Health Insurance', 'General Insurance', 'High-Interest Savings', 'Investment Solutions'] },
               { name: 'Schemes', links: ['Short Term Plans', 'Long Term Plans'] }
             ].map((item) => (
               <div key={item.name} className="w-full flex flex-col">
@@ -300,7 +320,7 @@ export default function LifeInsurancePage() {
                 {activeDropdown === item.name && (
                   <div className="flex flex-col gap-4 pb-5 pl-4">
                     {item.links.map(link => (
-                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : link === 'Health Insurance' ? '/health-insurance-tamil-nadu' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
+                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : link === 'Health Insurance' ? '/health-insurance-tamil-nadu' : link === 'General Insurance' ? '/general-insurance-tamil-nadu' : link === 'High-Interest Savings' ? '/high-interest-savings-plans-tamil-nadu' : link === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
                         {link}
                       </Link>
                     ))}
@@ -410,9 +430,9 @@ export default function LifeInsurancePage() {
             <p className="text-slate-600 text-lg truncate whitespace-normal lg:whitespace-nowrap">Whether you're looking to protect yourself, your family, children, or senior citizens, different health insurance options are available based on your healthcare requirements.</p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
             {plansOffered.map((plan, i) => (
-              <div key={i} className="relative group h-[260px] rounded-[32px] overflow-hidden reveal-on-scroll opacity-0 translate-y-12 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer" style={{ transitionDelay: `${i * 100}ms` }}>
+              <div key={i} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] max-w-[500px] relative group h-[260px] rounded-[32px] overflow-hidden reveal-on-scroll opacity-0 translate-y-12 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer" style={{ transitionDelay: `${i * 100}ms` }}>
                 {/* Background Image */}
                 <img src={plan.image} alt={plan.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 
@@ -522,28 +542,38 @@ export default function LifeInsurancePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Trust and How it Works */}
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
-            <div className="lg:col-span-7 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10">
+            <div className="lg:col-span-7 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10 flex flex-col">
               <h2 className="text-3xl font-black text-white mb-6">What Makes Our Plans <span className="text-sky-400">Worth It?</span></h2>
               <p className="text-slate-300 text-[15px] mb-8 leading-relaxed">Health insurance plans can offer different features designed to make healthcare protection more practical and flexible. Depending on the insurer and policy selected, available benefits may include:</p>
-              <div className="grid gap-6">
-                {[
-                  { title: "Cashless Hospitalization", desc: "Eligible treatment at network hospitals, subject to policy terms." },
-                  { title: "Family Floater Option", desc: "Cover eligible family members under a shared sum insured." },
-                  { title: "Pre & Post-Hospitalization Cover", desc: "Eligible medical expenses before and after hospitalization, as specified in the policy." },
-                  { title: "No-Claim Benefits", desc: "Additional benefits available on eligible policies for claim-free periods." },
-                  { title: "Top-Up & Super Top-Up Options", desc: "Additional coverage beyond a base policy, subject to applicable deductibles and terms." },
-                  { title: "Critical Illness Benefits", desc: "Selected plans may provide a lump-sum benefit for listed critical illnesses." }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="mt-1 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                      <Check className="w-3.5 h-3.5" />
+              <div className="relative group/scroll flex-1 min-h-[300px]">
+                <div 
+                  className="grid gap-6 absolute inset-0 overflow-y-auto pr-10 custom-scrollbar"
+                  ref={scrollContainerRef}
+                  onMouseEnter={() => setIsPaused(true)}
+                  onMouseLeave={() => setIsPaused(false)}
+                >
+                  {(() => {
+                    const items = [
+                      { title: "Cashless Hospitalization", desc: "Eligible treatment at network hospitals, subject to policy terms." },
+                      { title: "Family Floater Option", desc: "Cover eligible family members under a shared sum insured." },
+                      { title: "Pre & Post-Hospitalization Cover", desc: "Eligible medical expenses before and after hospitalization, as specified in the policy." },
+                      { title: "No-Claim Benefits", desc: "Additional benefits available on eligible policies for claim-free periods." },
+                      { title: "Top-Up & Super Top-Up Options", desc: "Additional coverage beyond a base policy, subject to applicable deductibles and terms." },
+                      { title: "Critical Illness Benefits", desc: "Selected plans may provide a lump-sum benefit for listed critical illnesses." }
+                    ];
+                    return [...items, ...items];
+                  })().map((item, i) => (
+                    <div key={i} className="flex gap-4">
+                      <div className="mt-1 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                        <Check className="w-3.5 h-3.5" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-lg text-white">{item.title}</h4>
+                        <p className="text-slate-300 mt-2">{item.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-lg text-white">{item.title}</h4>
-                      <p className="text-slate-300 mt-2">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -695,7 +725,7 @@ export default function LifeInsurancePage() {
                 <p className="text-white font-black text-sm uppercase tracking-widest mb-6">{col.head}</p>
                 <ul className="space-y-4">
                   {col.links.map(l => (
-                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
+                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : l === 'General Insurance' ? '/general-insurance-tamil-nadu' : l === 'High-Interest Savings Plans' ? '/high-interest-savings-plans-tamil-nadu' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
                   ))}
                 </ul>
               </div>

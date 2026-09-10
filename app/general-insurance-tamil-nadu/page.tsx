@@ -4,13 +4,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { 
   ShieldCheck, HeartPulse, GraduationCap, TrendingUp, 
-  PiggyBank, Wallet, CheckCircle2, ChevronDown,
+  PiggyBank, Wallet, CheckCircle2, ChevronDown, 
   Phone, MessageCircle, ArrowRight, Shield, HeartHandshake,
-  Check, Info, X, Clock, Star, Facebook, Twitter, Linkedin, Instagram, PhoneCall, Menu, Layers, Compass, FileText, Sparkles, Headset
+  Check, Info, X, Clock, Star, Facebook, Twitter, Linkedin, Instagram, PhoneCall, Menu,
+  Layers, Compass, FileText, Sparkles, Activity, Headset,
+  Car, Home, Briefcase, Plane, AlertCircle
 } from 'lucide-react';
-import ContactPopup from '../../../components/ContactPopup';
+import ContactPopup from '../../components/ContactPopup';
 
-export default function LifeInsurancePage() {
+export default function GeneralInsurancePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -65,54 +67,49 @@ export default function LifeInsurancePage() {
   };
 
   const whyNeedInsurance = [
-    "Financial security for your family, no matter what happens",
-    "Protection against life's uncertainties",
-    "Long-term savings and wealth creation",
-    "Tax benefits under applicable rules"
+    "Repair or replacement cost for your vehicle after an accident",
+    "Third-party liability cover, mandatory by law for every vehicle owner",
+    "Protection for your home and shop against fire, burglary, and storm damage",
+    "Cover for flood and cyclone-related property loss, common across Tamil Nadu",
+    "Medical and cancellation cover for domestic and international trips",
+    "Cashless repairs at network garages, so you don't pay large sums upfront"
   ];
 
   const plansOffered = [
     {
-      title: "Family Life Protection",
-      icon: ShieldCheck,
+      title: "Motor Insurance (Car & Two-Wheeler)",
+      icon: Car,
       color: "bg-emerald-500 text-white",
-      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800",
-      desc: "Your family shouldn't have to compromise on their lifestyle if you're not around. This plan gives them a guaranteed payout to cover daily expenses, loans, and other essentials — so they can stay financially secure even in your absence."
+      image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=800",
+      desc: "Covers own-damage repair costs after an accident, theft, or fire. It also includes the mandatory third-party liability cover for both cars and two-wheelers. Optional add-ons such as zero depreciation and engine protection may provide additional protection, subject to the selected policy's terms and conditions, whether you're navigating Chennai traffic or a highway trip to Madurai."
     },
     {
-      title: "Child Education",
-      icon: GraduationCap,
+      title: "Home Insurance",
+      icon: Home,
       color: "bg-sky-500 text-white",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800",
-      desc: "Every parent dreams big for their child — good education, a strong career, a happy wedding. This plan helps you build that fund steadily over the years, so those dreams never have to wait on your bank balance."
+      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
+      desc: "Comprehensive protection for your house structure and household contents against fire, theft, cyclone, and flood damage."
     },
     {
-      title: "Wealth Creation",
-      icon: TrendingUp,
-      color: "bg-indigo-500 text-white",
-      image: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&q=80&w=800",
-      desc: "Why let your money sit idle when it can grow? These plans combine the safety of life insurance with the benefits of disciplined, long-term investing — helping you build real wealth over time."
-    },
-    {
-      title: "Retirement Planning",
-      icon: PiggyBank,
-      color: "bg-orange-500 text-white",
-      image: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=800",
-      desc: "After years of hard work, you deserve to relax without worrying about money. Our retirement solutions are designed to help you plan for a more financially secure and independent future."
-    },
-    {
-      title: "Monthly Income",
-      icon: Wallet,
+      title: "Shop & Commercial Property Insurance",
+      icon: Briefcase,
       color: "bg-rose-500 text-white",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
-      desc: "Want an extra income stream without extra effort? These plans are designed to give you regular monthly payouts, adding a cushion of comfort to your everyday life."
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+      desc: "Covers your shop, office, warehouse, or factory building and stock against fire, explosion, short-circuit, theft, and natural calamities. The right cover can help reduce the financial impact of unexpected property damage or stock losses on your business."
     },
     {
-      title: "Health & Illness Cover",
-      icon: HeartPulse,
-      color: "bg-teal-500 text-white",
-      image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800",
-      desc: "Medical emergencies can wipe out savings in an instant. This acts as a financial shield, providing a lump-sum payout upon diagnosis of covered critical illnesses, letting you focus on recovery."
+      title: "Travel Insurance",
+      icon: Plane,
+      color: "bg-indigo-500 text-white",
+      image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=800",
+      desc: "Covers trip cancellations, lost baggage, passport loss, and emergency medical treatment abroad. A delayed flight or a missed connection, at home or overseas, stays a minor hassle instead of a major expense."
+    },
+    {
+      title: "Personal Accident Insurance",
+      icon: AlertCircle,
+      color: "bg-orange-500 text-white",
+      image: "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&q=80&w=800",
+      desc: "May provide a lump-sum benefit for covered accidental death or disability, with benefits depending on the selected policy and terms."
     }
   ];
 
@@ -138,13 +135,12 @@ export default function LifeInsurancePage() {
   ];
 
   const faqs = [
-    { q: "What is the best age to buy life insurance?", a: "There is no single ideal age for everyone. Buying life insurance earlier can often mean lower premiums and longer coverage, depending on your age, health and policy terms." },
-    { q: "How much life insurance coverage do I actually need?", a: "Coverage needs depend on your income, liabilities, lifestyle, dependants and long-term financial goals. A qualified advisor can help you estimate a suitable amount." },
-    { q: "What's the difference between term insurance and a savings-linked plan?", a: "Term insurance is pure protection — low cost, high cover, but no payout if nothing happens to you. Savings-linked plans cost a bit more but combine life cover with an investment return, so you get something back at maturity too." },
-    { q: "Can I save on tax with a life insurance policy?", a: "Life insurance premiums and benefits may receive tax treatment under applicable Indian income-tax provisions, subject to prevailing rules and eligibility conditions." },
-    { q: "Which insurance companies can I choose from through SGNL?", a: "You get access to 15+ trusted insurers — including SBI Life, HDFC Life, ICICI Prudential, and Tata AIA — so you're not stuck with just one option." },
-    { q: "Can life insurance help with my child's education planning?", a: "Definitely. Our child future planning policies are built specifically to grow a dedicated fund over the years, covering education, career, and even wedding expenses down the line." },
-    { q: "Is SGNL a trustworthy platform for insurance?", a: "We maintain a transparent process with clear documentation, applicable charges and dedicated end-to-end support for documentation and claims." }
+    { q: "What is general insurance and why do I need it?", a: "General insurance covers non-life risks — your vehicle, home, shop, and travel plans — against accidents, fire, theft, and other unforeseen events. A sudden loss stays manageable instead of becoming a financial setback." },
+    { q: "Is motor insurance mandatory in Tamil Nadu?", a: "Yes, third-party motor insurance is legally mandatory for every vehicle owner in Tamil Nadu and across India. A comprehensive policy additionally covers damage to your own vehicle." },
+    { q: "What is cashless claim settlement in motor insurance?", a: "Cashless claim settlement allows the insurer to settle an eligible repair claim directly with a network garage, subject to the policy terms and applicable deductibles." },
+    { q: "Which general insurance companies can I choose from through SGNL?", a: "You get access to 10+ trusted insurers — including ICICI Lombard, Bajaj Allianz, Tata AIG, HDFC ERGO, and SBI General Insurance — compared side by side, so you're not limited to a single company's plans." },
+    { q: "Can I insure my home and shop under one policy?", a: "Some property insurance products may allow coverage for multiple properties or risks under a single policy, depending on the insurer and policy terms. SGNL can help you compare suitable options based on your requirements." },
+    { q: "What is a no-claim bonus in motor insurance?", a: "A no-claim bonus is a discount on your premium for every year you don't make a claim. It builds up over consecutive claim-free years and can lower your renewal cost significantly." }
   ];
 
   return (
@@ -355,15 +351,15 @@ export default function LifeInsurancePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#001D3D]/50 border border-sky-400/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 backdrop-blur-sm">
-              <Shield className="w-4 h-4" /> Compare Life Insurance Plans from 15+ Leading Insurers in Tamil Nadu
+              <Shield className="w-4 h-4" /> Compare General Insurance Plans in Tamil Nadu
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100">
-              Protect Your Family’s Tomorrow, <span className="text-sky-400">Starting Today</span>
+              Protect What Matters Most — <span className="text-sky-400">Compare General Insurance Plans in Tamil Nadu</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
-              Life is unpredictable, but your family's future doesn't have to be. SGNL helps you compare and choose the right life insurance plan from leading life insurers in India — SBI Life, HDFC Life, ICICI Prudential, Tata AIA, and Max Life Insurance — so your loved ones are always taken care of.
+              Accidents, fire, theft, and travel mishaps arrive without warning. SGNL helps you compare general insurance plans in Tamil Nadu from trusted insurers — helping you manage unexpected repair and loss-related expenses.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-300">
@@ -376,7 +372,7 @@ export default function LifeInsurancePage() {
             </div>
             
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm font-semibold text-slate-300 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-400">
-              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400" /> 15+ IRDAI-Approved Insurers</div>
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400" /> 10+ IRDAI-Regulated Insurers</div>
               <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400" /> 100% Free Consultation</div>
               <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400" /> Dedicated Claims & Support Team</div>
             </div>
@@ -387,38 +383,23 @@ export default function LifeInsurancePage() {
       {/* WHY DO YOU NEED LIFE INSURANCE */}
       <section className="pt-20 lg:pt-28 pb-10 lg:pb-12 bg-[#fafafa] relative overflow-hidden">
         <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: Image */}
-            <div className="relative reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100 min-h-[450px] w-full order-2 lg:order-1">
-              <div className="w-full h-full rounded-[40px] overflow-hidden shadow-2xl absolute inset-0">
-                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=800" alt="Happy family outdoors" className="w-full h-full object-cover" />
-              </div>
-              
-              {/* Floating badges */}
-              <div className="absolute top-12 -right-4 sm:-right-8 z-20 bg-white p-3 px-4 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] flex items-center gap-3 animate-bounce" style={{ animationDuration: '3s' }}>
-                <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Coverage</p>
-                  <p className="text-[15px] font-black text-[#001D3D] leading-none mt-1">₹1 Crore+</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Paragraph Content + Ticks */}
-            <div className="flex flex-col justify-center reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 py-4 order-1 lg:order-2">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+            {/* Left: Heading & Paragraph */}
+            <div className="flex flex-col justify-center reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 py-4 h-full">
               <h2 className="text-3xl md:text-4xl lg:text-[42px] font-black mb-6 text-[#001D3D] leading-[1.15]">
-                Why Do You Need Life Insurance?
+                Why Do You Need General Insurance?
               </h2>
-              <p className="text-slate-900 font-medium text-[17px] leading-relaxed mb-8">
-                Life insurance is one of the simplest ways to make sure your family never has to worry about money if something happens to you. It covers everyday expenses, pending loans, and your children's education, while also helping you build long-term savings. Many plans also come with tax benefits, so you're not just protecting your family — you're growing your wealth at the same time.
+              <p className="text-slate-900 font-medium text-[17px] leading-relaxed">
+                Road accidents, monsoon flooding, fire, theft, and flight disruptions are everyday risks behind a vehicle, a home, or a small business in Tamil Nadu. General insurance can help cover eligible repair, replacement, or rebuilding costs, subject to the policy's terms, limits and exclusions. It also covers the liability you may owe to others, so one bad incident doesn't wipe out what you've built.
               </p>
-              
-              <div className="grid sm:grid-cols-2 gap-3">
+            </div>
+            
+            {/* Right: Tick points */}
+            <div className="flex flex-col justify-center reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100 h-full w-full">
+              <div className="grid sm:grid-cols-2 gap-4">
                 {whyNeedInsurance.map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-[0_8px_30px_rgba(14,165,233,0.15)] transition-all duration-300 cursor-pointer">
-                    <Check className="w-5 h-5 text-sky-500 shrink-0" strokeWidth={3} />
+                  <div key={i} className="flex items-start gap-3 bg-white px-5 py-4 rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-[0_8px_30px_rgba(14,165,233,0.15)] transition-all duration-300 cursor-pointer h-full">
+                    <Check className="w-5 h-5 text-sky-500 shrink-0 mt-0.5" strokeWidth={3} />
                     <p className="font-bold text-[#001D3D] text-[13.5px] leading-snug">{item}</p>
                   </div>
                 ))}
@@ -432,8 +413,7 @@ export default function LifeInsurancePage() {
       <section className="pt-10 lg:pt-12 pb-20 lg:pb-28 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-5xl mx-auto mb-6 lg:mb-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
-            <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-4">Life Insurance Plans We Offer</h2>
-            <p className="text-slate-600 text-lg truncate whitespace-normal lg:whitespace-nowrap">Comprehensive solutions designed to protect your family's future and grow your wealth at every stage of life.</p>
+            <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-4">General Insurance Plans We Offer in Tamil Nadu</h2>
           </div>
           
           <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
@@ -492,20 +472,19 @@ export default function LifeInsurancePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
-            <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-4">Why Choose <span className="text-sky-500">SGNL</span> for Life Insurance?</h2>
-            <p className="text-[#001D3D] font-bold text-xl mb-3">Compare More. Choose With Confidence.</p>
-            <p className="text-slate-600 text-lg">SGNL helps simplify the process of understanding and comparing life insurance options from participating insurers.</p>
+            <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-6">Why Choose <span className="text-sky-500">SGNL</span> for General Insurance?</h2>
+            <p className="text-slate-600 text-lg">Compare More. Choose With Confidence. Stay Supported.</p>
           </div>
             
-          <div className="flex flex-wrap justify-center gap-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
             {[
-              { icon: Layers, title: "Compare Multiple Insurers", desc: "Explore available life insurance plans from multiple participating insurers rather than limiting your options to a single provider." },
-              { icon: Compass, title: "Guidance Based on Your Goals", desc: "Understand suitable options based on your family responsibilities, financial goals, affordability, and preferred policy duration." },
-              { icon: FileText, title: "Clear Comparison of Coverage & Costs", desc: "Compare important factors such as coverage, premium, policy duration, benefits, exclusions, and other applicable policy terms." },
-              { icon: Sparkles, title: "Simple & Transparent Process", desc: "Get clear information about documentation, application requirements, applicable charges, and the overall process." },
-              { icon: Headset, title: "Support Beyond Policy Purchase", desc: "Receive assistance with policy-related queries, renewals, and understanding the applicable claim process." }
+              { icon: Layers, title: "Compare Multiple Insurers", desc: "Explore general insurance options from multiple leading insurers instead of being limited to one provider." },
+              { icon: Compass, title: "Guidance Based on Your Needs", desc: "Get help comparing options based on your vehicle, property, business, travel or personal protection requirements." },
+              { icon: FileText, title: "Simple & Transparent Process", desc: "Understand key policy features, coverage, exclusions and applicable terms before you choose." },
+              { icon: Headset, title: "Support Beyond Purchase", desc: "Get assistance with policy-related queries, renewals and claim-process guidance when required." },
+              { icon: ShieldCheck, title: "Multiple Protection Options", desc: "Explore motor, home, commercial property, travel and personal accident insurance through one platform." }
             ].map((item, i) => (
-              <div key={i} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] max-w-[500px] group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-sky-500/50 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+              <div key={i} className="group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-sky-500/50 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-sm border border-slate-100 group-hover:bg-sky-500 group-hover:border-sky-500 transition-colors duration-300">
                     <item.icon className="w-6 h-6 text-sky-500 group-hover:text-white transition-colors duration-300" />
@@ -524,15 +503,15 @@ export default function LifeInsurancePage() {
       <section className="py-8 lg:py-10 bg-slate-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
-            <h2 className="text-3xl font-black text-[#001D3D] mb-6">Our Trusted Life Insurance Partners</h2>
-            <p className="text-slate-600 text-lg mb-10">We're not tied to just one company — and that's a good thing for you. SGNL works with leading, IRDAI-approved life insurers, so we can help you explore and compare suitable plans from multiple insurers.</p>
+            <h2 className="text-3xl font-black text-[#001D3D] mb-6">Our Trusted General Insurance Partners</h2>
+            <p className="text-slate-600 text-lg mb-10">We're not tied to just one company — and that's a good thing for you. SGNL works with leading general insurers regulated by IRDAI , so we can help you explore and compare suitable plans from multiple insurers.</p>
             
             <div className="relative w-full flex overflow-hidden py-4 group">
               <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
               <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
 
               <div className="flex gap-4 lg:gap-8 items-center w-max animate-marquee group-hover:[animation-play-state:paused] opacity-80 hover:opacity-100 transition-opacity duration-500" style={{ animationDuration: '30s' }}>
-                {[...['SBI Life', 'HDFC Life', 'Max Life Insurance', 'Tata AIA Life', 'ICICI Prudential', 'Bajaj Allianz Life'], ...['SBI Life', 'HDFC Life', 'Max Life Insurance', 'Tata AIA Life', 'ICICI Prudential', 'Bajaj Allianz Life']].map((partner, i) => (
+                {[...['ICICI Lombard General Insurance', 'Bajaj Allianz General Insurance', 'Tata AIG General Insurance', 'HDFC ERGO General Insurance', 'SBI General Insurance', 'Royal Sundaram General Insurance', 'Digit Insurance', 'New India Assurance', 'United India Insurance', 'Chola MS General Insurance'], ...['ICICI Lombard General Insurance', 'Bajaj Allianz General Insurance', 'Tata AIG General Insurance', 'HDFC ERGO General Insurance', 'SBI General Insurance', 'Royal Sundaram General Insurance', 'Digit Insurance', 'New India Assurance', 'United India Insurance', 'Chola MS General Insurance']].map((partner, i) => (
                   <div key={i} className="shrink-0 px-6 py-3 bg-white rounded-xl border border-slate-200 font-black text-slate-700 text-xl tracking-tight hover:border-sky-500 hover:text-sky-500 hover:shadow-lg transition-all cursor-default">
                     {partner}
                   </div>
@@ -549,11 +528,8 @@ export default function LifeInsurancePage() {
           {/* Trust and How it Works */}
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-7 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10 flex flex-col">
-              <h2 className="text-3xl font-black text-white mb-4">What Makes Our Plans <span className="text-sky-400">Worth It?</span></h2>
-              <p className="text-slate-300 mb-8 text-sm md:text-base">
-                <strong className="text-white block mb-2">Benefits That Support Your Long-Term Financial Planning</strong>
-                The right life insurance solution can offer more than basic financial protection. Depending on the policy selected, you may benefit from features that support different financial priorities.
-              </p>
+              <h2 className="text-3xl font-black text-white mb-6">Key Benefits of <span className="text-sky-400">General Insurance</span></h2>
+              <p className="text-slate-300 text-[15px] mb-8 leading-relaxed">*Starting premiums vary by vehicle type, property value, city, and the insurer you choose — confirm current pricing with the client before publishing an exact figure.</p>
               <div className="relative group/scroll flex-1 min-h-[300px]">
                 <div 
                   className="grid gap-6 absolute inset-0 overflow-y-auto pr-10 custom-scrollbar"
@@ -563,35 +539,35 @@ export default function LifeInsurancePage() {
                 >
                   {(() => {
                     const items = [
-                      { title: "Flexible Premium Payment Options", desc: "Choose from available premium payment frequencies and options based on the selected policy." },
-                      { title: "Long-Term Financial Planning", desc: "Certain policies can support long-term savings and financial planning goals over the policy duration." },
-                      { title: "Family Protection", desc: "Life insurance can provide a financial benefit to eligible nominees or beneficiaries following a covered event, subject to policy terms." },
-                      { title: "Child Education Planning", desc: "Suitable plans can be considered as part of a long-term strategy for education and other future expenses." },
-                      { title: "Retirement Planning Support", desc: "Certain insurance products may provide benefits that can complement retirement-focused financial planning." },
-                      { title: "Policy-Based Benefits", desc: "Depending on the selected product, benefits may include death benefits, maturity benefits, income benefits, or other features specified in the policy." }
+                      { title: "Protection Against Unexpected Losses", desc: "Financial protection for covered vehicle, property, travel and personal accident risks." },
+                      { title: "Third-Party Liability Protection", desc: "Motor insurance can provide cover for eligible third-party liabilities, subject to policy terms." },
+                      { title: "Cashless Repairs at Network Garages", desc: "Eligible motor claims may be settled through network garages, subject to insurer terms and applicable deductibles." },
+                      { title: "Optional Add-On Covers", desc: "Choose additional protection such as zero depreciation, engine protection and roadside assistance, where available." },
+                      { title: "Protection for Property & Business Assets", desc: "Cover options may help protect eligible buildings, contents, stock and other insured assets against covered risks." },
+                      { title: "Travel & Personal Protection", desc: "Travel and personal accident policies can provide benefits for covered medical emergencies, trip-related losses and accidental events." }
                     ];
                     return [...items, ...items];
                   })().map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="mt-1 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                      <Check className="w-3.5 h-3.5" />
+                    <div key={i} className="flex gap-4">
+                      <div className="mt-1 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                        <Check className="w-3.5 h-3.5" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-lg text-white">{item.title}</h4>
+                        <p className="text-slate-300 mt-2">{item.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-lg text-white">{item.title}</h4>
-                      <p className="text-slate-300 mt-2">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="lg:col-span-5 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10">
+            <div className="lg:col-span-5 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10">
               <h2 className="text-3xl font-black text-white mb-8">How It Works</h2>
               <div className="ml-4 flex flex-col gap-8">
                 {[
-                  { step: 1, title: "Tell us about yourself", desc: "Your age, income, and what you're hoping to secure for your family." },
-                  { step: 2, title: "We compare plans for you", desc: "Across 15+ insurers, so you don't have to do the legwork." },
+                  { step: 1, title: "Tell us about yourself", desc: "Your vehicle, property, or the coverage you're looking for." },
+                  { step: 2, title: "We compare plans for you", desc: "Across 10+ insurers, so you don't have to do the legwork." },
                   { step: 3, title: "You choose, we handle the rest", desc: "Paperwork, documentation, all sorted for you." },
                   { step: 4, title: "Stay covered, stay supported", desc: "We're here for claims, renewals, and everything in between." }
                 ].map((item, i, arr) => (
@@ -664,10 +640,10 @@ export default function LifeInsurancePage() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
             <div className="text-center lg:text-left max-w-3xl">
               <h2 className="text-3xl lg:text-4xl font-black text-white leading-none tracking-tight mb-2">
-                Plan Today for a Secure Tomorrow
+                Stay Protected, Stay Prepared
               </h2>
               <p className="text-lg text-white/90 leading-snug font-medium">
-                Life doesn't wait, and neither should your family's financial security. Whether it's protecting your loved ones, saving for your child's future, or planning for retirement, we're here to help you find the right plan — without the confusion.
+                Accidents and emergencies don't wait for the right time, and neither should your protection. Whether it's your vehicle, your home, your business, or your next trip, we're here to help you find the right general insurance plan in Tamil Nadu — without the confusion.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center shrink-0 w-full lg:w-auto mt-24 sm:mt-0">

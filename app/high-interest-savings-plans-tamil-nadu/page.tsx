@@ -4,13 +4,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { 
   ShieldCheck, HeartPulse, GraduationCap, TrendingUp, 
-  PiggyBank, Wallet, CheckCircle2, ChevronDown,
+  PiggyBank, Wallet, CheckCircle2, ChevronDown, 
   Phone, MessageCircle, ArrowRight, Shield, HeartHandshake,
-  Check, Info, X, Clock, Star, Facebook, Twitter, Linkedin, Instagram, PhoneCall, Menu, Layers, Compass, FileText, Sparkles, Headset
+  Check, Info, X, Clock, Star, Facebook, Twitter, Linkedin, Instagram, PhoneCall, Menu,
+  Layers, Compass, FileText, Sparkles, Activity, Headset, Banknote, LineChart, Landmark, Coins, Lock, RotateCw
 } from 'lucide-react';
-import ContactPopup from '../../../components/ContactPopup';
+import ContactPopup from '../../components/ContactPopup';
 
-export default function LifeInsurancePage() {
+export default function HighInterestSavingsPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -59,92 +60,96 @@ export default function LifeInsurancePage() {
     }
     return () => clearInterval(interval);
   }, [isPaused]);
-
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
   const whyNeedInsurance = [
-    "Financial security for your family, no matter what happens",
-    "Protection against life's uncertainties",
-    "Long-term savings and wealth creation",
-    "Tax benefits under applicable rules"
+    {
+      text: "Potentially better interest earnings compared with standard savings options, depending on the product",
+      icon: TrendingUp,
+      iconColor: "text-emerald-500",
+      bgColor: "bg-emerald-50"
+    },
+    {
+      text: "Fixed deposit options with predetermined interest rates for the agreed tenure",
+      icon: Lock,
+      iconColor: "text-blue-500",
+      bgColor: "bg-blue-50"
+    },
+    {
+      text: "Recurring deposit options that help build a disciplined monthly savings habit",
+      icon: RotateCw,
+      iconColor: "text-purple-500",
+      bgColor: "bg-purple-50"
+    },
+    {
+      text: "Senior citizen deposit options with preferential rates where offered",
+      icon: HeartHandshake,
+      iconColor: "text-rose-500",
+      bgColor: "bg-rose-50"
+    },
+    {
+      text: "Flexible tenures ranging from short-term to long-term options",
+      icon: Clock,
+      iconColor: "text-amber-500",
+      bgColor: "bg-amber-50"
+    },
+    {
+      text: "Different payout choices depending on the selected deposit product and institution",
+      icon: Wallet,
+      iconColor: "text-indigo-500",
+      bgColor: "bg-indigo-50"
+    }
   ];
 
   const plansOffered = [
     {
-      title: "Family Life Protection",
-      icon: ShieldCheck,
-      color: "bg-emerald-500 text-white",
-      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800",
-      desc: "Your family shouldn't have to compromise on their lifestyle if you're not around. This plan gives them a guaranteed payout to cover daily expenses, loans, and other essentials — so they can stay financially secure even in your absence."
-    },
-    {
-      title: "Child Education",
-      icon: GraduationCap,
-      color: "bg-sky-500 text-white",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800",
-      desc: "Every parent dreams big for their child — good education, a strong career, a happy wedding. This plan helps you build that fund steadily over the years, so those dreams never have to wait on your bank balance."
-    },
-    {
-      title: "Wealth Creation",
-      icon: TrendingUp,
-      color: "bg-indigo-500 text-white",
-      image: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&q=80&w=800",
-      desc: "Why let your money sit idle when it can grow? These plans combine the safety of life insurance with the benefits of disciplined, long-term investing — helping you build real wealth over time."
-    },
-    {
-      title: "Retirement Planning",
+      title: "Fixed Deposit (FD)",
       icon: PiggyBank,
-      color: "bg-orange-500 text-white",
-      image: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=800",
-      desc: "After years of hard work, you deserve to relax without worrying about money. Our retirement solutions are designed to help you plan for a more financially secure and independent future."
+      color: "bg-emerald-500 text-white",
+      image: "https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?auto=format&fit=crop&q=80&w=800",
+      desc: "Invest a lump sum for a selected tenure and earn interest at the rate applicable when the deposit is booked, subject to the institution's terms. Depending on the product, interest may be paid periodically or at maturity."
     },
     {
-      title: "Monthly Income",
+      title: "Recurring Deposit (RD)",
       icon: Wallet,
-      color: "bg-rose-500 text-white",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
-      desc: "Want an extra income stream without extra effort? These plans are designed to give you regular monthly payouts, adding a cushion of comfort to your everyday life."
+      color: "bg-sky-500 text-white",
+      image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800",
+      desc: "Save a fixed amount regularly over a chosen tenure and earn interest at the applicable RD rate. An RD can be useful for salaried individuals, professionals, and small business owners who want to build savings gradually without investing a large lump sum upfront."
     },
     {
-      title: "Health & Illness Cover",
-      icon: HeartPulse,
-      color: "bg-teal-500 text-white",
-      image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800",
-      desc: "Medical emergencies can wipe out savings in an instant. This acts as a financial shield, providing a lump-sum payout upon diagnosis of covered critical illnesses, letting you focus on recovery."
+      title: "High-Interest Savings Account",
+      icon: Landmark,
+      color: "bg-rose-500 text-white",
+      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800",
+      desc: "Some banks offer savings accounts with competitive interest rates while keeping your funds accessible. Interest rates, balance requirements, withdrawal conditions, and other features vary by account and institution."
+    },
+    {
+      title: "Senior Citizen Savings Options",
+      icon: HeartHandshake,
+      color: "bg-indigo-500 text-white",
+      image: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=800",
+      desc: "Eligible senior citizens may have access to deposit products offering preferential interest rates or other benefits. Rates, eligibility, tenure, and payout options vary by institution and product."
+    },
+    {
+      title: "Tax-Saving Fixed Deposit",
+      icon: ShieldCheck,
+      color: "bg-orange-500 text-white",
+      image: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&q=80&w=800",
+      desc: "A tax-saving FD generally comes with a 5-year lock-in period and may qualify for deduction under Section 80C, subject to applicable tax rules and eligibility. Interest earned is subject to applicable taxation."
     }
   ];
 
-  const comparisonData = [
-    { feature: "Policy Options", traditional: "Plans from a single insurer", sgnl: "Choose from 15+ insurers' policies" },
-    { feature: "Premium Payment", traditional: "Options may vary by insurer", sgnl: "Flexible payment options, based on the selected plan" },
-    { feature: "Policy Coverage", traditional: "Coverage options vary by plan", sgnl: "Coverage options based on your family's needs" },
-    { feature: "Child Education Benefit", traditional: "May vary by policy", sgnl: "Child-focused planning options available" },
-    { feature: "Retirement Benefit", traditional: "May require a separate solution", sgnl: "Retirement-focused solutions available" },
-    { feature: "Tax Benefit", traditional: "Benefits depend on applicable rules", sgnl: "Tax benefits under applicable rules" },
-    { feature: "Claim Support", traditional: "Support depends on the provider", sgnl: "We assist you through the claim process" },
-    { feature: "Policy Renewal", traditional: "Renewal support may vary", sgnl: "Active support for policy renewals" },
-  ];
-
-  const worthItPoints = [
-    "Affordable premiums that fit your budget",
-    "Flexible monthly or yearly payment options",
-    "Long-term savings and wealth-building opportunities",
-    "Protection and investment, combined in one plan",
-    "Support for your child's education and your own retirement",
-    "Planning built around your goals, not a one-size-fits-all template",
-    "Guidance from a team that actually listens"
-  ];
 
   const faqs = [
-    { q: "What is the best age to buy life insurance?", a: "There is no single ideal age for everyone. Buying life insurance earlier can often mean lower premiums and longer coverage, depending on your age, health and policy terms." },
-    { q: "How much life insurance coverage do I actually need?", a: "Coverage needs depend on your income, liabilities, lifestyle, dependants and long-term financial goals. A qualified advisor can help you estimate a suitable amount." },
-    { q: "What's the difference between term insurance and a savings-linked plan?", a: "Term insurance is pure protection — low cost, high cover, but no payout if nothing happens to you. Savings-linked plans cost a bit more but combine life cover with an investment return, so you get something back at maturity too." },
-    { q: "Can I save on tax with a life insurance policy?", a: "Life insurance premiums and benefits may receive tax treatment under applicable Indian income-tax provisions, subject to prevailing rules and eligibility conditions." },
-    { q: "Which insurance companies can I choose from through SGNL?", a: "You get access to 15+ trusted insurers — including SBI Life, HDFC Life, ICICI Prudential, and Tata AIA — so you're not stuck with just one option." },
-    { q: "Can life insurance help with my child's education planning?", a: "Definitely. Our child future planning policies are built specifically to grow a dedicated fund over the years, covering education, career, and even wedding expenses down the line." },
-    { q: "Is SGNL a trustworthy platform for insurance?", a: "We maintain a transparent process with clear documentation, applicable charges and dedicated end-to-end support for documentation and claims." }
+    { q: "What is a high interest savings plan and why do I need it?", a: "A high-interest savings plan generally refers to savings or deposit options that may offer competitive interest rates compared with standard savings options. These can include eligible fixed deposits, recurring deposits, and other savings products, depending on the institution." },
+    { q: "Is the interest rate on a fixed deposit fixed?", a: "For a fixed-rate FD, the applicable interest rate is generally fixed according to the deposit terms at the time of booking and remains applicable for the agreed tenure, subject to the product's terms and conditions." },
+    { q: "What is the difference between FD and RD?", a: "A Fixed Deposit (FD) involves investing a lump sum for a selected tenure, while a Recurring Deposit (RD) involves making regular deposits, usually monthly, over a selected period. The applicable interest rates and terms vary by institution." },
+    { q: "Which banks offer competitive FD interest rates through SGNL?", a: "FD interest rates vary based on the institution, tenure, deposit amount, customer category, and applicable terms. SGNL helps you explore available options from participating banks and NBFCs so you can compare applicable rates and features before choosing." },
+    { q: "Can senior citizens get preferential interest rates on fixed deposits?", a: "Many banks and financial institutions offer preferential interest rates to eligible senior citizens on selected deposit products. The additional rate, eligibility, and terms vary by institution and tenure." },
+    { q: "What happens if I withdraw my FD before maturity?", a: "Many fixed deposits may allow premature withdrawal, but the applicable interest rate or penalty can vary depending on the institution and product. SGNL can help you understand the applicable premature withdrawal terms before you choose." },
+    { q: "Is my fixed deposit investment protected?", a: "Bank deposits with DICGC-insured banks are covered for up to ₹5 lakh per depositor per bank, including principal and interest, subject to applicable DICGC rules. DICGC deposit insurance does not cover deposits accepted by NBFCs. For NBFC fixed deposits, investors should review the institution's credit ratings, financial information, and applicable terms before investing." }
   ];
 
   return (
@@ -355,15 +360,15 @@ export default function LifeInsurancePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#001D3D]/50 border border-sky-400/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 backdrop-blur-sm">
-              <Shield className="w-4 h-4" /> Compare Life Insurance Plans from 15+ Leading Insurers in Tamil Nadu
+              <Shield className="w-4 h-4" /> Compare High Interest Savings Plans in Tamil Nadu
             </div>
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100">
-              Protect Your Family’s Tomorrow, <span className="text-sky-400">Starting Today</span>
+            <h1 className="text-3xl md:text-4xl lg:text-[42px] font-black leading-[1.15] mb-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100">
+              Grow Your Savings With Confidence — <span className="text-sky-400">Compare High Interest Savings Plans in Tamil Nadu</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
-              Life is unpredictable, but your family's future doesn't have to be. SGNL helps you compare and choose the right life insurance plan from leading life insurers in India — SBI Life, HDFC Life, ICICI Prudential, Tata AIA, and Max Life Insurance — so your loved ones are always taken care of.
+              Looking for better ways to grow your savings? SGNL helps you compare savings and deposit options in Tamil Nadu from participating banks and NBFCs, including HDFC Bank, ICICI Bank, State Bank of India, Bajaj Finance, and Axis Bank. Explore options based on your savings goal, preferred tenure, liquidity needs, and eligibility.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-300">
@@ -376,54 +381,39 @@ export default function LifeInsurancePage() {
             </div>
             
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm font-semibold text-slate-300 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-400">
-              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400" /> 15+ IRDAI-Approved Insurers</div>
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400" /> 10+ RBI-Regulated Banks & NBFCs</div>
               <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400" /> 100% Free Consultation</div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400" /> Dedicated Claims & Support Team</div>
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400" /> Dedicated Support Team</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* WHY DO YOU NEED LIFE INSURANCE */}
+      {/* WHY DO YOU NEED HIGH INTEREST SAVINGS */}
       <section className="pt-20 lg:pt-28 pb-10 lg:pb-12 bg-[#fafafa] relative overflow-hidden">
         <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: Image */}
-            <div className="relative reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100 min-h-[450px] w-full order-2 lg:order-1">
-              <div className="w-full h-full rounded-[40px] overflow-hidden shadow-2xl absolute inset-0">
-                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=800" alt="Happy family outdoors" className="w-full h-full object-cover" />
-              </div>
-              
-              {/* Floating badges */}
-              <div className="absolute top-12 -right-4 sm:-right-8 z-20 bg-white p-3 px-4 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] flex items-center gap-3 animate-bounce" style={{ animationDuration: '3s' }}>
-                <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
-                  <ShieldCheck className="w-5 h-5" />
+          {/* Heading */}
+          <div className="reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 mb-6 text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-black text-[#001D3D] leading-[1.15]">
+              Why Do You Need a High Interest Savings Plan?
+            </h2>
+          </div>
+          {/* Description */}
+          <div className="reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100 mb-10 text-center">
+            <p className="text-slate-900 font-medium text-[17px] leading-relaxed max-w-4xl mx-auto">
+              Keeping your money in a standard savings account may not always align with your financial goals. Savings and deposit products such as fixed deposits and recurring deposits can offer different interest rates, tenures, and payout options to help you plan your money more effectively. The right option depends on how much you want to save, how long you can keep the money invested, and how easily you may need to access it.
+            </p>
+          </div>
+          {/* Tick Points */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
+            {whyNeedInsurance.map((item, i) => (
+              <div key={i} className="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-[0_8px_30px_rgba(14,165,233,0.15)] transition-all duration-300 cursor-pointer h-full">
+                <div className={`w-10 h-10 rounded-xl ${item.bgColor} flex items-center justify-center shrink-0`}>
+                  <item.icon className={`w-5 h-5 ${item.iconColor}`} strokeWidth={2.5} />
                 </div>
-                <div>
-                  <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Coverage</p>
-                  <p className="text-[15px] font-black text-[#001D3D] leading-none mt-1">₹1 Crore+</p>
-                </div>
+                <p className="font-bold text-[#001D3D] text-[14px] leading-relaxed">{item.text}</p>
               </div>
-            </div>
-
-            {/* Right: Paragraph Content + Ticks */}
-            <div className="flex flex-col justify-center reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 py-4 order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-black mb-6 text-[#001D3D] leading-[1.15]">
-                Why Do You Need Life Insurance?
-              </h2>
-              <p className="text-slate-900 font-medium text-[17px] leading-relaxed mb-8">
-                Life insurance is one of the simplest ways to make sure your family never has to worry about money if something happens to you. It covers everyday expenses, pending loans, and your children's education, while also helping you build long-term savings. Many plans also come with tax benefits, so you're not just protecting your family — you're growing your wealth at the same time.
-              </p>
-              
-              <div className="grid sm:grid-cols-2 gap-3">
-                {whyNeedInsurance.map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-[0_8px_30px_rgba(14,165,233,0.15)] transition-all duration-300 cursor-pointer">
-                    <Check className="w-5 h-5 text-sky-500 shrink-0" strokeWidth={3} />
-                    <p className="font-bold text-[#001D3D] text-[13.5px] leading-snug">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -432,8 +422,8 @@ export default function LifeInsurancePage() {
       <section className="pt-10 lg:pt-12 pb-20 lg:pb-28 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-5xl mx-auto mb-6 lg:mb-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
-            <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-4">Life Insurance Plans We Offer</h2>
-            <p className="text-slate-600 text-lg truncate whitespace-normal lg:whitespace-nowrap">Comprehensive solutions designed to protect your family's future and grow your wealth at every stage of life.</p>
+            <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-4">High Interest Savings Plans in Tamil Nadu</h2>
+            <p className="text-slate-600 text-lg truncate whitespace-normal lg:whitespace-nowrap">Explore options based on your savings goal, preferred tenure, liquidity needs, and eligibility.</p>
           </div>
           
           <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
@@ -492,20 +482,19 @@ export default function LifeInsurancePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
-            <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-4">Why Choose <span className="text-sky-500">SGNL</span> for Life Insurance?</h2>
-            <p className="text-[#001D3D] font-bold text-xl mb-3">Compare More. Choose With Confidence.</p>
-            <p className="text-slate-600 text-lg">SGNL helps simplify the process of understanding and comparing life insurance options from participating insurers.</p>
+            <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-6">Why Choose <span className="text-sky-500">SGNL</span> for High Interest Savings?</h2>
+            <p className="text-slate-600 text-lg">Compare More. Save With Confidence. Stay Supported.</p>
           </div>
             
-          <div className="flex flex-wrap justify-center gap-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
             {[
-              { icon: Layers, title: "Compare Multiple Insurers", desc: "Explore available life insurance plans from multiple participating insurers rather than limiting your options to a single provider." },
-              { icon: Compass, title: "Guidance Based on Your Goals", desc: "Understand suitable options based on your family responsibilities, financial goals, affordability, and preferred policy duration." },
-              { icon: FileText, title: "Clear Comparison of Coverage & Costs", desc: "Compare important factors such as coverage, premium, policy duration, benefits, exclusions, and other applicable policy terms." },
-              { icon: Sparkles, title: "Simple & Transparent Process", desc: "Get clear information about documentation, application requirements, applicable charges, and the overall process." },
-              { icon: Headset, title: "Support Beyond Policy Purchase", desc: "Receive assistance with policy-related queries, renewals, and understanding the applicable claim process." }
+              { icon: Layers, title: "Compare Multiple Institutions", desc: "Explore FD, RD and other eligible savings options from participating banks and NBFCs." },
+              { icon: Compass, title: "Guidance Based on Your Goals", desc: "Compare options based on your savings amount, preferred tenure, liquidity needs and financial goals." },
+              { icon: FileText, title: "Clear Comparison of Rates & Terms", desc: "Understand applicable interest rates, tenure, payout options, premature withdrawal conditions and other key terms before choosing." },
+              { icon: Sparkles, title: "Simple Application Support", desc: "Get assistance with documentation, KYC and the application process as applicable." },
+              { icon: Headset, title: "Support Beyond Investment", desc: "Get assistance with renewals, maturity-related queries and other applicable requirements." }
             ].map((item, i) => (
-              <div key={i} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] max-w-[500px] group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-sky-500/50 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+              <div key={i} className="group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-sky-500/50 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-sm border border-slate-100 group-hover:bg-sky-500 group-hover:border-sky-500 transition-colors duration-300">
                     <item.icon className="w-6 h-6 text-sky-500 group-hover:text-white transition-colors duration-300" />
@@ -524,19 +513,26 @@ export default function LifeInsurancePage() {
       <section className="py-8 lg:py-10 bg-slate-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
-            <h2 className="text-3xl font-black text-[#001D3D] mb-6">Our Trusted Life Insurance Partners</h2>
-            <p className="text-slate-600 text-lg mb-10">We're not tied to just one company — and that's a good thing for you. SGNL works with leading, IRDAI-approved life insurers, so we can help you explore and compare suitable plans from multiple insurers.</p>
+            <h2 className="text-3xl font-black text-[#001D3D] mb-6">Our Banking, NBFC & Savings Scheme Partners</h2>
+            <p className="text-slate-600 text-lg mb-10">SGNL works with participating banks and NBFCs, helping customers explore and compare available savings and deposit options across multiple institutions.</p>
             
+            <h3 className="text-xl font-bold text-sky-500 mb-4 mt-8">Banks & NBFCs Regulated by RBI</h3>
             <div className="relative w-full flex overflow-hidden py-4 group">
               <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
               <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
-
               <div className="flex gap-4 lg:gap-8 items-center w-max animate-marquee group-hover:[animation-play-state:paused] opacity-80 hover:opacity-100 transition-opacity duration-500" style={{ animationDuration: '30s' }}>
-                {[...['SBI Life', 'HDFC Life', 'Max Life Insurance', 'Tata AIA Life', 'ICICI Prudential', 'Bajaj Allianz Life'], ...['SBI Life', 'HDFC Life', 'Max Life Insurance', 'Tata AIA Life', 'ICICI Prudential', 'Bajaj Allianz Life']].map((partner, i) => (
+                {[...['HDFC Bank', 'ICICI Bank', 'State Bank of India', 'Axis Bank', 'Bajaj Finance', 'Kotak Mahindra Bank', 'IDFC FIRST Bank', 'Shriram Finance', 'Mahindra Finance'], ...['HDFC Bank', 'ICICI Bank', 'State Bank of India', 'Axis Bank', 'Bajaj Finance', 'Kotak Mahindra Bank', 'IDFC FIRST Bank', 'Shriram Finance', 'Mahindra Finance']].map((partner, i) => (
                   <div key={i} className="shrink-0 px-6 py-3 bg-white rounded-xl border border-slate-200 font-black text-slate-700 text-xl tracking-tight hover:border-sky-500 hover:text-sky-500 hover:shadow-lg transition-all cursor-default">
                     {partner}
                   </div>
                 ))}
+              </div>
+            </div>
+
+            <h3 className="text-xl font-bold text-sky-500 mb-4 mt-8">Government-Backed Savings Scheme</h3>
+            <div className="flex justify-center">
+              <div className="shrink-0 px-6 py-3 bg-white rounded-xl border border-slate-200 font-black text-slate-700 text-xl tracking-tight hover:border-sky-500 hover:text-sky-500 hover:shadow-lg transition-all cursor-default">
+                Post Office Savings Schemes
               </div>
             </div>
           </div>
@@ -546,54 +542,16 @@ export default function LifeInsurancePage() {
       {/* HOW IT WORKS */}
       <section className="py-10 lg:py-12 bg-[#001D3D] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Trust and How it Works */}
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
-            <div className="lg:col-span-7 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10 flex flex-col">
-              <h2 className="text-3xl font-black text-white mb-4">What Makes Our Plans <span className="text-sky-400">Worth It?</span></h2>
-              <p className="text-slate-300 mb-8 text-sm md:text-base">
-                <strong className="text-white block mb-2">Benefits That Support Your Long-Term Financial Planning</strong>
-                The right life insurance solution can offer more than basic financial protection. Depending on the policy selected, you may benefit from features that support different financial priorities.
-              </p>
-              <div className="relative group/scroll flex-1 min-h-[300px]">
-                <div 
-                  className="grid gap-6 absolute inset-0 overflow-y-auto pr-10 custom-scrollbar"
-                  ref={scrollContainerRef}
-                  onMouseEnter={() => setIsPaused(true)}
-                  onMouseLeave={() => setIsPaused(false)}
-                >
-                  {(() => {
-                    const items = [
-                      { title: "Flexible Premium Payment Options", desc: "Choose from available premium payment frequencies and options based on the selected policy." },
-                      { title: "Long-Term Financial Planning", desc: "Certain policies can support long-term savings and financial planning goals over the policy duration." },
-                      { title: "Family Protection", desc: "Life insurance can provide a financial benefit to eligible nominees or beneficiaries following a covered event, subject to policy terms." },
-                      { title: "Child Education Planning", desc: "Suitable plans can be considered as part of a long-term strategy for education and other future expenses." },
-                      { title: "Retirement Planning Support", desc: "Certain insurance products may provide benefits that can complement retirement-focused financial planning." },
-                      { title: "Policy-Based Benefits", desc: "Depending on the selected product, benefits may include death benefits, maturity benefits, income benefits, or other features specified in the policy." }
-                    ];
-                    return [...items, ...items];
-                  })().map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="mt-1 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                      <Check className="w-3.5 h-3.5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg text-white">{item.title}</h4>
-                      <p className="text-slate-300 mt-2">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-5 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10">
-              <h2 className="text-3xl font-black text-white mb-8">How It Works</h2>
-              <div className="ml-4 flex flex-col gap-8">
+          <div className="w-full max-w-3xl mx-auto reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10">
+            <h2 className="text-3xl font-black text-white mb-8">How It Works</h2>
+            <div className="ml-4 flex flex-col gap-8">
                 {[
-                  { step: 1, title: "Tell us about yourself", desc: "Your age, income, and what you're hoping to secure for your family." },
-                  { step: 2, title: "We compare plans for you", desc: "Across 15+ insurers, so you don't have to do the legwork." },
-                  { step: 3, title: "You choose, we handle the rest", desc: "Paperwork, documentation, all sorted for you." },
-                  { step: 4, title: "Stay covered, stay supported", desc: "We're here for claims, renewals, and everything in between." }
+                  {
+                  step: 1, title: "Tell Us Your Savings Goal", desc: "Share the amount you want to save, preferred tenure, liquidity needs, and what you want to achieve." },
+                  { step: 2, title: "We Compare Available Options", desc: "We help you explore suitable savings and deposit options from participating institutions." },
+                  { step: 3, title: "Choose the Option That Fits", desc: "Review the applicable interest rate, tenure, payout structure, withdrawal conditions, and other terms before making your decision." },
+                  { step: 4, title: "Complete the Process", desc: "Get assistance with documentation, KYC, and account or deposit application requirements as applicable." },
+                  { step: 5, title: "Stay Supported", desc: "Get support for renewals, maturity-related queries, and other applicable requirements after you choose your product." }
                 ].map((item, i, arr) => (
                   <div key={i} className="relative pl-8">
                     {i !== arr.length - 1 && (
@@ -607,9 +565,7 @@ export default function LifeInsurancePage() {
                   </div>
                 ))}
               </div>
-            </div>
           </div>
-
         </div>
       </section>
 
@@ -664,10 +620,12 @@ export default function LifeInsurancePage() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
             <div className="text-center lg:text-left max-w-3xl">
               <h2 className="text-3xl lg:text-4xl font-black text-white leading-none tracking-tight mb-2">
-                Plan Today for a Secure Tomorrow
+                Save Smart. Plan With Confidence.
               </h2>
               <p className="text-lg text-white/90 leading-snug font-medium">
-                Life doesn't wait, and neither should your family's financial security. Whether it's protecting your loved ones, saving for your child's future, or planning for retirement, we're here to help you find the right plan — without the confusion.
+                Your savings should work toward your goals, whether you're building an emergency fund, planning for a major expense, preparing for retirement, or simply looking for a disciplined way to save.
+
+SGNL helps you explore and compare available savings and deposit options in Tamil Nadu, with clear information and support throughout the process.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center shrink-0 w-full lg:w-auto mt-24 sm:mt-0">

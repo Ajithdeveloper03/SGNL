@@ -223,7 +223,7 @@ export default function LifeInsurancePage() {
             <nav className="hidden lg:flex items-center gap-8 xl:gap-12 text-[15px] font-black text-[#001D3D] h-full ml-auto mr-8">
               <Link href="/" className="hover:text-sky-500 transition-colors h-full flex items-center">Home</Link>
 
-              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">
+              <Link href="/about-us" className="hover:text-sky-500 transition-colors h-full flex items-center">
                 About Us
               </Link>
 
@@ -299,7 +299,7 @@ export default function LifeInsurancePage() {
             <Link href="/" className="w-full py-5 cursor-pointer">
               <span className="text-[#001D3D] font-black text-[15px]">Home</span>
             </Link>
-            <Link href="#" className="w-full py-5 cursor-pointer border-t border-gray-100">
+            <Link href="/about-us" className="w-full py-5 cursor-pointer border-t border-gray-100">
               <span className="text-[#001D3D] font-black text-[15px]">About Us</span>
             </Link>
             {[
@@ -725,7 +725,7 @@ export default function LifeInsurancePage() {
                 <p className="text-white font-black text-sm uppercase tracking-widest mb-6">{col.head}</p>
                 <ul className="space-y-4">
                   {col.links.map(l => (
-                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : l === 'General Insurance' ? '/general-insurance-tamil-nadu' : l === 'High-Interest Savings Plans' ? '/high-interest-savings-plans-tamil-nadu' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
+                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : l === 'General Insurance' ? '/general-insurance-tamil-nadu' : l === 'High-Interest Savings Plans' ? '/high-interest-savings-plans-tamil-nadu' : l === 'About Us' ? '/about-us' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
                   ))}
                 </ul>
               </div>

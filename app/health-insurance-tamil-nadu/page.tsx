@@ -217,19 +217,9 @@ export default function LifeInsurancePage() {
             <nav className="hidden lg:flex items-center gap-8 xl:gap-12 text-[15px] font-black text-[#001D3D] h-full ml-auto mr-8">
               <Link href="/" className="hover:text-sky-500 transition-colors h-full flex items-center">Home</Link>
 
-              {/* About Us */}
-              <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('About')} onMouseLeave={() => setActiveDropdown(null)}>
-                <button className={`flex items-center gap-1.5 transition-colors h-full ${activeDropdown === 'About' ? 'text-sky-500' : 'hover:text-sky-500'}`}>
-                  About Us <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'About' ? 'rotate-180 text-sky-500' : 'text-gray-400'}`} />
-                </button>
-                {activeDropdown === 'About' && (
-                  <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[200px] flex flex-col gap-1 z-50">
-                    {['Mission', 'Vision', 'Why Us'].map(item => (
-                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">
+                About Us
+              </Link>
 
               {/* Services */}
               <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('Services')} onMouseLeave={() => setActiveDropdown(null)}>
@@ -303,8 +293,10 @@ export default function LifeInsurancePage() {
             <Link href="/" className="w-full py-5 cursor-pointer">
               <span className="text-[#001D3D] font-black text-[15px]">Home</span>
             </Link>
+            <Link href="#" className="w-full py-5 cursor-pointer border-t border-gray-100">
+              <span className="text-[#001D3D] font-black text-[15px]">About Us</span>
+            </Link>
             {[
-              { name: 'About Us', links: ['Mission', 'Vision', 'Why Us'] },
               { name: 'Services', links: ['Life Insurance', 'Health Insurance', 'General Insurance', 'High-Interest Savings', 'Investment Solutions'] },
               { name: 'Schemes', links: ['Short Term Plans', 'Long Term Plans'] }
             ].map((item) => (
@@ -356,7 +348,7 @@ export default function LifeInsurancePage() {
               Protect Your Family's Health — <span className="text-sky-400">Compare Insurance Plans</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
+            <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed text-justify md:text-left reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
               A medical emergency can bring unexpected expenses at any time. SGNL helps you compare health insurance options from participating insurers such as Star Health, Niva Bupa, HDFC ERGO, Care Health, and Manipal Cigna, so you can explore coverage based on your family's healthcare needs and budget.
             </p>
             
@@ -387,7 +379,7 @@ export default function LifeInsurancePage() {
               <h2 className="text-3xl md:text-4xl lg:text-[42px] font-black mb-6 text-[#001D3D] leading-[1.15]">
                 Why Do You Need Health Insurance?
               </h2>
-              <p className="text-slate-900 font-medium text-[17px] leading-relaxed mb-8">
+              <p className="text-slate-900 font-medium text-[17px] leading-relaxed mb-8 text-justify md:text-left">
                 Medical emergencies can happen without warning, and healthcare expenses can quickly put pressure on your savings. From hospitalization and surgeries to diagnostic tests and follow-up care, medical costs can become difficult to manage without adequate financial planning. Health insurance helps you prepare for these unexpected expenses, so a health emergency doesn't have to become a major financial setback for your family.
               </p>
               
@@ -437,10 +429,10 @@ export default function LifeInsurancePage() {
                 <img src={plan.image} alt={plan.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 
                 {/* Default state overlay (gradient to make bottom text readable) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#001D3D]/90 via-[#001D3D]/20 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001D3D]/90 via-[#001D3D]/20 to-transparent opacity-0 md:opacity-100 md:group-hover:opacity-0 transition-opacity duration-500"></div>
 
                 {/* Hover state dark overlay */}
-                <div className="absolute inset-0 bg-[#001D3D]/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-[#001D3D]/80 backdrop-blur-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 {/* Number indicator (like in reference image "01", "02") */}
                 <div className="absolute top-5 right-5 w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/80 font-bold text-xs backdrop-blur-md z-10">
@@ -451,7 +443,7 @@ export default function LifeInsurancePage() {
                 <div className="absolute inset-0 flex flex-col justify-end z-20">
                   
                   {/* Default State: Icon + Heading at bottom */}
-                  <div className="transform translate-y-0 group-hover:-translate-y-8 group-hover:opacity-0 transition-all duration-500 absolute bottom-5 left-5 right-5">
+                  <div className="transform translate-y-0 md:group-hover:-translate-y-8 opacity-0 md:opacity-100 md:group-hover:opacity-0 transition-all duration-500 absolute bottom-5 left-5 right-5">
                     <div className="flex items-center justify-center gap-3">
                       <div className={`w-10 h-10 rounded-xl ${plan.color} flex items-center justify-center shrink-0 shadow-lg`}>
                         <plan.icon className="w-5 h-5" />
@@ -461,7 +453,7 @@ export default function LifeInsurancePage() {
                   </div>
 
                   {/* Hover State: Icon + Heading + Description sliding up */}
-                  <div className="absolute top-0 left-0 right-0 bottom-0 p-5 md:p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500">
+                  <div className="absolute top-0 left-0 right-0 bottom-0 p-5 md:p-6 flex flex-col justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transform translate-y-0 md:translate-y-8 md:group-hover:translate-y-0 transition-all duration-500">
                     <div className="flex items-center justify-center gap-3 mb-4">
                       <div className={`w-10 h-10 rounded-xl ${plan.color} flex items-center justify-center shrink-0 shadow-lg`}>
                         <plan.icon className="w-5 h-5" />
@@ -542,7 +534,7 @@ export default function LifeInsurancePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Trust and How it Works */}
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
-            <div className="lg:col-span-7 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10 flex flex-col">
+            <div className="lg:col-span-7 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 bg-white/5 rounded-3xl p-2 md:p-8 lg:p-10 border border-white/10 flex flex-col">
               <h2 className="text-3xl font-black text-white mb-6">What Makes Our Plans <span className="text-sky-400">Worth It?</span></h2>
               <p className="text-slate-300 text-[15px] mb-8 leading-relaxed">Health insurance plans can offer different features designed to make healthcare protection more practical and flexible. Depending on the insurer and policy selected, available benefits may include:</p>
               <div className="relative group/scroll flex-1 min-h-[300px]">
@@ -577,8 +569,8 @@ export default function LifeInsurancePage() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10">
-              <h2 className="text-3xl font-black text-white mb-8">How It Works</h2>
+            <div className="lg:col-span-5 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200 bg-white/5 rounded-3xl p-2 md:p-8 lg:p-10 border border-white/10">
+              <h2 className="text-3xl font-black text-white mb-8 text-center md:text-left">How It Works</h2>
               <div className="ml-4 flex flex-col gap-8">
                 {[
                   { step: 1, title: "Tell Us Your Requirements", desc: "Share your age, family size, healthcare needs, existing coverage, and preferred coverage level." },
@@ -623,7 +615,7 @@ export default function LifeInsurancePage() {
                   onClick={() => toggleFaq(i)}
                   className="w-full flex items-center justify-between px-6 py-2 text-left cursor-pointer"
                 >
-                  <span className={`font-bold text-lg transition-colors duration-300 pr-8 ${openFaq === i ? 'text-sky-600' : 'text-[#001D3D]'}`}>
+                  <span className={`font-bold text-[14px] leading-[1.4] md:text-lg md:leading-normal line-clamp-2 md:line-clamp-none transition-colors duration-300 pr-4 md:pr-8 ${openFaq === i ? 'text-sky-600' : 'text-[#001D3D]'}`}>
                     {faq.q}
                   </span>
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === i ? 'bg-sky-500 text-white rotate-180' : 'bg-slate-100 text-slate-500'}`}>
@@ -633,7 +625,7 @@ export default function LifeInsurancePage() {
                 <div 
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
-                  <div className="px-6 pb-2 pt-0 text-slate-600 text-base leading-relaxed">
+                  <div className="px-6 pb-2 pt-0 text-slate-600 text-[13.5px] md:text-base leading-relaxed">
                     {faq.a}
                   </div>
                 </div>

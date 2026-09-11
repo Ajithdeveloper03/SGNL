@@ -228,19 +228,9 @@ export default function HighInterestSavingsPage() {
             <nav className="hidden lg:flex items-center gap-8 xl:gap-12 text-[15px] font-black text-[#001D3D] h-full ml-auto mr-8">
               <Link href="/" className="hover:text-sky-500 transition-colors h-full flex items-center">Home</Link>
 
-              {/* About Us */}
-              <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('About')} onMouseLeave={() => setActiveDropdown(null)}>
-                <button className={`flex items-center gap-1.5 transition-colors h-full ${activeDropdown === 'About' ? 'text-sky-500' : 'hover:text-sky-500'}`}>
-                  About Us <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'About' ? 'rotate-180 text-sky-500' : 'text-gray-400'}`} />
-                </button>
-                {activeDropdown === 'About' && (
-                  <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[200px] flex flex-col gap-1 z-50">
-                    {['Mission', 'Vision', 'Why Us'].map(item => (
-                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">
+                About Us
+              </Link>
 
               {/* Services */}
               <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('Services')} onMouseLeave={() => setActiveDropdown(null)}>
@@ -314,8 +304,10 @@ export default function HighInterestSavingsPage() {
             <Link href="/" className="w-full py-5 cursor-pointer">
               <span className="text-[#001D3D] font-black text-[15px]">Home</span>
             </Link>
+            <Link href="#" className="w-full py-5 cursor-pointer border-t border-gray-100">
+              <span className="text-[#001D3D] font-black text-[15px]">About Us</span>
+            </Link>
             {[
-              { name: 'About Us', links: ['Mission', 'Vision', 'Why Us'] },
               { name: 'Services', links: ['Life Insurance', 'Health Insurance', 'General Insurance', 'High-Interest Savings', 'Investment Solutions'] },
               { name: 'Schemes', links: ['Short Term Plans', 'Long Term Plans'] }
             ].map((item) => (
@@ -367,7 +359,7 @@ export default function HighInterestSavingsPage() {
               Grow Your Savings With Confidence — <span className="text-sky-400">Compare High Interest Savings Plans in Tamil Nadu</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
+            <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed text-justify md:text-left reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
               Looking for better ways to grow your savings? SGNL helps you compare savings and deposit options in Tamil Nadu from participating banks and NBFCs, including HDFC Bank, ICICI Bank, State Bank of India, Bajaj Finance, and Axis Bank. Explore options based on your savings goal, preferred tenure, liquidity needs, and eligibility.
             </p>
             
@@ -400,7 +392,7 @@ export default function HighInterestSavingsPage() {
           </div>
           {/* Description */}
           <div className="reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100 mb-10 text-center">
-            <p className="text-slate-900 font-medium text-[17px] leading-relaxed max-w-4xl mx-auto">
+            <p className="text-slate-900 font-medium text-[17px] leading-relaxed max-w-4xl mx-auto text-justify md:text-center">
               Keeping your money in a standard savings account may not always align with your financial goals. Savings and deposit products such as fixed deposits and recurring deposits can offer different interest rates, tenures, and payout options to help you plan your money more effectively. The right option depends on how much you want to save, how long you can keep the money invested, and how easily you may need to access it.
             </p>
           </div>
@@ -433,10 +425,10 @@ export default function HighInterestSavingsPage() {
                 <img src={plan.image} alt={plan.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 
                 {/* Default state overlay (gradient to make bottom text readable) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#001D3D]/90 via-[#001D3D]/20 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001D3D]/90 via-[#001D3D]/20 to-transparent opacity-0 md:opacity-100 md:group-hover:opacity-0 transition-opacity duration-500"></div>
 
                 {/* Hover state dark overlay */}
-                <div className="absolute inset-0 bg-[#001D3D]/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-[#001D3D]/80 backdrop-blur-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 {/* Number indicator (like in reference image "01", "02") */}
                 <div className="absolute top-5 right-5 w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/80 font-bold text-xs backdrop-blur-md z-10">
@@ -447,7 +439,7 @@ export default function HighInterestSavingsPage() {
                 <div className="absolute inset-0 flex flex-col justify-end z-20">
                   
                   {/* Default State: Icon + Heading at bottom */}
-                  <div className="transform translate-y-0 group-hover:-translate-y-8 group-hover:opacity-0 transition-all duration-500 absolute bottom-5 left-5 right-5">
+                  <div className="transform translate-y-0 md:group-hover:-translate-y-8 opacity-0 md:opacity-100 md:group-hover:opacity-0 transition-all duration-500 absolute bottom-5 left-5 right-5">
                     <div className="flex items-center justify-center gap-3">
                       <div className={`w-10 h-10 rounded-xl ${plan.color} flex items-center justify-center shrink-0 shadow-lg`}>
                         <plan.icon className="w-5 h-5" />
@@ -457,7 +449,7 @@ export default function HighInterestSavingsPage() {
                   </div>
 
                   {/* Hover State: Icon + Heading + Description sliding up */}
-                  <div className="absolute top-0 left-0 right-0 bottom-0 p-5 md:p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500">
+                  <div className="absolute top-0 left-0 right-0 bottom-0 p-5 md:p-6 flex flex-col justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transform translate-y-0 md:translate-y-8 md:group-hover:translate-y-0 transition-all duration-500">
                     <div className="flex items-center justify-center gap-3 mb-4">
                       <div className={`w-10 h-10 rounded-xl ${plan.color} flex items-center justify-center shrink-0 shadow-lg`}>
                         <plan.icon className="w-5 h-5" />
@@ -542,8 +534,8 @@ export default function HighInterestSavingsPage() {
       {/* HOW IT WORKS */}
       <section className="py-10 lg:py-12 bg-[#001D3D] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-full max-w-3xl mx-auto reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200 bg-white/5 rounded-3xl p-8 lg:p-10 border border-white/10">
-            <h2 className="text-3xl font-black text-white mb-8">How It Works</h2>
+          <div className="w-full max-w-3xl mx-auto reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200 bg-white/5 rounded-3xl p-2 md:p-8 lg:p-10 border border-white/10">
+            <h2 className="text-3xl font-black text-white mb-8 text-center md:text-left">How It Works</h2>
             <div className="ml-4 flex flex-col gap-8">
                 {[
                   {
@@ -587,7 +579,7 @@ export default function HighInterestSavingsPage() {
                   onClick={() => toggleFaq(i)}
                   className="w-full flex items-center justify-between px-6 py-2 text-left cursor-pointer"
                 >
-                  <span className={`font-bold text-lg transition-colors duration-300 pr-8 ${openFaq === i ? 'text-sky-600' : 'text-[#001D3D]'}`}>
+                  <span className={`font-bold text-[14px] leading-[1.4] md:text-lg md:leading-normal line-clamp-2 md:line-clamp-none transition-colors duration-300 pr-4 md:pr-8 ${openFaq === i ? 'text-sky-600' : 'text-[#001D3D]'}`}>
                     {faq.q}
                   </span>
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === i ? 'bg-sky-500 text-white rotate-180' : 'bg-slate-100 text-slate-500'}`}>
@@ -597,7 +589,7 @@ export default function HighInterestSavingsPage() {
                 <div 
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
-                  <div className="px-6 pb-2 pt-0 text-slate-600 text-base leading-relaxed">
+                  <div className="px-6 pb-2 pt-0 text-slate-600 text-[13.5px] md:text-base leading-relaxed">
                     {faq.a}
                   </div>
                 </div>

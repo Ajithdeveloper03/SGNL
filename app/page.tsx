@@ -397,19 +397,9 @@ export default function Home() {
             <nav className="hidden lg:flex items-center gap-8 xl:gap-12 text-[15px] font-black text-[#001D3D] h-full ml-auto mr-8">
               <Link href="/" className="hover:text-sky-500 transition-colors h-full flex items-center">Home</Link>
 
-              {/* About Us */}
-              <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('About')} onMouseLeave={() => setActiveDropdown(null)}>
-                <button className={`flex items-center gap-1.5 transition-colors h-full ${activeDropdown === 'About' ? 'text-sky-500' : 'hover:text-sky-500'}`}>
-                  About Us <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'About' ? 'rotate-180 text-sky-500' : 'text-gray-400'}`} />
-                </button>
-                {activeDropdown === 'About' && (
-                  <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[200px] flex flex-col gap-1 z-50">
-                    {['Mission', 'Vision', 'Why Us'].map(item => (
-                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">
+                About Us
+              </Link>
 
               {/* Services */}
               <div className="relative h-full flex items-center" onMouseEnter={() => setActiveDropdown('Services')} onMouseLeave={() => setActiveDropdown(null)}>
@@ -483,8 +473,10 @@ export default function Home() {
             <Link href="/" className="w-full py-5 cursor-pointer">
               <span className="text-[#001D3D] font-black text-[15px]">Home</span>
             </Link>
+            <Link href="#" className="w-full py-5 cursor-pointer border-t border-gray-100">
+              <span className="text-[#001D3D] font-black text-[15px]">About Us</span>
+            </Link>
             {[
-              { name: 'About Us', links: ['Mission', 'Vision', 'Why Us'] },
               { name: 'Services', links: ['Life Insurance', 'Health Insurance', 'General Insurance', 'High-Interest Savings', 'Investment Solutions'] },
               { name: 'Schemes', links: ['Short Term Plans', 'Long Term Plans'] }
             ].map((item) => (

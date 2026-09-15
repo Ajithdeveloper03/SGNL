@@ -245,7 +245,7 @@ export default function GeneralInsurancePage() {
                 {activeDropdown === 'Schemes' && (
                   <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[260px] flex flex-col gap-1 z-50">
                     {['Short Term Plans', 'Long Term Plans'].map(item => (
-                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                      <Link key={item} href={item === 'Long Term Plans' ? '/long-term-plans' : '#'} className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
                     ))}
                   </div>
                 )}
@@ -314,7 +314,7 @@ export default function GeneralInsurancePage() {
                 {activeDropdown === item.name && (
                   <div className="flex flex-col gap-4 pb-5 pl-4">
                     {item.links.map(link => (
-                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : link === 'Health Insurance' ? '/health-insurance-tamil-nadu' : link === 'General Insurance' ? '/general-insurance-tamil-nadu' : link === 'High-Interest Savings' ? '/high-interest-savings-plans-tamil-nadu' : link === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
+                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : link === 'Health Insurance' ? '/health-insurance-tamil-nadu' : link === 'General Insurance' ? '/general-insurance-tamil-nadu' : link === 'High-Interest Savings' ? '/high-interest-savings-plans-tamil-nadu' : link === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : link === 'Long Term Plans' ? '/long-term-plans' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
                         {link}
                       </Link>
                     ))}

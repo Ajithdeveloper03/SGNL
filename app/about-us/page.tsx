@@ -114,7 +114,7 @@ export default function AboutUsPage() {
                 {activeDropdown === 'Schemes' && (
                   <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[260px] flex flex-col gap-1 z-50">
                     {['Short Term Plans', 'Long Term Plans'].map(item => (
-                      <Link key={item} href="#" className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                      <Link key={item} href={item === 'Long Term Plans' ? '/long-term-plans' : '#'} className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
                     ))}
                   </div>
                 )}
@@ -161,7 +161,7 @@ export default function AboutUsPage() {
                 {activeDropdown === item.name && (
                   <div className="flex flex-col gap-4 pb-5 pl-4">
                     {item.links.map(link => (
-                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : link === 'Health Insurance' ? '/health-insurance-tamil-nadu' : link === 'General Insurance' ? '/general-insurance-tamil-nadu' : link === 'High-Interest Savings' ? '/high-interest-savings-plans-tamil-nadu' : link === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">{link}</Link>
+                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : link === 'Health Insurance' ? '/health-insurance-tamil-nadu' : link === 'General Insurance' ? '/general-insurance-tamil-nadu' : link === 'High-Interest Savings' ? '/high-interest-savings-plans-tamil-nadu' : link === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : link === 'Long Term Plans' ? '/long-term-plans' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">{link}</Link>
                     ))}
                   </div>
                 )}
@@ -293,10 +293,12 @@ export default function AboutUsPage() {
       <section className="py-20 lg:py-28 bg-[#001D3D] relative text-white">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="text-center max-w-5xl mx-auto mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-sky-500/20 text-sky-400 mb-6">
-              <Target className="w-8 h-8" />
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-sky-500/20 text-sky-400 shrink-0">
+                <Target className="w-7 h-7 md:w-8 md:h-8" />
+              </div>
+              <h2 className="text-3xl lg:text-5xl font-black">Our Mission</h2>
             </div>
-            <h2 className="text-3xl lg:text-5xl font-black mb-6">Our Mission</h2>
             <p className="text-lg text-slate-300 leading-relaxed mb-4">
               Our mission at Sarathi Germinate Nidhi Limited (SGNL) is to make trusted, transparent, and affordable financial services — including low-interest gold loans, personal loans, fixed deposit schemes, and disciplined savings plans — accessible to every family and small business across Tamil Nadu.
             </p>
@@ -318,13 +320,15 @@ export default function AboutUsPage() {
       </section>
 
       {/* ══════════ VISION ══════════ */}
-      <section className="py-20 lg:py-28 bg-white relative">
+      <section className="pt-20 lg:pt-28 pb-10 lg:pb-12 bg-white relative">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="text-center max-w-5xl mx-auto mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-sky-100 text-sky-500 mb-6">
-              <Sparkles className="w-8 h-8" />
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-sky-100 text-sky-500 shrink-0">
+                <Sparkles className="w-7 h-7 md:w-8 md:h-8" />
+              </div>
+              <h2 className="text-3xl lg:text-5xl font-black text-[#001D3D]">Our Vision</h2>
             </div>
-            <h2 className="text-3xl lg:text-5xl font-black text-[#001D3D] mb-6">Our Vision</h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-4">
               Our vision is to become Tamil Nadu's most trusted Nidhi company, helping every family and small business save, borrow, and build long-term financial security through simple, transparent, and accessible services.
             </p>
@@ -350,7 +354,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* ══════════ WHAT SETS SGNL APART ══════════ */}
-      <section className="py-20 lg:py-28 bg-slate-50 border-t border-gray-100">
+      <section className="py-10 lg:py-12 bg-slate-50 border-t border-gray-100">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl lg:text-4xl font-black text-[#001D3D] mb-4">What Sets SGNL Apart</h2>
@@ -372,7 +376,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* ══════════ WHO WE SERVE ══════════ */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="pt-10 lg:pt-12 pb-20 lg:pb-28 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-1">
@@ -396,21 +400,46 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* ══════════ CTA SECTION ══════════ */}
-      <section className="py-20 bg-sky-500 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
-        <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center relative z-10">
-          <h2 className="text-3xl lg:text-5xl font-black text-white mb-6">Ready to Start?</h2>
-          <p className="text-xl text-white/90 font-medium mb-10">Take the Next Step Towards Smarter Financial Planning</p>
-          <p className="text-white mb-8 text-lg">Explore our savings and investment schemes or connect with a branch near you.<br/>Visit us at: <strong>Hosur | Chennai | Coimbatore</strong></p>
+      {/* ══════════ FINAL CTA BANNER ══════════ */}
+      <section className="py-2 bg-sky-500 relative">
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 0%, transparent 80%)' }} />
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={() => setIsPopupOpen(true)} className="bg-white text-[#001D3D] px-8 py-4 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-50 transition-all shadow-xl hover:-translate-y-1">
-              Explore Our Schemes
-            </button>
-            <button onClick={() => setIsPopupOpen(true)} className="bg-[#001D3D] text-white px-8 py-4 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-900 transition-all shadow-xl hover:-translate-y-1">
-              Contact Us
-            </button>
+          {/* Desktop Character Illustration */}
+          <div className="hidden lg:block absolute -top-[140px] right-24 w-44 z-20 pointer-events-none drop-shadow-2xl">
+            <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain" />
+          </div>
+
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+            <div className="text-center lg:text-left max-w-3xl">
+              <h2 className="text-3xl lg:text-5xl font-black text-white mb-4">Ready to Start?</h2>
+              <p className="text-xl text-white/90 font-bold mb-4">
+                Take the Next Step Towards Smarter Financial Planning
+              </p>
+              <p className="text-white/80 text-lg">
+                Explore our savings and investment schemes or connect with a branch near you.<br/>Visit us at: <strong>Hosur | Chennai | Coimbatore</strong>
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center shrink-0 w-full lg:w-auto mt-24 sm:mt-0">
+              <div className="relative w-full sm:w-auto">
+                {/* Mobile Character Illustration */}
+                <div className="lg:hidden absolute bottom-[calc(100%-24px)] right-4 w-36 z-20 pointer-events-none drop-shadow-2xl">
+                  <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain" />
+                </div>
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className="w-full sm:w-auto bg-[#001D3D] text-white px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-900 transition-all shadow-xl flex items-center justify-center gap-2 hover:-translate-y-1 relative z-30"
+                >
+                  Explore Our Schemes
+                </button>
+              </div>
+              <button 
+                onClick={() => setIsPopupOpen(true)}
+                className="w-full sm:w-auto bg-white text-[#001D3D] px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-50 transition-all flex items-center justify-center shadow-lg hover:-translate-y-1 relative z-30"
+              >
+                Contact Us
+              </button>
+            </div>
           </div>
         </div>
       </section>

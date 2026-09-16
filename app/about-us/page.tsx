@@ -211,7 +211,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* ══════════ INTRO & STORY ══════════ */}
-      <section className="py-20 lg:py-28 relative bg-white">
+      <section className="pt-20 pb-10 lg:pt-28 lg:pb-12 relative bg-white">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 relative">
@@ -244,13 +244,23 @@ export default function AboutUsPage() {
                   </p>
                 </div>
               </div>
+
+              <div className="flex justify-center pt-4">
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className="bg-sky-500 text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-[#001D3D] transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+                >
+                  Discover Our Story <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+              
             </div>
           </div>
         </div>
       </section>
 
       {/* ══════════ SARATHI GROUPS ══════════ */}
-      <section className="py-16 lg:py-24 bg-white relative">
+      <section className="pt-16 pb-10 lg:pt-24 lg:pb-12 bg-white relative">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
           <div className="rounded-[32px] border border-sky-200/60 bg-white overflow-hidden flex flex-col lg:flex-row relative shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
             
@@ -286,11 +296,19 @@ export default function AboutUsPage() {
             </div>
 
           </div>
+          <div className="flex justify-center mt-2 relative z-10">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-[#001D3D] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-sky-500 transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+            >
+              Learn More About SG <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
       </section>
 
       {/* ══════════ MISSION ══════════ */}
-      <section className="py-20 lg:py-28 bg-[#001D3D] relative text-white">
+      <section className="pt-20 pb-10 lg:pt-28 lg:pb-12 bg-[#001D3D] relative text-white">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="text-center max-w-5xl mx-auto mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
@@ -315,6 +333,14 @@ export default function AboutUsPage() {
                 <p className="text-slate-400 text-sm leading-relaxed">{pillar.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="flex justify-center mt-2">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-sky-500 text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-white hover:text-[#001D3D] transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+            >
+              Join Our Mission <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
         </div>
       </section>
@@ -350,11 +376,19 @@ export default function AboutUsPage() {
               </div>
             ))}
           </div>
+          <div className="flex justify-center mt-2">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-[#001D3D] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-sky-500 transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+            >
+              See Our Vision <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
       </section>
 
       {/* ══════════ WHAT SETS SGNL APART ══════════ */}
-      <section className="py-10 lg:py-12 bg-slate-50 border-t border-gray-100">
+      <section className="pt-10 pb-6 lg:pt-12 lg:pb-8 bg-slate-50 border-t border-gray-100">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl lg:text-4xl font-black text-[#001D3D] mb-4">What Sets SGNL Apart</h2>
@@ -372,11 +406,19 @@ export default function AboutUsPage() {
               </div>
             ))}
           </div>
+          <div className="flex justify-center mt-2">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-sky-500 text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-[#001D3D] transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+            >
+              Experience the Difference <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
       </section>
 
       {/* ══════════ WHO WE SERVE ══════════ */}
-      <section className="pt-10 lg:pt-12 pb-20 lg:pb-28 bg-white">
+      <section className="pt-10 pb-10 lg:pt-12 lg:pb-12 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-1">
@@ -388,9 +430,17 @@ export default function AboutUsPage() {
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
                 Our approach is simple: understand your priorities first, then help you explore suitable financial solutions.
               </p>
-              <p className="text-xl font-bold text-[#001D3D]">
+              <p className="text-xl font-bold text-[#001D3D] mb-8">
                 We believe financial planning should be about finding the right approach for your needs — not simply pushing a product.
               </p>
+              <div className="pt-2">
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className="bg-[#001D3D] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-sky-500 transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+                >
+                  Find Your Solution <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </div>
             <div className="order-2 relative">
               <div className="absolute -inset-4 bg-gradient-to-bl from-sky-50 to-white rounded-3xl -z-10 transform rotate-3" />

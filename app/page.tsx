@@ -751,6 +751,15 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          <div className="flex justify-center mt-6 lg:mt-8 reveal-on-scroll opacity-0 translate-y-8 transition-all duration-[800ms] ease-out delay-300">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-[#001D3D] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-sky-500 transition-all shadow-xl hover:shadow-sky-500/30 flex items-center gap-2 group"
+            >
+              Get Started with SGNL <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
       </section>
 
@@ -819,6 +828,15 @@ export default function Home() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          <div className="flex justify-center mt-0 lg:mt-2 reveal-on-scroll opacity-0 translate-y-8 transition-all duration-[800ms] ease-out delay-300">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-[#001D3D] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-sky-500 transition-all shadow-xl hover:shadow-sky-500/30 flex items-center gap-2 group"
+            >
+              Explore All Offerings <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
         </div>
       </section>
@@ -935,7 +953,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out delay-100">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[1000ms] ease-out delay-100">
             {loanProducts.map((p, i) => (
               <div key={i} className="group relative bg-white rounded-[2.5rem] border border-slate-100 shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-2xl hover:shadow-sky-500/10 transition-all duration-700 flex flex-col md:flex-row hover:-translate-y-2">
                 
@@ -952,9 +970,9 @@ export default function Home() {
                   </div>
 
                   {/* Rate Badge */}
-                  <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] z-10 border border-white/50">
-                    <p className="text-[#001D3D] font-black text-lg tracking-tight">{p.rate}</p>
-                    <p className="text-slate-500 font-bold text-[8px] uppercase tracking-wider mt-0.5">Estimated Returns</p>
+                  <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] z-10 border border-white/50">
+                    <p className="text-[#001D3D] font-black text-[13px] sm:text-[15px] xl:text-lg tracking-tight whitespace-nowrap">{p.rate}</p>
+                    <p className="text-slate-500 font-bold text-[7px] sm:text-[8px] uppercase tracking-wider mt-0.5">Estimated Returns</p>
                   </div>
 
                   {/* Overlapping Circular Icon (Visible on desktop/horizontal) */}
@@ -981,7 +999,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="flex flex-col xl:flex-row gap-3 mt-auto">
+                  <div className="flex flex-col lg:flex-row gap-3 mt-auto">
                     <button 
                       onClick={() => setIsPopupOpen(true)}
                       className="flex-1 bg-[#001D3D] text-white py-3 rounded-xl font-black text-[11px] uppercase tracking-wider hover:bg-sky-500 transition-all shadow-lg hover:shadow-sky-500/30 flex items-center justify-center gap-2 group/btn"

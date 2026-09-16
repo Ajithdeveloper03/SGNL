@@ -27,22 +27,26 @@ export default function LongTermPlansPage() {
     {
       title: "Vikas Money Savings Plan",
       desc: "A long-term savings plan designed for B2B customers, with tenure options from 3 to 5 years. Select plans may also offer add-on insurance benefits for additional financial protection.",
-      icon: Building2
+      icon: Building2,
+      bgImage: "https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Elite Wealth Gain",
       desc: "A fixed deposit plan with a tenure of up to 60 months, designed for members looking for regular monthly returns according to the applicable plan terms.",
-      icon: TrendingUp
+      icon: TrendingUp,
+      bgImage: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Elite Wealth Gain Combo",
       desc: "A fixed deposit plan with a tenure of up to 60 months, offering compounding interest for members who prefer to build their savings toward a larger maturity value.",
-      icon: HandCoins
+      icon: HandCoins,
+      bgImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Multi Pro Plus Plan",
       desc: "SGNL's long-term investment plans include tenure options of 3 to 5 years, along with plan-specific options designed to support different long-term financial goals.",
-      icon: Target
+      icon: Target,
+      bgImage: "https://images.unsplash.com/photo-1533421644343-45cb605330e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -88,7 +92,7 @@ export default function LongTermPlansPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-[#001D3D]">
+    <div className="min-h-screen bg-slate-50 font-sans text-[#001D3D] overflow-x-hidden">
       
       {/* ══════════ HEADER SECTION ══════════ */}
       <div className="w-full relative z-50 flex flex-col shadow-sm">
@@ -232,10 +236,10 @@ export default function LongTermPlansPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#001D3D]/50 border border-sky-400/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-sm">
               <Sparkles className="w-4 h-4" /> Secure Your Future
             </div>
-            <h1 className="text-3xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight mb-8">
+            <h1 className="text-3xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight mb-4">
               Long-Term Investment Plans in Tamil Nadu
             </h1>
-            <p className="text-justify md:text-left text-lg lg:text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl font-medium">
+            <p className="text-justify md:text-left text-lg lg:text-xl text-slate-300 leading-relaxed mb-6 max-w-2xl font-medium">
               SGNL helps individuals and businesses across Tamil Nadu plan for larger financial goals with long-term savings and investment options. Whether you are looking for regular returns, compounded growth, or a plan with additional protection, SGNL offers options based on different financial needs and tenure preferences.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -258,7 +262,7 @@ export default function LongTermPlansPage() {
       </section>
 
       {/* ══════════ OUR LONG-TERM PLANS ══════════ */}
-      <section className="py-20 lg:py-28 relative bg-slate-50 -mt-10 rounded-t-[40px] z-30">
+      <section className="pt-20 lg:pt-28 pb-12 lg:pb-16 relative bg-slate-50 -mt-10 rounded-t-[40px] z-30">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl lg:text-4xl font-black text-[#001D3D] mb-4">Our Long-Term Plans</h2>
@@ -267,17 +271,27 @@ export default function LongTermPlansPage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {plans.map((plan, i) => (
-              <div key={i} className="bg-white p-8 lg:p-10 rounded-[32px] shadow-sm hover:shadow-2xl transition-all border border-gray-100 group relative overflow-hidden flex flex-col justify-between">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-sky-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110 opacity-50"></div>
+              <div 
+                key={i} 
+                className="p-8 lg:p-10 rounded-[32px] shadow-sm hover:shadow-2xl transition-all group relative overflow-hidden flex flex-col justify-between border border-white/10 min-h-[380px]"
+              >
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  style={{ backgroundImage: `url('${plan.bgImage}')` }}
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001D3D] via-[#001D3D]/80 to-[#001D3D]/60 group-hover:via-[#001D3D]/90 transition-colors duration-500" />
+                
                 <div className="relative z-10 mb-8">
                   <div className="w-16 h-16 bg-sky-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-sky-500/20 group-hover:-translate-y-1 transition-transform">
                     <plan.icon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-black text-[#001D3D] mb-4">{plan.title}</h3>
-                  <p className="text-justify md:text-left text-slate-600 leading-relaxed text-lg">{plan.desc}</p>
+                  <h3 className="text-2xl font-black text-white mb-4 group-hover:text-sky-400 transition-colors">{plan.title}</h3>
+                  <p className="text-justify md:text-left text-slate-300 leading-relaxed text-lg group-hover:text-white transition-colors">{plan.desc}</p>
                 </div>
                 <div className="relative z-10 mt-4">
-                  <button onClick={() => setIsPopupOpen(true)} className="flex items-center text-sky-500 font-bold uppercase tracking-wider text-sm hover:text-[#001D3D] transition-colors group/btn">
+                  <button onClick={() => setIsPopupOpen(true)} className="flex items-center text-sky-400 font-bold uppercase tracking-wider text-sm hover:text-white transition-colors group/btn">
                     Know More <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -304,7 +318,7 @@ export default function LongTermPlansPage() {
       </section>
 
       {/* ══════════ WHY CHOOSE ══════════ */}
-      <section className="py-20 lg:py-28 bg-white border-t border-gray-100">
+      <section className="py-12 lg:py-16 bg-white border-t border-gray-100">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl lg:text-4xl font-black text-[#001D3D] mb-4">Why Choose SGNL's Long-Term Plans?</h2>
@@ -326,7 +340,7 @@ export default function LongTermPlansPage() {
       </section>
 
       {/* ══════════ WHO CAN INVEST ══════════ */}
-      <section className="py-20 lg:py-28 bg-[#001D3D] relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-[#001D3D] relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -345,7 +359,7 @@ export default function LongTermPlansPage() {
                   </div>
                 ))}
               </div>
-              <p className="text-justify md:text-left text-slate-400 italic">
+              <p className="text-justify md:text-left text-slate-200">
                 Eligibility and documentation requirements may vary by plan — connect with SGNL's team to confirm what applies to your chosen option.
               </p>
             </div>
@@ -426,13 +440,9 @@ export default function LongTermPlansPage() {
       </section>
 
       {/* ══════════ FINAL CTA BANNER ══════════ */}
-      <section className="py-2 bg-sky-500 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 0%, transparent 80%)' }} />
+      <section className="py-2 bg-sky-500 relative z-20">
+        <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 0%, transparent 80%)' }} />
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
-          
-          <div className="hidden lg:block absolute -top-[140px] right-24 w-44 z-20 pointer-events-none drop-shadow-2xl">
-            <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain" />
-          </div>
 
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10 py-16">
             <div className="text-center lg:text-left max-w-3xl">
@@ -456,12 +466,17 @@ export default function LongTermPlansPage() {
                   Explore Our Schemes
                 </button>
               </div>
-              <button 
-                onClick={() => setIsPopupOpen(true)}
-                className="w-full sm:w-auto bg-white text-[#001D3D] px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-50 transition-all flex items-center justify-center shadow-lg hover:-translate-y-1 relative z-30"
-              >
-                Contact Us
-              </button>
+              <div className="relative w-full sm:w-auto">
+                <div className="hidden lg:block absolute bottom-[calc(100%-24px)] left-1/2 -translate-x-1/2 w-64 z-20 pointer-events-none drop-shadow-2xl">
+                  <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain object-bottom" />
+                </div>
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className="w-full sm:w-auto bg-white text-[#001D3D] px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-50 transition-all flex items-center justify-center shadow-lg hover:-translate-y-1 relative z-30"
+                >
+                  Contact Us
+                </button>
+              </div>
             </div>
           </div>
         </div>

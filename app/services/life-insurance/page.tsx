@@ -415,13 +415,21 @@ export default function LifeInsurancePage() {
                   </div>
                 ))}
               </div>
+              <div className="flex justify-center pt-6">
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className="bg-sky-500 text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-[#001D3D] transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+                >
+                  Get Life Cover <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* LIFE INSURANCE PLANS WE OFFER */}
-      <section className="pt-10 lg:pt-12 pb-20 lg:pb-28 bg-slate-50">
+      <section className="pt-10 lg:pt-12 pb-10 lg:pb-12 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-5xl mx-auto mb-6 lg:mb-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
             <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-4">Life Insurance Plans We Offer</h2>
@@ -476,11 +484,19 @@ export default function LifeInsurancePage() {
               </div>
             ))}
           </div>
+          <div className="flex justify-center pt-8">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-[#001D3D] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-sky-500 transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+            >
+              Explore All Plans <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
       </section>
 
       {/* WHY CHOOSE SGNL */}
-      <section className="pt-10 pb-20 lg:pt-16 lg:pb-28 bg-white">
+      <section className="pt-10 pb-10 lg:pt-16 lg:pb-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
@@ -508,7 +524,14 @@ export default function LifeInsurancePage() {
               </div>
             ))}
           </div>
-          
+          <div className="flex justify-center pt-8">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-sky-500 text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-[#001D3D] transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+            >
+              Consult an Expert <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
       </section>
 
@@ -524,19 +547,41 @@ export default function LifeInsurancePage() {
               <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
 
               <div className="flex gap-4 lg:gap-8 items-center w-max animate-marquee group-hover:[animation-play-state:paused] opacity-80 hover:opacity-100 transition-opacity duration-500" style={{ animationDuration: '30s' }}>
-                {[...['SBI Life', 'HDFC Life', 'Max Life Insurance', 'Tata AIA Life', 'ICICI Prudential', 'Bajaj Allianz Life'], ...['SBI Life', 'HDFC Life', 'Max Life Insurance', 'Tata AIA Life', 'ICICI Prudential', 'Bajaj Allianz Life']].map((partner, i) => (
-                  <div key={i} className="shrink-0 px-6 py-3 bg-white rounded-xl border border-slate-200 font-black text-slate-700 text-xl tracking-tight hover:border-sky-500 hover:text-sky-500 hover:shadow-lg transition-all cursor-default">
-                    {partner}
+                {[...[
+                  { name: 'SBI Life', src: '/sgnl/SBI-life-25-years-logo.png' }, 
+                  { name: 'HDFC Life', src: '/sgnl/HDFCLife25Yearslogo-min.png' }, 
+                  { name: 'Max Life Insurance', src: '/sgnl/Max_Life_Insurance.svg.webp' }, 
+                  { name: 'Tata AIA Life', src: '/sgnl/Tata_AIA_logo.png' }, 
+                  { name: 'ICICI Prudential', src: '/sgnl/logo1.png' }, 
+                  { name: 'Bajaj Allianz Life', src: '/sgnl/Bajaj-Life-Logo.jpg', className: 'scale-[1.35]' }
+                ], ...[
+                  { name: 'SBI Life', src: '/sgnl/SBI-life-25-years-logo.png' }, 
+                  { name: 'HDFC Life', src: '/sgnl/HDFCLife25Yearslogo-min.png' }, 
+                  { name: 'Max Life Insurance', src: '/sgnl/Max_Life_Insurance.svg.webp' }, 
+                  { name: 'Tata AIA Life', src: '/sgnl/Tata_AIA_logo.png' }, 
+                  { name: 'ICICI Prudential', src: '/sgnl/logo1.png' }, 
+                  { name: 'Bajaj Allianz Life', src: '/sgnl/Bajaj-Life-Logo.jpg', className: 'scale-[1.35]' }
+                ]].map((partner, i) => (
+                  <div key={i} className="shrink-0 px-6 py-4 bg-white rounded-xl border border-slate-200 hover:border-sky-500 hover:shadow-lg transition-all flex items-center justify-center w-[180px] h-[90px] overflow-hidden">
+                    <img src={partner.src} alt={partner.name} className={`max-w-full max-h-full object-contain ${partner.className || ''}`} />
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="flex justify-center pt-6">
+              <button 
+                onClick={() => setIsPopupOpen(true)}
+                className="bg-[#001D3D] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-sky-500 transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+              >
+                Compare Partners <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="py-10 lg:py-12 bg-[#001D3D] text-white relative overflow-hidden">
+      <section className="pt-10 pb-10 lg:pt-12 lg:pb-12 bg-[#001D3D] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Trust and How it Works */}
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
@@ -599,6 +644,14 @@ export default function LifeInsurancePage() {
                   </div>
                 ))}
               </div>
+              <div className="flex justify-center pt-8">
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className="bg-sky-500 text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-white hover:text-[#001D3D] transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+                >
+                  Start The Process <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </div>
           </div>
 
@@ -606,7 +659,7 @@ export default function LifeInsurancePage() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="py-12 lg:py-16 bg-slate-50">
+      <section className="pt-12 pb-10 lg:pt-16 lg:pb-12 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
             <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-4">Frequently Asked Questions</h2>

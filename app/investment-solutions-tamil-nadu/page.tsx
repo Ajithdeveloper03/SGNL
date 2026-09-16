@@ -423,11 +423,19 @@ export default function InvestmentSolutionsPage() {
               </div>
             ))}
           </div>
+          <div className="flex justify-center pt-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-300">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-sky-500 text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-[#001D3D] transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+            >
+              Start Investing <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
       </section>
 
       {/* INVESTMENT SOLUTIONS WE OFFER */}
-      <section className="pt-10 lg:pt-12 pb-20 lg:pb-28 bg-slate-50">
+      <section className="pt-10 lg:pt-12 pb-10 lg:pb-12 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-5xl mx-auto mb-6 lg:mb-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
             <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-4">Investment Solutions We Offer in Tamil Nadu</h2>
@@ -482,11 +490,19 @@ export default function InvestmentSolutionsPage() {
               </div>
             ))}
           </div>
+          <div className="flex justify-center pt-8">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-[#001D3D] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-sky-500 transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+            >
+              Explore All Plans <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
       </section>
 
       {/* WHY CHOOSE SGNL */}
-      <section className="pt-10 pb-20 lg:pt-16 lg:pb-28 bg-white">
+      <section className="pt-10 pb-10 lg:pt-16 lg:pb-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
@@ -494,9 +510,9 @@ export default function InvestmentSolutionsPage() {
             <p className="text-slate-600 text-lg">Choosing health insurance can be complicated when every insurer offers different coverage, premiums, waiting periods, and policy conditions. SGNL helps simplify the comparison process.</p>
           </div>
             
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
+          <div className="flex flex-wrap justify-center gap-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
             {whyChooseSgnl.map((item, i) => (
-              <div key={i} className="group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-sky-500/50 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+              <div key={i} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[500px] group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-sky-500/50 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-sm border border-slate-100 group-hover:bg-sky-500 group-hover:border-sky-500 transition-colors duration-300">
                     <item.icon className="w-6 h-6 text-sky-500 group-hover:text-white transition-colors duration-300" />
@@ -507,7 +523,14 @@ export default function InvestmentSolutionsPage() {
               </div>
             ))}
           </div>
-          
+          <div className="flex justify-center pt-8">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-sky-500 text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-[#001D3D] transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+            >
+              Consult an Expert <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
       </section>
 
@@ -537,12 +560,20 @@ export default function InvestmentSolutionsPage() {
                 National Pension System (NPS)
               </div>
             </div>
+            <div className="flex justify-center pt-8">
+              <button 
+                onClick={() => setIsPopupOpen(true)}
+                className="bg-[#001D3D] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-sky-500 transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+              >
+                Compare Partners <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="py-10 lg:py-12 bg-[#001D3D] text-white relative overflow-hidden">
+      <section className="pt-10 pb-10 lg:pt-12 lg:pb-12 bg-[#001D3D] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="w-full max-w-3xl mx-auto">
             <div className="reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 bg-white/5 rounded-3xl p-2 md:p-8 lg:p-10 border border-white/10">
@@ -567,13 +598,21 @@ export default function InvestmentSolutionsPage() {
                   </div>
                 ))}
               </div>
+              <div className="flex justify-center pt-8">
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className="bg-sky-500 text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-white hover:text-[#001D3D] transition-all shadow-xl hover:-translate-y-1 flex items-center gap-2 group"
+                >
+                  Start The Process <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ SECTION */}
-      <section className="py-12 lg:py-16 bg-slate-50">
+      <section className="pt-12 pb-10 lg:pt-16 lg:pb-12 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
             <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-4">Frequently Asked Questions</h2>

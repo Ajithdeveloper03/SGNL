@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import ContactPopup from '../../components/ContactPopup';
 
-export default function LongTermPlansPage() {
+export default function ShortTermPlansPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -25,69 +25,72 @@ export default function LongTermPlansPage() {
 
   const plans = [
     {
-      title: "Vikas Money Savings Plan",
-      desc: "A long-term savings plan designed for B2B customers, with tenure options from 3 to 5 years. Select plans may also offer add-on insurance benefits for additional financial protection.",
+      title: "Prime Wealth Gain",
+      desc: "A recurring deposit plan created for employees and homemakers, offering a convenient and affordable way to save toward short-term financial goals.",
       icon: Building2,
       bgImage: "https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Elite Wealth Gain",
-      desc: "A fixed deposit plan with a tenure of up to 60 months, designed for members looking for regular monthly returns according to the applicable plan terms.",
+      title: "Conventional Growth Plan",
+      desc: "A savings plan with no fixed tenure, allowing members to benefit from daily gains and stay flexible with how long they choose to save.",
       icon: TrendingUp,
       bgImage: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Elite Wealth Gain Combo",
-      desc: "A fixed deposit plan with a tenure of up to 60 months, offering compounding interest for members who prefer to build their savings toward a larger maturity value.",
+      title: "Ecocial Savings Plan",
+      desc: "An economical, budget-friendly savings option with a flexible payment method, designed for members who want an easy and affordable way to save.",
       icon: HandCoins,
       bgImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Multi Pro Plus Plan",
-      desc: "SGNL's long-term investment plans include tenure options of 3 to 5 years, along with plan-specific options designed to support different long-term financial goals.",
+      title: "Students Saving Plan",
+      desc: "A savings plan created specifically for students, giving them an early start on building savings habits and financial confidence for the future.",
       icon: Target,
       bgImage: "https://images.unsplash.com/photo-1533421644343-45cb605330e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Elite Money Back",
+      desc: "A fixed deposit account offering guaranteed monthly returns at a competitive interest rate, suited for members who want predictable short-term income.",
+      icon: ShieldCheck,
+      bgImage: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
   const whyChoose = [
-    { title: "Investment + Insurance", desc: "Select SGNL investment plans may include add-on insurance benefits, providing an additional layer of financial protection alongside your investment.", icon: Shield },
-    { title: "DEMAT Services", desc: "SGNL offers DEMAT services for eligible long-term investment requirements. Connect with our team to learn about the available options and applicable terms.", icon: FileText },
-    { title: "Financial Planning", desc: "SGNL offers financial planning support to help members understand their long-term options and make investment decisions based on their financial goals.", icon: BarChart },
-    { title: "Flexible Tenure Options", desc: "SGNL's long-term plans are available across a 3 to 5 year range, allowing members to choose a tenure that fits their financial goals and repayment comfort, subject to the applicable plan terms.", icon: CalendarCheck },
-    { title: "Dedicated Consultant Support", desc: "Members get access to SGNL's team of consultants who can help explain plan options, tenure choices, and applicable benefits before a long-term investment decision is made.", icon: Users }
+    { title: "Competitive Interest Rates", desc: "Competitive interest rates on select fixed deposit and recurring deposit plans, subject to applicable terms.", icon: TrendingUp },
+    { title: "Flexible Tenure Options", desc: "Flexible tenure options, including plans with no fixed lock-in period.", icon: CalendarCheck },
+    { title: "Budget-Friendly", desc: "Budget-friendly entry points designed for employees, homemakers, and students alike.", icon: HandCoins },
+    { title: "Guaranteed Monthly Returns", desc: "Guaranteed monthly returns available on select plans like Elite Money Back.", icon: ShieldCheck },
+    { title: "Dedicated Support", desc: "Dedicated support from SGNL's team to help you choose a plan suited to your short-term goals.", icon: Users }
   ];
 
   const whoCanInvest = [
-    "Individuals looking for steady, long-term savings growth with fixed or compounding returns.",
-    "Business owners and entrepreneurs seeking B2B-focused savings options like the Vikas Money Savings Plan.",
-    "Members planning for future goals, such as education, business expansion, or retirement, who prefer a structured 3–5 year commitment."
+    "Employees and homemakers looking for a convenient recurring deposit option like Prime Wealth Gain.",
+    "Students wanting to start building savings habits early with the Students Saving Plan.",
+    "Budget-conscious savers who prefer flexible, low-commitment options like the Ecocial Savings Plan.",
+    "Members seeking daily-gain flexibility with no fixed tenure, through the Conventional Growth Plan."
   ];
 
   const faqs = [
     {
-      q: "What is the tenure of SGNL's long-term investment plans?",
-      a: "SGNL's long-term plans include tenure options ranging from 3 to 5 years, depending on the plan selected."
+      q: "What is a short-term investment plan at SGNL?",
+      a: "SGNL's short-term plans are savings and deposit options — such as recurring deposits, fixed deposits, and flexible-tenure savings plans — designed for members looking for quicker returns compared to long-term investments."
     },
     {
-      q: "What is the maximum tenure available for SGNL fixed deposit plans?",
-      a: "The Elite Wealth Gain and Elite Wealth Gain Combo plans have a tenure of up to 60 months, according to the available plan information."
+      q: "Which SGNL short-term plan offers guaranteed returns?",
+      a: "Elite Money Back is a fixed deposit account that offers guaranteed monthly returns, according to the applicable plan terms."
     },
     {
-      q: "Does SGNL offer insurance with long-term investment plans?",
-      a: "Yes. Select investment plans may include add-on insurance benefits, subject to the applicable plan terms and eligibility."
+      q: "Is there a plan with no fixed tenure?",
+      a: "Yes. The Conventional Growth Plan lets members benefit from daily gains without committing to a fixed tenure."
     },
     {
-      q: "What is the difference between Elite Wealth Gain and Elite Wealth Gain Combo?",
-      a: "Elite Wealth Gain is designed for members looking for regular monthly returns, while Elite Wealth Gain Combo focuses on compounding interest and building a larger maturity value."
+      q: "Are there short-term plans designed for students?",
+      a: "Yes. The Students Saving Plan is created specifically to help students start saving early, subject to plan eligibility."
     },
     {
-      q: "Who can choose the Vikas Money Savings Plan?",
-      a: "The Vikas Money Savings Plan is designed for business owners and entrepreneurs looking for a long-term savings option with a 3–5 year tenure."
-    },
-    {
-      q: "How can I choose the right long-term plan?",
-      a: "You can connect with SGNL's team to discuss your financial goals, preferred tenure, and plan requirements before selecting an option."
+      q: "Who is the Prime Wealth Gain plan best suited for?",
+      a: "Prime Wealth Gain is a recurring deposit plan designed for employees and homemakers looking for a convenient, affordable way to save regularly."
     }
   ];
 
@@ -162,7 +165,7 @@ export default function LongTermPlansPage() {
                 {activeDropdown === 'Schemes' && (
                   <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[260px] flex flex-col gap-1 z-50">
                     {['Short Term Plans', 'Long Term Plans'].map(item => (
-                      <Link key={item} href={item === 'Long Term Plans' ? '/long-term-plans' : item === 'Short Term Plans' ? '/short-term-plans' : '#'} className={`px-8 py-2.5 text-[14px] font-bold ${item === 'Long Term Plans' ? 'text-sky-500' : 'text-[#475569] hover:text-sky-500'} transition-colors`}>{item}</Link>
+                      <Link key={item} href={item === 'Long Term Plans' ? '/long-term-plans' : item === 'Short Term Plans' ? '/short-term-plans' : '#'} className={`px-8 py-2.5 text-[14px] font-bold ${item === 'Short Term Plans' ? 'text-sky-500' : 'text-[#475569] hover:text-sky-500'} transition-colors`}>{item}</Link>
                     ))}
                   </div>
                 )}
@@ -209,7 +212,7 @@ export default function LongTermPlansPage() {
                 {activeDropdown === item.name && (
                   <div className="flex flex-col gap-4 pb-5 pl-4">
                     {item.links.map(link => (
-                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : link === 'Health Insurance' ? '/health-insurance-tamil-nadu' : link === 'General Insurance' ? '/general-insurance-tamil-nadu' : link === 'High-Interest Savings' ? '/high-interest-savings-plans-tamil-nadu' : link === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : link === 'Long Term Plans' ? '/long-term-plans' : link === 'Short Term Plans' ? '/short-term-plans' : '#'} className={`font-bold text-[14px] ${link === 'Long Term Plans' ? 'text-sky-500' : 'text-[#475569] hover:text-sky-500'} transition-colors`}>{link}</Link>
+                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : link === 'Health Insurance' ? '/health-insurance-tamil-nadu' : link === 'General Insurance' ? '/general-insurance-tamil-nadu' : link === 'High-Interest Savings' ? '/high-interest-savings-plans-tamil-nadu' : link === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : link === 'Long Term Plans' ? '/long-term-plans' : link === 'Short Term Plans' ? '/short-term-plans' : '#'} className={`font-bold text-[14px] ${link === 'Short Term Plans' ? 'text-sky-500' : 'text-[#475569] hover:text-sky-500'} transition-colors`}>{link}</Link>
                     ))}
                   </div>
                 )}
@@ -237,10 +240,10 @@ export default function LongTermPlansPage() {
               <Sparkles className="w-4 h-4" /> Secure Your Future
             </div>
             <h1 className="text-3xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight mb-4">
-              Long-Term Investment Plans in Tamil Nadu
+              Short-Term Investment Plans in Tamil Nadu
             </h1>
             <p className="text-justify md:text-left text-lg lg:text-xl text-slate-300 leading-relaxed mb-6 max-w-2xl font-medium">
-              SGNL helps individuals and businesses across Tamil Nadu plan for larger financial goals with long-term savings and investment options. Whether you are looking for regular returns, compounded growth, or a plan with additional protection, SGNL offers options based on different financial needs and tenure preferences.
+              SGNL's short-term investment plans are built for quick, flexible savings — with easy EMI options and plans designed to fit different budgets, incomes, and lifestyles. Whether you're an employee, a homemaker, a student, or someone looking for daily-gain savings with no fixed tenure, SGNL offers a short-term option to match your pace.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
@@ -265,8 +268,8 @@ export default function LongTermPlansPage() {
       <section className="pt-20 lg:pt-28 pb-12 lg:pb-16 relative bg-slate-50 -mt-10 rounded-t-[40px] z-30">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl lg:text-4xl font-black text-[#001D3D] mb-4">Our Long-Term Plans</h2>
-            <p className="text-lg text-slate-600">Explore SGNL's long-term investment options tailored for your financial stability.</p>
+            <h2 className="text-3xl lg:text-4xl font-black text-[#001D3D] mb-4">Our Key Plans</h2>
+            <p className="text-lg text-slate-600">Explore SGNL's short-term investment options tailored for your financial flexibility.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -302,9 +305,9 @@ export default function LongTermPlansPage() {
           <div className="mt-20 bg-[#001D3D] rounded-3xl p-8 lg:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10">
             <div className="absolute inset-0 bg-sky-500/10 pointer-events-none" />
             <div className="relative z-10 max-w-2xl">
-              <h3 className="text-2xl lg:text-3xl font-black text-white mb-4">More Long-Term Plans</h3>
+              <h3 className="text-2xl lg:text-3xl font-black text-white mb-4">More Plans</h3>
               <p className="text-justify md:text-left text-slate-300 leading-relaxed text-lg">
-                Looking for a long-term plan that fits your financial goals? SGNL's team can help you explore investment options with flexible tenures, applicable benefits, and additional protection on select plans.
+                Looking for a short-term plan that fits your income and goals? SGNL's team can walk you through additional plans, applicable interest rates, and flexible tenure options. Connect with our team to find the right fit.
               </p>
             </div>
             <button 
@@ -321,7 +324,7 @@ export default function LongTermPlansPage() {
       <section className="py-12 lg:py-16 bg-white border-t border-gray-100">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl lg:text-4xl font-black text-[#001D3D] mb-4">Why Choose SGNL's Long-Term Plans?</h2>
+            <h2 className="text-3xl lg:text-4xl font-black text-[#001D3D] mb-4">Why Choose SGNL's Short-Term Plans?</h2>
             <p className="text-lg text-slate-600">Discover the benefits of securing your financial future with us.</p>
           </div>
 
@@ -347,7 +350,7 @@ export default function LongTermPlansPage() {
             <div>
               <h2 className="text-3xl lg:text-5xl font-black text-white mb-6">Who Can Invest</h2>
               <p className="text-lg text-sky-400 font-bold mb-8">
-                SGNL's long-term plans are designed for a range of members
+                SGNL's short-term plans are designed for a wide range of savers, including:
               </p>
               <div className="space-y-6 mb-8">
                 {whoCanInvest.map((item, i) => (

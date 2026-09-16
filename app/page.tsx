@@ -423,7 +423,7 @@ export default function Home() {
                 {activeDropdown === 'Schemes' && (
                   <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[260px] flex flex-col gap-1 z-50">
                     {['Short Term Plans', 'Long Term Plans'].map(item => (
-                      <Link key={item} href={item === 'Long Term Plans' ? '/long-term-plans' : '#'} className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                      <Link key={item} href={item === 'Long Term Plans' ? '/long-term-plans' : item === 'Short Term Plans' ? '/short-term-plans' : '#'} className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
                     ))}
                   </div>
                 )}
@@ -492,7 +492,7 @@ export default function Home() {
                 {activeDropdown === item.name && (
                   <div className="flex flex-col gap-4 pb-5 pl-4">
                     {item.links.map(link => (
-                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : link === 'Health Insurance' ? '/health-insurance-tamil-nadu' : link === 'General Insurance' ? '/general-insurance-tamil-nadu' : link === 'High-Interest Savings' ? '/high-interest-savings-plans-tamil-nadu' : link === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : link === 'Long Term Plans' ? '/long-term-plans' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
+                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : link === 'Health Insurance' ? '/health-insurance-tamil-nadu' : link === 'General Insurance' ? '/general-insurance-tamil-nadu' : link === 'High-Interest Savings' ? '/high-interest-savings-plans-tamil-nadu' : link === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : link === 'Long Term Plans' ? '/long-term-plans' : link === 'Short Term Plans' ? '/short-term-plans' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
                         {link}
                       </Link>
                     ))}
@@ -545,19 +545,19 @@ export default function Home() {
 
           {/* Hero Typography — keyed for transition */}
           <div className="max-w-3xl lg:max-w-4xl xl:max-w-5xl mt-8 lg:mt-0 px-2 sm:px-4">
-            <div key={`tag-${currentSlide}`} className="flex flex-wrap items-center gap-4 mb-6 lg:mb-8 animate-fade-in-up">
+            <div key={`tag-${currentSlide}`} className="flex flex-col items-start gap-3 mb-4 lg:mb-6 animate-fade-in-up">
               <div className="bg-sky-500 text-white text-[10px] md:text-[12px] font-black uppercase tracking-[0.2em] px-4 py-2 relative shadow-[0_10px_20px_rgba(14,165,233,0.3)]">
                 {slide.tag}
                 <div className="absolute right-[-14px] top-0 border-y-[16px] border-l-[14px] border-y-transparent border-l-sky-500 h-full" />
               </div>
-              <p className="text-white/80 font-bold text-sm md:text-base tracking-wide ml-1 drop-shadow-md">{slide.badge}</p>
+              <p className="text-white/80 font-bold text-sm md:text-base tracking-wide drop-shadow-md">{slide.badge}</p>
             </div>
 
-            <h1 key={`head-${currentSlide}`} className="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[36px] xl:text-[44px] font-black text-white tracking-tight drop-shadow-2xl mb-5 lg:mb-8 animate-fade-in-up [animation-delay:200ms] whitespace-pre-line" style={{ lineHeight: '1.2' }}>
+            <h1 key={`head-${currentSlide}`} className="text-[18px] sm:text-[24px] md:text-[28px] lg:text-[36px] xl:text-[44px] font-black text-white tracking-tight drop-shadow-2xl mb-3 lg:mb-5 animate-fade-in-up [animation-delay:200ms] whitespace-pre-line" style={{ lineHeight: '1.2' }}>
               {slide.headline}
             </h1>
 
-            <p key={`sub-${currentSlide}`} className="text-white/70 font-medium text-sm md:text-base lg:text-lg leading-relaxed mb-8 lg:mb-10 max-w-xl animate-fade-in-up [animation-delay:400ms]">
+            <p key={`sub-${currentSlide}`} className="text-white/70 font-medium text-sm md:text-base lg:text-lg leading-relaxed mb-5 lg:mb-7 max-w-xl animate-fade-in-up [animation-delay:400ms]">
               {slide.sub}
             </p>
 

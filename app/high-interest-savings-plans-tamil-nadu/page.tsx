@@ -254,7 +254,7 @@ export default function HighInterestSavingsPage() {
                 {activeDropdown === 'Schemes' && (
                   <div className="absolute top-[75px] left-1/2 -translate-x-1/2 bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] py-6 w-[260px] flex flex-col gap-1 z-50">
                     {['Short Term Plans', 'Long Term Plans'].map(item => (
-                      <Link key={item} href={item === 'Long Term Plans' ? '/long-term-plans' : '#'} className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
+                      <Link key={item} href={item === 'Long Term Plans' ? '/long-term-plans' : item === 'Short Term Plans' ? '/short-term-plans' : '#'} className="px-8 py-2.5 text-[14px] font-bold text-[#475569] hover:text-sky-500 transition-colors">{item}</Link>
                     ))}
                   </div>
                 )}
@@ -323,7 +323,7 @@ export default function HighInterestSavingsPage() {
                 {activeDropdown === item.name && (
                   <div className="flex flex-col gap-4 pb-5 pl-4">
                     {item.links.map(link => (
-                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : link === 'Health Insurance' ? '/health-insurance-tamil-nadu' : link === 'General Insurance' ? '/general-insurance-tamil-nadu' : link === 'High-Interest Savings' ? '/high-interest-savings-plans-tamil-nadu' : link === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : link === 'Long Term Plans' ? '/long-term-plans' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
+                      <Link key={link} href={link === 'Life Insurance' ? '/services/life-insurance' : link === 'Health Insurance' ? '/health-insurance-tamil-nadu' : link === 'General Insurance' ? '/general-insurance-tamil-nadu' : link === 'High-Interest Savings' ? '/high-interest-savings-plans-tamil-nadu' : link === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : link === 'Long Term Plans' ? '/long-term-plans' : link === 'Short Term Plans' ? '/short-term-plans' : '#'} className="text-[#475569] font-bold text-[14px] hover:text-sky-500 transition-colors">
                         {link}
                       </Link>
                     ))}
@@ -535,10 +535,28 @@ export default function HighInterestSavingsPage() {
             <div className="relative w-full flex overflow-hidden py-4 group">
               <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
               <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
-              <div className="flex gap-4 lg:gap-8 items-center w-max animate-marquee group-hover:[animation-play-state:paused] opacity-80 hover:opacity-100 transition-opacity duration-500" style={{ animationDuration: '30s' }}>
-                {[...['HDFC Bank', 'ICICI Bank', 'State Bank of India', 'Axis Bank', 'Bajaj Finance', 'Kotak Mahindra Bank', 'IDFC FIRST Bank', 'Shriram Finance', 'Mahindra Finance'], ...['HDFC Bank', 'ICICI Bank', 'State Bank of India', 'Axis Bank', 'Bajaj Finance', 'Kotak Mahindra Bank', 'IDFC FIRST Bank', 'Shriram Finance', 'Mahindra Finance']].map((partner, i) => (
-                  <div key={i} className="shrink-0 px-6 py-3 bg-white rounded-xl border border-slate-200 font-black text-slate-700 text-xl tracking-tight hover:border-sky-500 hover:text-sky-500 hover:shadow-lg transition-all cursor-default">
-                    {partner}
+              <div className="flex gap-4 lg:gap-8 items-center w-max animate-marquee group-hover:[animation-play-state:paused] opacity-80 hover:opacity-100 transition-opacity duration-500" style={{ animationDuration: '45s' }}>
+                {[...[
+                  { name: 'HDFC Bank', src: '/sgnl/HDFC Bank.png' },
+                  { name: 'ICICI Bank', src: '/sgnl/ICICI Bank.png' },
+                  { name: 'State Bank of India', src: '/sgnl/State Bank of India.png' },
+                  { name: 'Axis Bank', src: '/sgnl/AXISBank_Logo.svg.webp' },
+                  { name: 'Kotak Mahindra Bank', src: '/sgnl/Kotak Mahindra Bank.png' },
+                  { name: 'IDFC FIRST Bank', src: '/sgnl/IDFC FIRST Bank.png' },
+                  { name: 'Shriram Finance', src: '/sgnl/Shriram Finance.png' },
+                  { name: 'Mahindra Finance', src: '/sgnl/mahindra-finance-logo.png' }
+                ], ...[
+                  { name: 'HDFC Bank', src: '/sgnl/HDFC Bank.png' },
+                  { name: 'ICICI Bank', src: '/sgnl/ICICI Bank.png' },
+                  { name: 'State Bank of India', src: '/sgnl/State Bank of India.png' },
+                  { name: 'Axis Bank', src: '/sgnl/AXISBank_Logo.svg.webp' },
+                  { name: 'Kotak Mahindra Bank', src: '/sgnl/Kotak Mahindra Bank.png' },
+                  { name: 'IDFC FIRST Bank', src: '/sgnl/IDFC FIRST Bank.png' },
+                  { name: 'Shriram Finance', src: '/sgnl/Shriram Finance.png' },
+                  { name: 'Mahindra Finance', src: '/sgnl/mahindra-finance-logo.png' }
+                ]].map((partner, i) => (
+                  <div key={i} className="shrink-0 px-6 py-4 bg-white rounded-xl border border-slate-200 hover:border-sky-500 hover:shadow-lg transition-all flex items-center justify-center w-[180px] h-[90px] overflow-hidden">
+                    <img src={partner.src} alt={partner.name} className="max-w-full max-h-full object-contain scale-[1.25]" />
                   </div>
                 ))}
               </div>

@@ -28,25 +28,25 @@ export default function LongTermPlansPage() {
       title: "Vikas Money Savings Plan",
       desc: "A long-term savings plan designed for B2B customers, with tenure options from 3 to 5 years. Select plans may also offer add-on insurance benefits for additional financial protection.",
       icon: Building2,
-      bgImage: "https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      bgImage: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Elite Wealth Gain",
       desc: "A fixed deposit plan with a tenure of up to 60 months, designed for members looking for regular monthly returns according to the applicable plan terms.",
       icon: TrendingUp,
-      bgImage: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      bgImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Elite Wealth Gain Combo",
       desc: "A fixed deposit plan with a tenure of up to 60 months, offering compounding interest for members who prefer to build their savings toward a larger maturity value.",
       icon: HandCoins,
-      bgImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      bgImage: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Multi Pro Plus Plan",
       desc: "SGNL's long-term investment plans include tenure options of 3 to 5 years, along with plan-specific options designed to support different long-term financial goals.",
       icon: Target,
-      bgImage: "https://images.unsplash.com/photo-1533421644343-45cb605330e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      bgImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -168,7 +168,7 @@ export default function LongTermPlansPage() {
                 )}
               </div>
 
-              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">Get In Touch</Link>
+              <Link href="/get-in-touch" className="hover:text-sky-500 transition-colors h-full flex items-center">Get In Touch</Link>
             </nav>
 
             <div className="hidden lg:flex items-center h-full">
@@ -215,7 +215,7 @@ export default function LongTermPlansPage() {
                 )}
               </div>
             ))}
-            <Link href="#" className="w-full py-5 cursor-pointer border-t border-gray-100 mb-2"><span className="text-[#001D3D] font-black text-[15px]">Get In Touch</span></Link>
+            <Link href="/get-in-touch" className="w-full py-5 cursor-pointer border-t border-gray-100 mb-2"><span className="text-[#001D3D] font-black text-[15px]">Get In Touch</span></Link>
           </div>
         )}
       </div>
@@ -223,7 +223,7 @@ export default function LongTermPlansPage() {
       {/* ══════════ HERO SECTION ══════════ */}
       <section className="relative w-full pt-8 pb-16 lg:pt-10 lg:pb-24 bg-[#001D3D] overflow-hidden flex items-center select-none text-white">
         {/* Background Image - Clear on the right side */}
-        <div className="absolute inset-0 bg-cover bg-right lg:bg-center opacity-40 lg:opacity-100" style={{ backgroundImage: "url('/sgnl/banner.avif')" }}></div>
+        <div className="absolute inset-0 bg-cover bg-right lg:bg-center opacity-40 lg:opacity-100" style={{ backgroundImage: "url('/sgnl/Long%20Term%20Plans.png')" }}></div>
         
         {/* Mobile Gradient (Dark everywhere for text readability) */}
         <div className="absolute inset-0 bg-[#001D3D]/80 lg:hidden"></div>
@@ -336,6 +336,15 @@ export default function LongTermPlansPage() {
               </div>
             ))}
           </div>
+
+          <div className="mt-12 text-center flex justify-center">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-sky-500 text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-[#001D3D] transition-all shadow-xl hover:-translate-y-1 inline-flex items-center gap-2 group"
+            >
+              Start Investing Today <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
       </section>
 
@@ -362,10 +371,19 @@ export default function LongTermPlansPage() {
               <p className="text-justify md:text-left text-slate-200">
                 Eligibility and documentation requirements may vary by plan — connect with SGNL's team to confirm what applies to your chosen option.
               </p>
+
+              <div className="mt-10 md:mt-12">
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className="bg-white text-[#001D3D] px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-sky-500 hover:text-white transition-all shadow-xl hover:-translate-y-1 inline-flex items-center gap-2 group"
+                >
+                  Check Eligibility <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </div>
             <div className="relative">
               <div className="aspect-square rounded-full bg-sky-500/20 absolute -inset-10 blur-3xl" />
-              <img src="/sgnl/who-can-invest.jpg" alt="Who Can Invest" className="relative z-10 w-full h-auto rounded-[40px] shadow-2xl border-4 border-white/10 object-cover" />
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Who Can Invest" className="relative z-10 w-full aspect-[4/3] lg:aspect-[1.1] rounded-[40px] shadow-2xl border-4 border-white/10 object-cover" />
             </div>
           </div>
         </div>
@@ -399,6 +417,15 @@ export default function LongTermPlansPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-14 text-center flex justify-center">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-[#001D3D] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-sky-500 transition-all shadow-xl hover:-translate-y-1 inline-flex items-center gap-2 group"
+            >
+              Contact Our Team <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
         </div>
       </section>
@@ -517,7 +544,7 @@ export default function LongTermPlansPage() {
                 <p className="text-white font-black text-sm uppercase tracking-widest mb-6">{col.head}</p>
                 <ul className="space-y-4">
                   {col.links.map(l => (
-                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : l === 'General Insurance' ? '/general-insurance-tamil-nadu' : l === 'High-Interest Savings Plans' ? '/high-interest-savings-plans-tamil-nadu' : l === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : l === 'About Us' ? '/about-us' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
+                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : l === 'General Insurance' ? '/general-insurance-tamil-nadu' : l === 'High-Interest Savings Plans' ? '/high-interest-savings-plans-tamil-nadu' : l === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : l === 'About Us' ? '/about-us' : l === 'Get In Touch' ? '/get-in-touch' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
                   ))}
                 </ul>
               </div>

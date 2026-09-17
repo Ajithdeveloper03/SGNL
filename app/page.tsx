@@ -429,7 +429,7 @@ export default function Home() {
                 )}
               </div>
 
-              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">
+              <Link href="/get-in-touch" className="hover:text-sky-500 transition-colors h-full flex items-center">
                 Get In Touch
               </Link>
             </nav>
@@ -1287,7 +1287,7 @@ export default function Home() {
                 <p className="text-white font-black text-sm uppercase tracking-widest mb-6">{col.head}</p>
                 <ul className="space-y-4">
                   {col.links.map(l => (
-                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : l === 'General Insurance' ? '/general-insurance-tamil-nadu' : l === 'High-Interest Savings Plans' ? '/high-interest-savings-plans-tamil-nadu' : l === 'About Us' ? '/about-us' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
+                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : l === 'General Insurance' ? '/general-insurance-tamil-nadu' : l === 'High-Interest Savings Plans' ? '/high-interest-savings-plans-tamil-nadu' : l === 'About Us' ? '/about-us' : l === 'Get In Touch' ? '/get-in-touch' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
                   ))}
                 </ul>
               </div>

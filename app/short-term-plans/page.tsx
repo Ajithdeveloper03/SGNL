@@ -28,31 +28,31 @@ export default function ShortTermPlansPage() {
       title: "Prime Wealth Gain",
       desc: "A recurring deposit plan created for employees and homemakers, offering a convenient and affordable way to save toward short-term financial goals.",
       icon: Building2,
-      bgImage: "https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      bgImage: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Conventional Growth Plan",
       desc: "A savings plan with no fixed tenure, allowing members to benefit from daily gains and stay flexible with how long they choose to save.",
       icon: TrendingUp,
-      bgImage: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      bgImage: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Ecocial Savings Plan",
       desc: "An economical, budget-friendly savings option with a flexible payment method, designed for members who want an easy and affordable way to save.",
       icon: HandCoins,
-      bgImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      bgImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Students Saving Plan",
       desc: "A savings plan created specifically for students, giving them an early start on building savings habits and financial confidence for the future.",
       icon: Target,
-      bgImage: "https://images.unsplash.com/photo-1533421644343-45cb605330e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      bgImage: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Elite Money Back",
       desc: "A fixed deposit account offering guaranteed monthly returns at a competitive interest rate, suited for members who want predictable short-term income.",
       icon: ShieldCheck,
-      bgImage: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      bgImage: "https://images.unsplash.com/photo-1580519542036-ed47f3e42d9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -171,7 +171,7 @@ export default function ShortTermPlansPage() {
                 )}
               </div>
 
-              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">Get In Touch</Link>
+              <Link href="/get-in-touch" className="hover:text-sky-500 transition-colors h-full flex items-center">Get In Touch</Link>
             </nav>
 
             <div className="hidden lg:flex items-center h-full">
@@ -218,7 +218,7 @@ export default function ShortTermPlansPage() {
                 )}
               </div>
             ))}
-            <Link href="#" className="w-full py-5 cursor-pointer border-t border-gray-100 mb-2"><span className="text-[#001D3D] font-black text-[15px]">Get In Touch</span></Link>
+            <Link href="/get-in-touch" className="w-full py-5 cursor-pointer border-t border-gray-100 mb-2"><span className="text-[#001D3D] font-black text-[15px]">Get In Touch</span></Link>
           </div>
         )}
       </div>
@@ -226,7 +226,7 @@ export default function ShortTermPlansPage() {
       {/* ══════════ HERO SECTION ══════════ */}
       <section className="relative w-full pt-8 pb-16 lg:pt-10 lg:pb-24 bg-[#001D3D] overflow-hidden flex items-center select-none text-white">
         {/* Background Image - Clear on the right side */}
-        <div className="absolute inset-0 bg-cover bg-right lg:bg-center opacity-40 lg:opacity-100" style={{ backgroundImage: "url('/sgnl/banner.avif')" }}></div>
+        <div className="absolute inset-0 bg-cover bg-right lg:bg-center opacity-40 lg:opacity-100" style={{ backgroundImage: "url('/sgnl/Short%20Term%20Plans.png')" }}></div>
         
         {/* Mobile Gradient (Dark everywhere for text readability) */}
         <div className="absolute inset-0 bg-[#001D3D]/80 lg:hidden"></div>
@@ -272,11 +272,11 @@ export default function ShortTermPlansPage() {
             <p className="text-lg text-slate-600">Explore SGNL's short-term investment options tailored for your financial flexibility.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {plans.map((plan, i) => (
               <div 
                 key={i} 
-                className="p-8 lg:p-10 rounded-[32px] shadow-sm hover:shadow-2xl transition-all group relative overflow-hidden flex flex-col justify-between border border-white/10 min-h-[380px]"
+                className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)] p-8 lg:p-10 rounded-[32px] shadow-sm hover:shadow-2xl transition-all group relative overflow-hidden flex flex-col justify-between border border-white/10 min-h-[380px]"
               >
                 {/* Background Image */}
                 <div 
@@ -339,6 +339,15 @@ export default function ShortTermPlansPage() {
               </div>
             ))}
           </div>
+          
+          <div className="mt-12 text-center flex justify-center">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-sky-500 text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-[#001D3D] transition-all shadow-xl hover:-translate-y-1 inline-flex items-center gap-2 group"
+            >
+              Start Investing Today <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
       </section>
 
@@ -365,10 +374,19 @@ export default function ShortTermPlansPage() {
               <p className="text-justify md:text-left text-slate-200">
                 Eligibility and documentation requirements may vary by plan — connect with SGNL's team to confirm what applies to your chosen option.
               </p>
+              
+              <div className="mt-10 md:mt-12">
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className="bg-white text-[#001D3D] px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-sky-500 hover:text-white transition-all shadow-xl hover:-translate-y-1 inline-flex items-center gap-2 group"
+                >
+                  Check Eligibility <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </div>
             <div className="relative">
               <div className="aspect-square rounded-full bg-sky-500/20 absolute -inset-10 blur-3xl" />
-              <img src="/sgnl/who-can-invest.jpg" alt="Who Can Invest" className="relative z-10 w-full h-auto rounded-[40px] shadow-2xl border-4 border-white/10 object-cover" />
+              <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Who Can Invest" className="relative z-10 w-full aspect-[4/3] lg:aspect-[1.1] rounded-[40px] shadow-2xl border-4 border-white/10 object-cover" />
             </div>
           </div>
         </div>
@@ -384,10 +402,10 @@ export default function ShortTermPlansPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: "Connect", desc: "Connect with SGNL's team to discuss your financial goals, preferred tenure, and plan options.", icon: PhoneCall },
-              { title: "Choose", desc: "Choose a long-term plan that fits your needs — savings, fixed deposit, compounding, or insurance-linked.", icon: Target },
-              { title: "Document", desc: "Complete the required documentation and KYC, as applicable to the selected plan.", icon: FileText },
-              { title: "Invest", desc: "Start your investment and track your returns based on the plan's applicable terms.", icon: TrendingUp }
+              { title: "Connect", desc: "Connect with SGNL's team to discuss your savings goals and preferred plan type.", icon: PhoneCall },
+              { title: "Choose", desc: "Choose a short-term plan — recurring deposit, fixed deposit, or a flexible no-tenure option.", icon: Target },
+              { title: "Document", desc: "Complete the required documentation, as applicable to the selected plan.", icon: FileText },
+              { title: "Invest", desc: "Start saving and track your returns based on the plan's applicable terms.", icon: TrendingUp }
             ].map((step, i) => (
               <div key={i} className="relative group">
                 {i !== 3 && <div className="hidden lg:block absolute top-12 left-[60%] w-[80%] h-0.5 bg-gray-200 z-0">
@@ -402,6 +420,15 @@ export default function ShortTermPlansPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-14 text-center flex justify-center">
+            <button 
+              onClick={() => setIsPopupOpen(true)}
+              className="bg-[#001D3D] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-[13px] hover:bg-sky-500 transition-all shadow-xl hover:-translate-y-1 inline-flex items-center gap-2 group"
+            >
+              Contact Our Team <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
         </div>
       </section>
@@ -520,7 +547,7 @@ export default function ShortTermPlansPage() {
                 <p className="text-white font-black text-sm uppercase tracking-widest mb-6">{col.head}</p>
                 <ul className="space-y-4">
                   {col.links.map(l => (
-                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : l === 'General Insurance' ? '/general-insurance-tamil-nadu' : l === 'High-Interest Savings Plans' ? '/high-interest-savings-plans-tamil-nadu' : l === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : l === 'About Us' ? '/about-us' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
+                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : l === 'General Insurance' ? '/general-insurance-tamil-nadu' : l === 'High-Interest Savings Plans' ? '/high-interest-savings-plans-tamil-nadu' : l === 'Investment Solutions' ? '/investment-solutions-tamil-nadu' : l === 'About Us' ? '/about-us' : l === 'Get In Touch' ? '/get-in-touch' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
                   ))}
                 </ul>
               </div>

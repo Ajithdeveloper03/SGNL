@@ -255,7 +255,7 @@ export default function LifeInsurancePage() {
                 )}
               </div>
 
-              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">
+              <Link href="/get-in-touch" className="hover:text-sky-500 transition-colors h-full flex items-center">
                 Get In Touch
               </Link>
             </nav>
@@ -336,7 +336,7 @@ export default function LifeInsurancePage() {
       {/* HERO SECTION */}
       <section className="relative w-full pt-8 pb-16 lg:pt-10 lg:pb-24 overflow-hidden bg-[#001D3D] text-white">
         {/* Background Image - Clear on the right side */}
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-right lg:bg-center"></div>
+        <div className="absolute inset-0 bg-cover bg-right lg:bg-center" style={{ backgroundImage: "url('/sgnl/Life%20Insurance.png')" }}></div>
         
         {/* Mobile Gradient (Dark everywhere for text readability) */}
         <div className="absolute inset-0 bg-[#001D3D]/80 lg:hidden"></div>
@@ -778,7 +778,7 @@ export default function LifeInsurancePage() {
                 <p className="text-white font-black text-sm uppercase tracking-widest mb-6">{col.head}</p>
                 <ul className="space-y-4">
                   {col.links.map(l => (
-                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : l === 'General Insurance' ? '/general-insurance-tamil-nadu' : l === 'High-Interest Savings Plans' ? '/high-interest-savings-plans-tamil-nadu' : l === 'About Us' ? '/about-us' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
+                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : l === 'General Insurance' ? '/general-insurance-tamil-nadu' : l === 'High-Interest Savings Plans' ? '/high-interest-savings-plans-tamil-nadu' : l === 'About Us' ? '/about-us' : l === 'Get In Touch' ? '/get-in-touch' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
                   ))}
                 </ul>
               </div>

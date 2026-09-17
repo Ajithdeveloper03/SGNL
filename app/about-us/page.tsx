@@ -120,7 +120,7 @@ export default function AboutUsPage() {
                 )}
               </div>
 
-              <Link href="#" className="hover:text-sky-500 transition-colors h-full flex items-center">Get In Touch</Link>
+              <Link href="/get-in-touch" className="hover:text-sky-500 transition-colors h-full flex items-center">Get In Touch</Link>
             </nav>
 
             <div className="hidden lg:flex items-center h-full">
@@ -167,7 +167,7 @@ export default function AboutUsPage() {
                 )}
               </div>
             ))}
-            <Link href="#" className="w-full py-5 cursor-pointer border-t border-gray-100 mb-2"><span className="text-[#001D3D] font-black text-[15px]">Get In Touch</span></Link>
+            <Link href="/get-in-touch" className="w-full py-5 cursor-pointer border-t border-gray-100 mb-2"><span className="text-[#001D3D] font-black text-[15px]">Get In Touch</span></Link>
           </div>
         )}
       </div>
@@ -175,7 +175,7 @@ export default function AboutUsPage() {
       {/* ══════════ HERO SLIDER ══════════ */}
       <section className="relative w-full pt-8 pb-16 lg:pt-10 lg:pb-24 bg-[#001D3D] overflow-hidden flex items-center select-none text-white">
         {/* Background Image - Clear on the right side */}
-        <div className="absolute inset-0 bg-cover bg-right lg:bg-center opacity-40 lg:opacity-100" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=2000&q=80')" }}></div>
+        <div className="absolute inset-0 bg-cover bg-right lg:bg-center opacity-40 lg:opacity-100" style={{ backgroundImage: "url('/sgnl/about%20page%20banner.jpg')" }}></div>
         
         {/* Mobile Gradient (Dark everywhere for text readability) */}
         <div className="absolute inset-0 bg-[#001D3D]/80 lg:hidden"></div>
@@ -529,7 +529,7 @@ export default function AboutUsPage() {
                 <p className="text-white font-black text-sm uppercase tracking-widest mb-6">{col.head}</p>
                 <ul className="space-y-4">
                   {col.links.map(l => (
-                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : l === 'General Insurance' ? '/general-insurance-tamil-nadu' : l === 'High-Interest Savings Plans' ? '/high-interest-savings-plans-tamil-nadu' : l === 'About Us' ? '/about-us' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
+                    <li key={l}><Link href={l === 'Life Insurance' ? '/services/life-insurance' : l === 'Health Insurance' ? '/health-insurance-tamil-nadu' : l === 'General Insurance' ? '/general-insurance-tamil-nadu' : l === 'High-Interest Savings Plans' ? '/high-interest-savings-plans-tamil-nadu' : l === 'About Us' ? '/about-us' : l === 'Get In Touch' ? '/get-in-touch' : '#'} className="text-white text-[15px] hover:text-sky-500 font-medium transition-colors">{l}</Link></li>
                   ))}
                 </ul>
               </div>

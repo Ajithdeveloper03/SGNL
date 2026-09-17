@@ -702,7 +702,7 @@ export default function LifeInsurancePage() {
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
           
           {/* Desktop Character Illustration */}
-          <div className="hidden lg:block absolute -top-[186px] right-24 w-44 z-20 pointer-events-none drop-shadow-2xl">
+          <div className="hidden lg:block absolute -top-[160px] right-24 w-44 z-20 pointer-events-none drop-shadow-2xl">
             <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain" />
           </div>
 

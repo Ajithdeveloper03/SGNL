@@ -471,7 +471,7 @@ export default function LongTermPlansPage() {
         <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 0%, transparent 80%)' }} />
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
 
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 py-16">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 py-8 lg:py-10">
             <div className="text-center lg:text-left max-w-3xl">
               <h2 className="text-3xl lg:text-5xl font-black text-white mb-4">Ready to Start?</h2>
               <p className="text-xl text-white/90 font-bold mb-4">
@@ -483,6 +483,17 @@ export default function LongTermPlansPage() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center shrink-0 w-full lg:w-auto mt-24 sm:mt-0">
               <div className="relative w-full sm:w-auto">
+                <button 
+                  onClick={() => setIsPopupOpen(true)}
+                  className="w-full sm:w-auto bg-white text-[#001D3D] px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-50 transition-all flex items-center justify-center shadow-lg hover:-translate-y-1 relative z-30"
+                >
+                  Contact Us
+                </button>
+              </div>
+              <div className="relative w-full sm:w-auto">
+                <div className="hidden lg:block absolute bottom-[calc(100%-10px)] left-1/2 -translate-x-1/2 w-64 z-20 pointer-events-none drop-shadow-2xl">
+                  <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain object-bottom" />
+                </div>
                 <div className="lg:hidden absolute bottom-[calc(100%-24px)] right-4 w-36 z-20 pointer-events-none drop-shadow-2xl">
                   <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain" />
                 </div>
@@ -491,17 +502,6 @@ export default function LongTermPlansPage() {
                   className="w-full sm:w-auto bg-[#001D3D] text-white px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-900 transition-all shadow-xl flex items-center justify-center gap-2 hover:-translate-y-1 relative z-30"
                 >
                   Explore Our Schemes
-                </button>
-              </div>
-              <div className="relative w-full sm:w-auto">
-                <div className="hidden lg:block absolute bottom-[calc(100%-24px)] left-1/2 -translate-x-1/2 w-64 z-20 pointer-events-none drop-shadow-2xl">
-                  <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain object-bottom" />
-                </div>
-                <button 
-                  onClick={() => setIsPopupOpen(true)}
-                  className="w-full sm:w-auto bg-white text-[#001D3D] px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-50 transition-all flex items-center justify-center shadow-lg hover:-translate-y-1 relative z-30"
-                >
-                  Contact Us
                 </button>
               </div>
             </div>

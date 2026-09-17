@@ -368,20 +368,20 @@ export default function InvestmentSolutionsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#001D3D]/50 border border-sky-400/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 backdrop-blur-sm">
-              <Shield className="w-4 h-4" /> Compare Investment Options Plans in Tamil Nadu
+              <Shield className="w-4 h-4" /> Compare Investment Options in Tamil Nadu
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100">
-              Protect Your Family's Health — <span className="text-sky-400">Compare Insurance Plans</span>
+              Grow Your Wealth Smart — <span className="text-sky-400">Compare Investment Solutions in Tamil Nadu</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed text-justify md:text-left reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
-              A medical emergency can bring unexpected expenses at any time. SGNL helps you compare health insurance options from participating insurers such as Star Health, Niva Bupa, HDFC ERGO, Care Health, and Manipal Cigna, so you can explore coverage based on your family's healthcare needs and budget.
+              Money that stays idle may lose purchasing power over time as prices rise. SGNL helps you compare investment solutions in Tamil Nadu across mutual funds, SIPs, bonds, and portfolio management services. Understand your options, compare key features, and explore investment solutions based on your financial goals, risk comfort, and investment horizon.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-300">
               <button className="bg-sky-500 hover:bg-sky-400 text-white px-6 py-3 rounded-lg font-bold text-base transition-all flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20">
-                Get a Free Quote <ArrowRight className="w-4 h-4" />
+                Compare Investment Options <ArrowRight className="w-4 h-4" />
               </button>
               <button className="bg-white hover:bg-sky-50 text-[#001D3D] border border-transparent hover:border-sky-200 px-6 py-3 rounded-lg font-bold text-base transition-all flex items-center justify-center gap-2 shadow-lg shadow-black/5">
                 <MessageCircle className="w-4 h-4" /> WhatsApp Us
@@ -389,7 +389,7 @@ export default function InvestmentSolutionsPage() {
             </div>
             
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm font-semibold text-slate-300 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-400">
-              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400" /> 15+ IRDAI-Approved Insurers</div>
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400" /> SEBI-Registered Fund Houses</div>
               <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400" /> Free Investment Consultation</div>
               <div className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400" /> Dedicated Investment Support</div>
             </div>
@@ -507,7 +507,7 @@ export default function InvestmentSolutionsPage() {
           
           <div className="text-center max-w-3xl mx-auto mb-10 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
             <h2 className="text-3xl md:text-4xl font-black text-[#001D3D] mb-6">Why Choose <span className="text-sky-500">SGNL</span> for Investment Solutions?</h2>
-            <p className="text-slate-600 text-lg">Choosing health insurance can be complicated when every insurer offers different coverage, premiums, waiting periods, and policy conditions. SGNL helps simplify the comparison process.</p>
+            <p className="text-slate-600 text-lg">Compare More. Invest With Clarity. Stay Supported. Compare your options and make investment planning simpler with SGNL.</p>
           </div>
             
           <div className="flex flex-wrap justify-center gap-6 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-200">
@@ -664,22 +664,22 @@ export default function InvestmentSolutionsPage() {
       </section>
 
       {/* ══════════ FINAL CTA BANNER ══════════ */}
-      <section className="py-16 bg-sky-500 relative">
+      <section className="py-10 lg:py-12 bg-sky-500 relative">
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 0%, transparent 80%)' }} />
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
           
           {/* Desktop Character Illustration */}
-          <div className="hidden lg:block absolute -top-[186px] right-24 w-44 z-20 pointer-events-none drop-shadow-2xl">
+          <div className="hidden lg:block absolute -top-[147px] right-24 w-44 z-20 pointer-events-none drop-shadow-2xl">
             <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain" />
           </div>
 
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
             <div className="text-center lg:text-left max-w-3xl">
               <h2 className="text-3xl lg:text-4xl font-black text-white leading-none tracking-tight mb-2">
-                Stay Protected, Stay Prepared
+                Invest Smart, Grow Steady
               </h2>
               <p className="text-lg text-white/90 leading-snug font-medium">
-                Medical emergencies can happen unexpectedly. Having suitable health insurance can help you prepare for eligible healthcare expenses and protect your family from unnecessary financial pressure. Whether you're looking to protect yourself, your children, your parents, or your entire family, SGNL can help you explore available health insurance options.
+                The earlier you start planning, the more time your investments may have to grow and compound. Talk to our team about investment options that align with your financial goals, risk comfort, and investment timeline. Get a clear understanding of your options before making an investment decision.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center shrink-0 w-full lg:w-auto mt-24 sm:mt-0">

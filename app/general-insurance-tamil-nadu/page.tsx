@@ -675,12 +675,12 @@ export default function GeneralInsurancePage() {
       </section>
 
       {/* ══════════ FINAL CTA BANNER ══════════ */}
-      <section className="py-16 bg-sky-500 relative">
+      <section className="py-10 lg:py-12 bg-sky-500 relative">
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 0%, transparent 80%)' }} />
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 relative z-10">
           
           {/* Desktop Character Illustration */}
-          <div className="hidden lg:block absolute -top-[186px] right-24 w-44 z-20 pointer-events-none drop-shadow-2xl">
+          <div className="hidden lg:block absolute -top-[145px] right-24 w-44 z-20 pointer-events-none drop-shadow-2xl">
             <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain" />
           </div>
 

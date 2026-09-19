@@ -317,7 +317,7 @@ export default function LifeInsurancePage() {
                 )}
               </div>
             ))}
-            <Link href="#" className="w-full py-5 cursor-pointer border-t border-gray-100 mb-2">
+            <Link href="/get-in-touch" className="w-full py-5 cursor-pointer border-t border-gray-100 mb-2">
               <span className="text-[#001D3D] font-black text-[15px]">Get In Touch</span>
             </Link>
           </div>

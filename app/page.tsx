@@ -40,7 +40,7 @@ const heroSlides = [
     sub: 'SGNL (Sarathi Germinate Nidhi Limited) offers savings, fixed deposit, investment and insurance solutions designed to help individuals and families plan, protect and grow their finances with confidence.',
     cta: 'Start Saving Today',
     ctaSecondary: 'View Top Schemes',
-    image: 'https://images.pexels.com/photos/10958528/pexels-photo-10958528.jpeg',
+    image: '/sgnl/home banner 1.png',
     badge: 'SGNL · Established 2020 · Registered Nidhi Company',
   },
   {
@@ -50,7 +50,7 @@ const heroSlides = [
     sub: 'From high-interest savings plans to flexible fixed deposits and investment options — SGNL helps you build wealth systematically, with plans starting at just ₹1,000/month.',
     cta: 'Explore Schemes',
     ctaSecondary: 'Talk to an Advisor',
-    image: '/sgnl/banner.avif',
+    image: '/sgnl/home banner 2.png',
     badge: '1000+ Happy Members · Flexible Savings & FD Options',
   }
 ];
@@ -88,7 +88,7 @@ const loanProducts = [
     maxAmt: 'Duration: 1-Year Plan',
     tenure: 'Minimum Investment: Starting from ₹1,000/month',
     desc: 'A structured monthly savings plan designed to help you build a lump sum through disciplined saving.',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/sgnl/Superstar Products 1.png',
     tag: 'Most Popular',
     tagColor: 'bg-sky-500',
   },
@@ -98,7 +98,7 @@ const loanProducts = [
     maxAmt: 'Duration: 6 Months – 5 Years',
     tenure: 'Minimum Investment: ₹30,000 – ₹1 Crore',
     desc: 'A term deposit option designed for those seeking regular interest payouts from their savings.',
-    image: 'https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/sgnl/Superstar Products 2.png',
     tag: 'High Returns',
     tagColor: 'bg-emerald-600',
   },
@@ -108,7 +108,7 @@ const loanProducts = [
     maxAmt: 'Duration: Monthly / Quarterly',
     tenure: 'Plan: 3 or 5 Years',
     desc: 'A long-term savings plan with an additional yearly bonus and flexible payment options.',
-    image: 'https://images.pexels.com/photos/31513716/pexels-photo-31513716.jpeg',
+    image: '/sgnl/Superstar Products 3.png',
     tag: 'With Bonus',
     tagColor: 'bg-blue-600',
   },
@@ -118,7 +118,7 @@ const loanProducts = [
     maxAmt: 'Duration: Annual / Monthly',
     tenure: 'Coverage: Based on individual requirements',
     desc: 'A combined protection solution bringing life and health insurance benefits together for added financial security.',
-    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=600&h=400',
+    image: '/sgnl/Superstar Products 4.png',
     tag: 'New Arrival',
     tagColor: 'bg-rose-500',
   },
@@ -497,7 +497,7 @@ export default function Home() {
                 )}
               </div>
             ))}
-            <Link href="#" className="w-full py-5 cursor-pointer border-t border-gray-100 mb-2">
+            <Link href="/get-in-touch" className="w-full py-5 cursor-pointer border-t border-gray-100 mb-2">
               <span className="text-[#001D3D] font-black text-[15px]">Get In Touch</span>
             </Link>
           </div>
@@ -505,7 +505,7 @@ export default function Home() {
       </div>
 
       {/* ══════════ HERO SLIDER ══════════ */}
-      <section className="relative w-full h-[calc(100vh-70px)] lg:h-[calc(100vh-130px)] min-h-[500px] max-h-[850px] bg-[#001D3D] overflow-hidden flex items-center select-none">
+      <section className="relative w-full h-auto py-12 lg:py-0 lg:h-[calc(100vh-130px)] lg:min-h-[500px] lg:max-h-[850px] bg-[#001D3D] overflow-hidden flex items-center select-none">
         {/* Background Images — all stacked, opacity-controlled */}
         {heroSlides.map((s, i) => (
           <div key={i} className={`absolute top-0 right-0 w-full lg:w-[65%] h-full transition-opacity duration-1000 ease-in-out ${i === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
@@ -575,11 +575,18 @@ export default function Home() {
               )}
             </div>
 
-            {/* Mobile dots */}
-            <div className="flex lg:hidden gap-3 mt-8">
-              {heroSlides.map((_, i) => (
-                <button key={i} onClick={() => goSlide(i)} className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === currentSlide ? 'bg-sky-500 w-8' : 'bg-white/30'}`} />
-              ))}
+            {/* Mobile Footer: Dots & Counter */}
+            <div className="flex lg:hidden items-center justify-between w-full mt-8">
+              <div className="flex gap-3 items-center">
+                {heroSlides.map((_, i) => (
+                  <button key={i} onClick={() => goSlide(i)} className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === currentSlide ? 'bg-sky-500 w-8' : 'bg-white/30'}`} />
+                ))}
+              </div>
+              <div className="text-white/40 font-black text-xs tracking-widest flex items-center pr-2">
+                <span className="text-white text-lg leading-none">{String(currentSlide + 1).padStart(2, '0')}</span>
+                <span className="mx-2 leading-none">/</span>
+                <span className="leading-none">{String(heroSlides.length).padStart(2, '0')}</span>
+              </div>
             </div>
           </div>
 
@@ -602,8 +609,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Slide counter */}
-        <div className="absolute bottom-6 left-4 lg:left-8 text-white/40 font-black text-xs tracking-widest" style={{ zIndex: 10 }}>
+        {/* Slide counter (Desktop) */}
+        <div className="hidden lg:block absolute bottom-6 left-8 text-white/40 font-black text-xs tracking-widest" style={{ zIndex: 10 }}>
           <span className="text-white text-lg">{String(currentSlide + 1).padStart(2, '0')}</span>
           <span className="mx-2">/</span>
           <span>{String(heroSlides.length).padStart(2, '0')}</span>
@@ -957,7 +964,7 @@ export default function Home() {
                 {/* Left: Image Section */}
                 <div className="relative h-64 md:h-auto md:w-[45%] md:shrink-0 overflow-visible rounded-t-[2.5rem] md:rounded-tr-none md:rounded-l-[2.5rem] z-10">
                   <div className="absolute inset-0 overflow-hidden rounded-t-[2.5rem] md:rounded-tr-none md:rounded-l-[2.5rem]">
-                    <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1500ms]" />
+                    <img src={p.image} alt={p.title} className="w-full h-full object-fill group-hover:scale-110 transition-transform duration-[1500ms]" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#001D3D]/90 via-[#001D3D]/20 to-transparent md:bg-gradient-to-r md:from-transparent md:via-[#001D3D]/30 md:to-[#001D3D]/90 opacity-80" />
                   </div>
 
@@ -1034,25 +1041,25 @@ export default function Home() {
               {
                 title: 'Smart Saving for a Stronger Future',
                 desc: "A salaried professional chose an SGNL savings plan to work towards a home down payment while maintaining her regular monthly budget.",
-                img: 'https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?auto=format&fit=crop&q=80&w=600',
+                img: '/sgnl/Case Studies 1.png',
                 icon: <Coins className="w-8 h-8" />
               },
               {
                 title: 'Health Insurance That Delivered in Crisis',
                 desc: "A family facing an unexpected medical emergency received support through their health insurance coverage, helping reduce the financial pressure during a difficult time.",
-                img: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=600',
+                img: '/sgnl/Case Studies 2.png',
                 icon: <ShieldCheck className="w-8 h-8" />
               },
               {
                 title: 'Home Protected, Peace Preserved',
                 desc: "When storm damage affected a client's home, their general insurance coverage helped support the repair expenses and protect their financial stability.",
-                img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600',
+                img: '/sgnl/Case Studies 3.png',
                 icon: <Building2 className="w-8 h-8" />
               },
               {
                 title: 'Investing with Confidence',
                 desc: "A small business owner explored an SGNL investment solution to diversify his financial planning and work towards expanding his business.",
-                img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
+                img: '/sgnl/Case Studies 4.png',
                 icon: <TrendingUp className="w-8 h-8" />
               }
             ].map((s, i) => (

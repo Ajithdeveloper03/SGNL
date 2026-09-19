@@ -643,7 +643,7 @@ export default function Home() {
             
             {/* Image Side (Left Column) */}
             <div className="w-full lg:w-1/2 relative rounded-[32px] overflow-hidden min-h-[400px] lg:min-h-[unset] shadow-2xl reveal-on-scroll opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
-              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="About SGNL" className="absolute inset-0 w-full h-full object-cover" />
+              <img src="/sgnl/home (about us).png" alt="About SGNL" className="absolute inset-0 w-full h-full object-cover" />
               
               {/* Dark Gradient Overlay matching reference */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/70 to-transparent" />
@@ -792,11 +792,11 @@ export default function Home() {
             onMouseLeave={() => setIsSchemesHovered(false)}
           >
             {[
-              { name: 'High-Interest Savings Plans', cat: 'Savings', sub: 'Flexible savings for your goals.', desc: 'Build disciplined savings with flexible options designed to support your short-term and long-term financial goals.', img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800' },
-              { name: 'Investment Solutions', cat: 'Investment', sub: 'Invest aligned with your goals.', desc: 'Explore investment options aligned with your financial objectives, preferences and long-term plans.', img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800' },
-              { name: 'Life Insurance', cat: 'Insurance', sub: 'Protect your family\'s future.', desc: 'Help protect your family\'s financial future with life insurance solutions designed to provide long-term security.', img: 'https://images.pexels.com/photos/31513716/pexels-photo-31513716.jpeg' },
-              { name: 'Health Insurance', cat: 'Health', sub: 'Prepare for medical expenses.', desc: 'Prepare for unexpected medical expenses with health insurance solutions that help protect you and your loved ones.', img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800' },
-              { name: 'General Insurance', cat: 'Insurance', sub: 'Protect your valuable assets.', desc: 'Protect your valuable assets with insurance solutions covering important needs such as vehicles and property.', img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800' },
+              { name: 'High-Interest Savings Plans', cat: 'Savings', sub: 'Flexible savings for your goals.', desc: 'Build disciplined savings with flexible options designed to support your short-term and long-term financial goals.', img: "/sgnl/We're Offering 1.png" },
+              { name: 'Investment Solutions', cat: 'Investment', sub: 'Invest aligned with your goals.', desc: 'Explore investment options aligned with your financial objectives, preferences and long-term plans.', img: "/sgnl/We're Offering 2.png" },
+              { name: 'Life Insurance', cat: 'Insurance', sub: 'Protect your family\'s future.', desc: 'Help protect your family\'s financial future with life insurance solutions designed to provide long-term security.', img: "/sgnl/We're Offering 3.png" },
+              { name: 'Health Insurance', cat: 'Health', sub: 'Prepare for medical expenses.', desc: 'Prepare for unexpected medical expenses with health insurance solutions that help protect you and your loved ones.', img: "/sgnl/We're Offering 4.png" },
+              { name: 'General Insurance', cat: 'Insurance', sub: 'Protect your valuable assets.', desc: 'Protect your valuable assets with insurance solutions covering important needs such as vehicles and property.', img: "/sgnl/We're Offering 5.png" },
             ].map((scheme, i) => (
               <Link href={scheme.name === 'Life Insurance' ? '/services/life-insurance' : scheme.name === 'Health Insurance' ? '/health-insurance-tamil-nadu' : '#'} key={scheme.name} className="relative group w-[280px] h-[340px] md:w-[320px] md:h-[380px] lg:w-[380px] lg:h-[420px] rounded-[2rem] overflow-hidden snap-center shrink-0 cursor-pointer shadow-md border border-slate-200 bg-white block">
                 <img src={scheme.img} alt={scheme.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1000ms] ease-out" />

@@ -80,35 +80,35 @@ export default function GeneralInsurancePage() {
       title: "Motor Insurance (Car & Two-Wheeler)",
       icon: Car,
       color: "bg-emerald-500 text-white",
-      image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Motor Insurance (Car & Two-Wheeler).png",
       desc: "Covers own-damage repair costs after an accident, theft, or fire. It also includes the mandatory third-party liability cover for both cars and two-wheelers. Optional add-ons such as zero depreciation and engine protection may provide additional protection, subject to the selected policy's terms and conditions, whether you're navigating Chennai traffic or a highway trip to Madurai."
     },
     {
       title: "Home Insurance",
       icon: Home,
       color: "bg-sky-500 text-white",
-      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Home Insurance.png",
       desc: "Comprehensive protection for your house structure and household contents against fire, theft, cyclone, and flood damage."
     },
     {
       title: "Shop & Commercial Property Insurance",
       icon: Briefcase,
       color: "bg-rose-500 text-white",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Shop & Commercial Property Insurance.png",
       desc: "Covers your shop, office, warehouse, or factory building and stock against fire, explosion, short-circuit, theft, and natural calamities. The right cover can help reduce the financial impact of unexpected property damage or stock losses on your business."
     },
     {
       title: "Travel Insurance",
       icon: Plane,
       color: "bg-indigo-500 text-white",
-      image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Travel Insurance.png",
       desc: "Covers trip cancellations, lost baggage, passport loss, and emergency medical treatment abroad. A delayed flight or a missed connection, at home or overseas, stays a minor hassle instead of a major expense."
     },
     {
       title: "Personal Accident Insurance",
       icon: AlertCircle,
       color: "bg-orange-500 text-white",
-      image: "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Personal Accident Insurance.png",
       desc: "May provide a lump-sum benefit for covered accidental death or disability, with benefits depending on the selected policy and terms."
     }
   ];

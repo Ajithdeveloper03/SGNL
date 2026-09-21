@@ -74,15 +74,35 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
       setIsSubmitting(true);
-      // Simulate API call
-      setTimeout(() => {
+      
+      try {
+        const response = await fetch('/sgnl/contact.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...formData,
+            source: 'Contact Popup Form',
+          }),
+        });
+
+        if (response.ok) {
+          setIsSuccess(true);
+        } else {
+          console.error('Failed to send email');
+          alert('Failed to send message. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('An error occurred. Please try again.');
+      } finally {
         setIsSubmitting(false);
-        setIsSuccess(true);
-      }, 1500);
+      }
     }
   };
 

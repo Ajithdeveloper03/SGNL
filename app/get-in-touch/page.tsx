@@ -15,6 +15,7 @@ export default function GetInTouchPage() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', altPhone: '', email: '', service: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 60);
@@ -22,12 +23,34 @@ export default function GetInTouchPage() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted", formData);
-    alert("Thank you for getting in touch! We will contact you soon.");
-    setFormData({ name: '', phone: '', altPhone: '', email: '', service: '', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/sgnl/contact.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: 'Get In Touch Page',
+        }),
+      });
+
+      if (response.ok) {
+        setFormData({ name: '', phone: '', altPhone: '', email: '', service: '', message: '' });
+        alert("Thank you for getting in touch! We will contact you soon.");
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -334,9 +357,12 @@ export default function GetInTouchPage() {
 
                 <button 
                   type="submit"
-                  className="w-full bg-sky-500 text-white px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-[#001D3D] transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 group"
+                  disabled={isSubmitting}
+                  className="w-full bg-sky-500 text-white px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-[#001D3D] transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 group disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Send Message <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  {isSubmitting ? 'Sending...' : (
+                    <>Send Message <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /></>
+                  )}
                 </button>
               </form>
             </div>

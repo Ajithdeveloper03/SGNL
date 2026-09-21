@@ -77,35 +77,35 @@ export default function LifeInsurancePage() {
       title: "Family Health Plan",
       icon: ShieldCheck,
       color: "bg-emerald-500 text-white",
-      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Family Health Plan.png",
       desc: "A single policy designed to cover eligible family members under one sum insured, subject to the policy terms. It can be a practical option for families looking for shared health coverage."
     },
     {
       title: "Individual Health Plan",
       icon: HeartPulse,
       color: "bg-sky-500 text-white",
-      image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Individual Health Plan.png",
       desc: "A health insurance policy designed around one individual's healthcare needs, with coverage and sum insured applicable to the insured person as per the policy terms."
     },
     {
       title: "Critical Illness Cover",
       icon: Shield,
       color: "bg-rose-500 text-white",
-      image: "https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Critical Illness Cover.png",
       desc: "A plan that may provide a lump-sum benefit upon diagnosis of a listed critical illness, subject to the policy's conditions, exclusions, and applicable terms."
     },
     {
       title: "Senior Citizen Health Plan",
       icon: HeartHandshake,
       color: "bg-indigo-500 text-white",
-      image: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Senior Citizen Health Plan.png",
       desc: "Health insurance options designed for older adults, with coverage features suited to age-related healthcare and hospitalization needs."
     },
     {
       title: "Top-Up & Super Top-Up Plans",
       icon: TrendingUp,
       color: "bg-orange-500 text-white",
-      image: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Top-Up & Super Top-Up Plans.png",
       desc: "Additional health insurance options that can increase your overall coverage beyond a base policy, subject to the applicable deductible, limits, and policy terms."
     }
   ];
@@ -401,7 +401,7 @@ export default function LifeInsurancePage() {
             {/* Right: Image */}
             <div className="relative reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100 min-h-[450px] w-full order-2 lg:order-1">
               <div className="w-full h-full rounded-[40px] overflow-hidden shadow-2xl absolute inset-0">
-                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=800" alt="Happy family outdoors" className="w-full h-full object-cover" />
+                <img src="/sgnl/Why Do You Need Health Insurance.png" alt="Happy family outdoors" className="w-full h-full object-cover" />
               </div>
               
               {/* Floating badges */}

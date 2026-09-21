@@ -108,35 +108,35 @@ export default function HighInterestSavingsPage() {
       title: "Fixed Deposit (FD)",
       icon: PiggyBank,
       color: "bg-emerald-500 text-white",
-      image: "https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Fixed Deposit (FD).png",
       desc: "Invest a lump sum for a selected tenure and earn interest at the rate applicable when the deposit is booked, subject to the institution's terms. Depending on the product, interest may be paid periodically or at maturity."
     },
     {
       title: "Recurring Deposit (RD)",
       icon: Wallet,
       color: "bg-sky-500 text-white",
-      image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Recurring Deposit (RD).png",
       desc: "Save a fixed amount regularly over a chosen tenure and earn interest at the applicable RD rate. An RD can be useful for salaried individuals, professionals, and small business owners who want to build savings gradually without investing a large lump sum upfront."
     },
     {
       title: "High-Interest Savings Account",
       icon: Landmark,
       color: "bg-rose-500 text-white",
-      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/High-Interest Savings Account.png",
       desc: "Some banks offer savings accounts with competitive interest rates while keeping your funds accessible. Interest rates, balance requirements, withdrawal conditions, and other features vary by account and institution."
     },
     {
       title: "Senior Citizen Savings Options",
       icon: HeartHandshake,
       color: "bg-indigo-500 text-white",
-      image: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Senior Citizen Savings Options.png",
       desc: "Eligible senior citizens may have access to deposit products offering preferential interest rates or other benefits. Rates, eligibility, tenure, and payout options vary by institution and product."
     },
     {
       title: "Tax-Saving Fixed Deposit",
       icon: ShieldCheck,
       color: "bg-orange-500 text-white",
-      image: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Tax-Saving Fixed Deposit.png",
       desc: "A tax-saving FD generally comes with a 5-year lock-in period and may qualify for deduction under Section 80C, subject to applicable tax rules and eligibility. Interest earned is subject to applicable taxation."
     }
   ];

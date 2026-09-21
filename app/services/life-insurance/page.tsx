@@ -76,42 +76,42 @@ export default function LifeInsurancePage() {
       title: "Family Life Protection",
       icon: ShieldCheck,
       color: "bg-emerald-500 text-white",
-      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Family Life Protection.png",
       desc: "Your family shouldn't have to compromise on their lifestyle if you're not around. This plan gives them a guaranteed payout to cover daily expenses, loans, and other essentials — so they can stay financially secure even in your absence."
     },
     {
       title: "Child Education",
       icon: GraduationCap,
       color: "bg-sky-500 text-white",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Child Education.png",
       desc: "Every parent dreams big for their child — good education, a strong career, a happy wedding. This plan helps you build that fund steadily over the years, so those dreams never have to wait on your bank balance."
     },
     {
       title: "Wealth Creation",
       icon: TrendingUp,
       color: "bg-indigo-500 text-white",
-      image: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Wealth Creation.png",
       desc: "Why let your money sit idle when it can grow? These plans combine the safety of life insurance with the benefits of disciplined, long-term investing — helping you build real wealth over time."
     },
     {
       title: "Retirement Planning",
       icon: PiggyBank,
       color: "bg-orange-500 text-white",
-      image: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Retirement Planning.png",
       desc: "After years of hard work, you deserve to relax without worrying about money. Our retirement solutions are designed to help you plan for a more financially secure and independent future."
     },
     {
       title: "Monthly Income",
       icon: Wallet,
       color: "bg-rose-500 text-white",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Monthly Income.png",
       desc: "Want an extra income stream without extra effort? These plans are designed to give you regular monthly payouts, adding a cushion of comfort to your everyday life."
     },
     {
       title: "Health & Illness Cover",
       icon: HeartPulse,
       color: "bg-teal-500 text-white",
-      image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800",
+      image: "/sgnl/Health & Illness Cover.png",
       desc: "Medical emergencies can wipe out savings in an instant. This acts as a financial shield, providing a lump-sum payout upon diagnosis of covered critical illnesses, letting you focus on recovery."
     }
   ];
@@ -380,7 +380,7 @@ export default function LifeInsurancePage() {
             {/* Left: Image */}
             <div className="relative reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 delay-100 min-h-[450px] w-full order-2 lg:order-1">
               <div className="w-full h-full rounded-[40px] overflow-hidden shadow-2xl absolute inset-0">
-                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=800" alt="Happy family outdoors" className="w-full h-full object-cover" />
+                <img src="/sgnl/Why Do You Need Life Insurance.png" alt="Happy family outdoors" className="w-full h-full object-fill" />
               </div>
               
               {/* Floating badges */}
@@ -472,7 +472,7 @@ export default function LifeInsurancePage() {
                       <h3 className="text-lg md:text-xl font-black text-sky-500 leading-tight text-center">{plan.title}</h3>
                     </div>
                     <div className="w-8 h-1 bg-sky-500 rounded-full mb-4 mx-auto"></div>
-                    <p className="text-slate-200 text-[13px] md:text-[14px] leading-relaxed line-clamp-4 text-justify">
+                    <p className="text-slate-200 text-[13px] md:text-[14px] leading-relaxed text-justify">
                       {plan.desc}
                     </p>
                   </div>

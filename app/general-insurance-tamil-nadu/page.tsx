@@ -452,7 +452,7 @@ export default function GeneralInsurancePage() {
                       <h3 className="text-lg md:text-xl font-black text-sky-500 leading-tight text-center">{plan.title}</h3>
                     </div>
                     <div className="w-8 h-1 bg-sky-500 rounded-full mb-4 mx-auto"></div>
-                    <p className="text-slate-200 text-[13px] md:text-[14px] leading-relaxed line-clamp-4 text-justify">
+                    <p className="text-slate-200 text-[13px] md:text-[14px] leading-relaxed text-justify">
                       {plan.desc}
                     </p>
                   </div>

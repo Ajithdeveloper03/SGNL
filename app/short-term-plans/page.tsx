@@ -486,6 +486,9 @@ export default function ShortTermPlansPage() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center shrink-0 w-full lg:w-auto mt-24 sm:mt-0">
               <div className="relative w-full sm:w-auto">
+                <div className="lg:hidden absolute bottom-[calc(100%-24px)] right-4 w-36 z-20 pointer-events-none drop-shadow-2xl">
+                  <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain" />
+                </div>
                 <button 
                   onClick={() => setIsPopupOpen(true)}
                   className="w-full sm:w-auto bg-white text-[#001D3D] px-8 py-5 rounded-2xl font-black tracking-widest uppercase text-sm hover:bg-slate-50 transition-all flex items-center justify-center shadow-lg hover:-translate-y-1 relative z-30"
@@ -496,9 +499,6 @@ export default function ShortTermPlansPage() {
               <div className="relative w-full sm:w-auto">
                 <div className="hidden lg:block absolute bottom-[calc(100%-10px)] left-1/2 -translate-x-1/2 w-64 z-20 pointer-events-none drop-shadow-2xl">
                   <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain object-bottom" />
-                </div>
-                <div className="lg:hidden absolute bottom-[calc(100%-24px)] right-4 w-36 z-20 pointer-events-none drop-shadow-2xl">
-                  <img src="/sgnl/person 2.png" alt="Character" className="w-full h-auto object-contain" />
                 </div>
                 <button 
                   onClick={() => setIsPopupOpen(true)}
